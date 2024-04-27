@@ -171,7 +171,7 @@ const Documentation = () => {
                     </table>
 
                     <p>Account Services (Feedback and Complaints View)</p>
-                    <pre>Account / Customer No: Indicate client's RM Number</pre>
+                    <p>Account / Customer No: Indicate client's RM Number</p>
                 </section>
 
                 <section>
