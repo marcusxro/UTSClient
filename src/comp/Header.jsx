@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Header = () => {
     const [isSelected, setSelected] = useState("")
     const nav = useNavigate()
+
     const optionsForAdvisories = [
         { title: 'New campaigns', links: ['/new-campaigns'] },
         { title: 'Promos', links: ['/promos'] },
@@ -14,11 +15,38 @@ const Header = () => {
     ]
 
     const optionsForCampaign = [
-        { title: 'Filtering of Leads', links: ['/filtering-of-leads'] },
-        { title: 'Call Flow and Spiels', links: ['/call-flow-and-spiels'] },
-        { title: 'Documentation', links: ['/documentation'] },
-        { title: 'Exception Handling', links: ['/exception-handling'] },
-        { title: 'add Sub', links: ['/exception-handling'] },
+        {
+            title: 'Credit Cards',
+            links: ['/filtering-of-leads'],
+            content: [
+                { title: '1. Filtering of Leads', links: ['/campaign/filtering-of-leads'] },
+                { title: '2. Call flow and Spiels', links: ['/campaign/call-flow-and-spiels'] },
+                { title: '3. Documentation', links: ['/campaign/documentation'] },
+                { title: '4. Exception Handling', links: ['/campaign/exception-handling'] }
+            ]
+        },
+        {
+            title: 'Personal Loans',
+            links: ['/filtering-of-leads'],
+            content: [
+                { title: '1. Filtering of Leads', links: ['/personal-loan/filtering-of-leads'] },
+                { title: '2. Call flow and Spiels', links: ['/personal-loan/call-flow-and-spiels'] },
+                { title: '3. Other Guidelines for DocuSign', links: ['/personal-loan/other-guidlines-for-docusign'] },
+                { title: '4. documentation', links: ['/personal-loan/documentation'] },
+                { title: '5. Exception Handling', links: ['/personal-loan/exception-handling'] }
+            ]
+        },
+
+        {
+            title: 'SIP Loans',
+            links: ['/filtering-of-leads'],
+            content: [
+                { title: '1. Filtering of Leads', links: ['/SIP-loan/filtering-of-leads'] },
+                { title: '2. Documentation', links: ['/SIP-loan/documentation'] },
+                { title: '3. Exception Handling', links: ['/SIP-loan/exception-handling'] }
+            ]
+        },
+
     ]
     const optionForTraining = [
         { title: 'Supported Products', links: ['/supported-products'] },
@@ -76,13 +104,27 @@ const Header = () => {
     const handleClick = (event) => {
         event.stopPropagation();
     };
+
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [subCategoryPosition, setSubCategoryPosition] = useState({});
+    const [isActive, setIsActive] = useState('')
+    const handleCategoryClick = (title, event) => {
+        const rect = event.target.getBoundingClientRect();
+        const position = {
+            top: rect.top + window.scrollY,
+            left: rect.left + window.scrollX,
+            width: rect.width
+        };
+        setSubCategoryPosition(position);
+        setSelectedCategory(selectedCategory === title ? null : title);
+    };
     const renderMenu = () => {
         switch (isSelected) {
             case 'Advisories':
                 return (
                     <div className="menuItem Advisories" onClick={handleClick}>
                         {optionsForAdvisories.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); }}>
+                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); window.scrollTo(0, 0) }}>
                                 {item.title}
                             </div>
                         ))}
@@ -92,18 +134,31 @@ const Header = () => {
                 return (
                     <div className="menuItem Campaign" onClick={handleClick}>
                         {optionsForCampaign.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); }}>
-
-                                {item.title}
+                            <div key={item.title} className="categoryContainer">
+                                <div className={`navigator`} onClick={(event) => { handleCategoryClick(item.title, event); setIsActive(item.title) }}>
+                                    <div className={`naviTitle ${item.title === isActive && 'activated'}`}>
+                                        {item.title}
+                                    </div>
+                                </div>
+                                {selectedCategory === item.title && (
+                                    <div className="subContent" style={{ ...subCategoryPosition }}>
+                                        {item.content.map((subItem) => (
+                                            <div className="subItem" key={subItem.title} onClick={() => { nav(subItem.links.join('')); window.scrollTo(0, 0) }}>
+                                                {subItem.title}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>
                 );
+
             case 'Training':
                 return (
                     <div className="menuItem Training" onClick={handleClick}>
                         {optionForTraining.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); }}>
+                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); window.scrollTo(0, 0) }}>
                                 {item.title}
                             </div>
                         ))}
@@ -113,7 +168,7 @@ const Header = () => {
                 return (
                     <div className="menuItem Customers" onClick={handleClick}>
                         {optionForCustomers.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); }}>
+                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); window.scrollTo(0, 0) }}>
                                 {item.title}
                             </div>
                         ))}
@@ -123,7 +178,7 @@ const Header = () => {
                 return (
                     <div className="menuItem Performance" onClick={handleClick}>
                         {optionForPerfomance.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); }}>
+                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); window.scrollTo(0, 0) }}>
                                 {item.title}
                             </div>
                         ))}
@@ -133,7 +188,7 @@ const Header = () => {
                 return (
                     <div className="menuItem Team" onClick={handleClick}>
                         {optionForTeam.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); }}>
+                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); window.scrollTo(0, 0) }}>
                                 {item.title}
                             </div>
                         ))}
@@ -143,7 +198,7 @@ const Header = () => {
                 return (
                     <div className="menuItem Sales" onClick={handleClick}>
                         {optionForSales.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); }}>
+                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); window.scrollTo(0, 0) }}>
                                 {item.title}
                             </div>
                         ))}
@@ -161,11 +216,11 @@ const Header = () => {
             }
         };
 
-        const homepageContent = document.querySelector('.Homepage');
+        const homepageContent = document.querySelector('.closer');
 
         // Add event listener when component mounts
         homepageContent.addEventListener('click', handleClickOutside);
-
+        homepageContent.addEventListener('click', setIsActive(''));
         // Remove event listener when component unmounts
         return () => {
             homepageContent.removeEventListener('click', handleClickOutside);
@@ -203,17 +258,17 @@ const Header = () => {
     }, [isSearch])
 
 
-
     const [query, setQuery] = useState('')
 
     const submitQuery = (e) => {
         e.preventDefault()
-        if(!query) {
+        if (!query) {
             alert("Please type something")
         } else {
             nav(`/query/${query}`)
             setQuery('')
             setSearch(false)
+            window.scrollTo(0, 0)
         }
 
     }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Header from '../comp/Header'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -17,9 +17,27 @@ import figureSlider from '../images/IMG_6585.png'
 import Footer from '../comp/Footer';
 import { useNavigate } from 'react-router-dom';
 const Hompage = () => {
+
   const nav = useNavigate('')
+
+  
+  const [query, setQuery] = useState('')
+
+  const submitQuery = (e) => {
+      e.preventDefault()
+      if (!query) {
+          alert("Please type something")
+      } else {
+          nav(`/query/${query}`)
+          setQuery('')
+          window.scrollTo(0,0)
+      }
+
+  }
+
+
   return (
-    <div className='Homepage'>
+    <div className='Homepage closer'>
       <Header />
 
       <div className="HomepageContent">
@@ -162,10 +180,10 @@ const Hompage = () => {
 
         </div>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur ad quo accusantium dolore incidunt, neque voluptates aliquid minus accusamus quia exercitationem dolorum architecto magnam saepe numquam cumque placeat iusto fuga.</p>
-        <div className="searchForm">
-          <input type="text" placeholder='What do you want to learn?' />
-          <button><ion-icon name="arrow-forward-outline"></ion-icon></button>
-        </div>
+        <form onSubmit={submitQuery} className="searchForm">
+          <input value={query} onChange={(e) => {setQuery(e.target.value)}} type="text" placeholder='What do you want to learn?' />
+          <button type='submit'><ion-icon name="arrow-forward-outline"></ion-icon></button>
+        </form>
       </div>
 
       <Footer />

@@ -93,20 +93,38 @@ header .firstLayer .absoMenu {
 header .firstLayer .dropdowns .menuItem {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   gap: 10px;
 }
 
-header .firstLayer .dropdowns .menuItem .navigator {
+.navigator {
+  padding: 10px 0px;
+  width: calc(100% - 20px);
+}
+
+header .firstLayer .dropdowns .menuItem .navigator .naviTitle:hover {
+  background-color: #a8181f;
+  color: white;
+}
+header .firstLayer .dropdowns .menuItem .navigator:hover{
+  background-color: #a8181f;
+  color: white;
+}
+.naviTitle {
   padding-left: 10px;
   padding-right: 10px;
 }
 
-
-header .firstLayer .dropdowns .menuItem .navigator:hover {
-  background-color: #a8181f;
-  color: white;
+.Advisories{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
+.navigator {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .AdvisoriesBtn {
   position: relative;
 }
@@ -191,6 +209,7 @@ header .secondLayer button {
     gap: 1px;
     justify-content: center;
   }
+
   header .secondLayer button {
     width: 25%;
   }
@@ -251,7 +270,7 @@ header .firstLayer .Menu .lines {
   position: fixed;
   display: flex;
   flex-direction: column;
-  right: -300px;
+  right: -500px;
   top: 65px;
   gap: 10px;
 
@@ -695,7 +714,7 @@ header .menuEl button .DropText span {
   height: auto;
   padding-top: 30px;
   padding-bottom: 30px;
-  padding-inline: 20%;
+  padding-inline: 5%;
   box-sizing: border-box;
   /* Ensure padding is included in the width calculation */
   overflow: hidden;
@@ -751,10 +770,18 @@ header .menuEl button .DropText span {
   align-items: center;
   justify-content: space-evenly;
   color: white;
+  gap: 10px;
 }
 
 .footer .title {
   font-size: clamp(1.5rem, 7vw, 3rem);
+  font-weight: 700;
+  color: #cab641;
+  line-height: 90%;
+}
+
+.footer .contacts .title {
+  font-size: clamp(1rem, 7vw, 2rem);
   font-weight: 700;
   color: #cab641;
   line-height: 90%;
@@ -829,7 +856,7 @@ html {
 }
 
 .CampaignPage .pageTitle:after {
-  content: 'CampaignPage Guidelines';
+  content: 'Credit Cards';
   display: flex;
   align-items: flex-end;
   font-size: 3rem;
@@ -1119,6 +1146,11 @@ html {
   align-items: center;
 }
 
+.resultCon .searchedTitle .Title span {
+  font-weight: 900;
+  color: #cab641;
+}
+
 .searchedTitle button {
   padding: 10px 15px;
   background-color: #a8181f;
@@ -1189,5 +1221,337 @@ html {
 @media only screen and (max-width: 750px) {
   .CampaignPage .Homepage {
     padding-inline: 9%;
+  }
+}
+
+
+
+/* Personal loans B. */
+
+
+.Ploan .pageTitle {
+  margin-top: 70px;
+
+}
+
+.Ploan .pageTitle {
+  width: 100%;
+  background-color: #a8181f;
+  height: 60vh;
+  background-image: url('./images/IMG_6582.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  position: relative;
+  background-size: cover;
+}
+
+.Ploan .pageTitle:after {
+  content: 'Personal Loans';
+  display: flex;
+  align-items: flex-end;
+  font-size: 3rem;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: clamp(1.5rem, 7vw, 7rem);
+  font-weight: 900;
+  color: #cab641;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+  background: rgba(63, 56, 56, 0.5);
+}
+
+.Ploan .Homepage {
+  padding: 20px 20%;
+}
+
+
+.PloanCall .pageTitle {
+  margin-top: 70px;
+}
+
+.PloanCall .pageTitle {
+  width: 100%;
+  background-color: #a8181f;
+  height: 60vh;
+  background-image: url('./images/IMG_6582.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  position: relative;
+  background-size: cover;
+}
+
+.PloanCall .pageTitle:after {
+  content: 'Personal Loans';
+  display: flex;
+  align-items: flex-end;
+  font-size: 3rem;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: clamp(1.5rem, 7vw, 7rem);
+  font-weight: 900;
+  color: #cab641;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+  background: rgba(63, 56, 56, 0.5);
+}
+
+
+.PloanCall .Homepage {
+  padding: 20px 20%;
+}
+
+
+@media only screen and (max-width: 750px) {
+  .PloanCall .Homepage {
+    padding-inline: 10%;
+  }
+}
+
+
+.subContent {
+  right: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #333;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  text-wrap: balance;
+}
+
+
+.subContent .subItem:hover {
+  background-color: #a8181f;
+  color: white;
+}
+
+/* Show subContent when its parent is clicked */
+.navigator.active+.subContent {
+  display: flex;
+}
+
+
+
+
+/* Add styling for main categories */
+.navigator {
+  cursor: pointer;
+  /* Add your other styles */
+}
+
+/* Add styling for subcategories */
+.subItem {
+  cursor: pointer;
+  padding: 5px 10px;
+  /* Add your other styles */
+}
+
+/* Position subContent relative to its parent */
+.menuItem {
+  position: relative;
+}
+
+.DropText:hover {
+  color: #a8181f;
+}
+
+.menuItem {
+  box-shadow: 0px 1px 11px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 1px 11px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 11px 0px rgba(0, 0, 0, 0.75);
+}
+
+.categoryContainer {
+  display: flex;
+  gap: 10px;
+}
+
+
+/* SIP LOAN STYLES */
+
+.SIPFilter .pageTitle {
+  margin-top: 70px;
+}
+
+.SIPFilter .pageTitle {
+  width: 100%;
+  background-color: #a8181f;
+  height: 60vh;
+  background-image: url('./images/IMG_6582.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  position: relative;
+  background-size: cover;
+}
+
+.SIPFilter .pageTitle:after {
+  content: 'SIP Loans';
+  display: flex;
+  align-items: flex-end;
+  font-size: 3rem;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: clamp(1.5rem, 7vw, 7rem);
+  font-weight: 900;
+  color: #cab641;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+  background: rgba(63, 56, 56, 0.5);
+}
+
+
+.SIPFilter .Homepage {
+  padding: 20px 20%;
+}
+
+
+@media only screen and (max-width: 750px) {
+  .SIPFilter .Homepage {
+    padding-inline: 10%;
+  }
+}
+
+
+
+
+
+.SIPException .pageTitle {
+  margin-top: 70px;
+}
+
+.SIPException .pageTitle {
+  width: 100%;
+  background-color: #a8181f;
+  height: 60vh;
+  background-image: url('./images/IMG_6582.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  position: relative;
+  background-size: cover;
+}
+
+.SIPException .pageTitle:after {
+  content: 'SIP Loans';
+  display: flex;
+  align-items: flex-end;
+  font-size: 3rem;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: clamp(1.5rem, 7vw, 7rem);
+  font-weight: 900;
+  color: #cab641;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+  background: rgba(63, 56, 56, 0.5);
+}
+
+
+.SIPException .Homepage {
+  padding: 20px 20%;
+}
+
+.SIPException .Homepage .image {
+  width: 100%;
+  height: auto;
+}
+
+.SIPException .Homepage .image img {
+  width: 100%;
+  object-fit: contain;
+  height: 100%;
+}
+
+
+
+@media only screen and (max-width: 750px) {
+  .SIPException .Homepage {
+    padding-inline: 10%;
+  }
+}
+
+
+
+
+.SIPDocu .pageTitle {
+  margin-top: 70px;
+}
+
+.SIPDocu .pageTitle {
+  width: 100%;
+  background-color: #a8181f;
+  height: 60vh;
+  background-image: url('./images/IMG_6582.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  position: relative;
+  background-size: cover;
+}
+
+.SIPDocu .pageTitle:after {
+  content: 'SIP Loans';
+  display: flex;
+  align-items: flex-end;
+  font-size: 3rem;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: clamp(1.5rem, 7vw, 7rem);
+  font-weight: 900;
+  color: #cab641;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+  background: rgba(63, 56, 56, 0.5);
+}
+
+
+.SIPDocu .Homepage {
+  padding: 20px 20%;
+}
+
+
+
+@media only screen and (max-width: 750px) {
+  .SIPDocu .Homepage {
+    padding-inline: 10%;
   }
 }

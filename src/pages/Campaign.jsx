@@ -6,16 +6,15 @@ import { useNavigate } from 'react-router-dom'
 const Campaign = () => {
     const nav = useNavigate('')
     return (
-        <div className='CampaignPage'>
+        <div className='CampaignPage closer'>
             <Header />
             <div className="pageTitle">
             </div>
             <div className="Homepage">
-                <h1>A. Credit Cards</h1>
                 <ol>
                     <li>
                         <div className="liTitle">
-                            <p>Filtering of Leads: <a href="https://bpicomph.sharepoint.com/:w:/r/sites/UnsecuredLendingandCardsGroup/_layouts/15/Doc.aspx?sourcedoc=%7B54568E36-F2CA-4048-B19F-82D0D204021E%7D&file=Credit%20Card%20Campaign.docx&action=default&mobileredirect=true">TSA - Credit Card Campaign.docx</a></p>
+                            <h1>Filtering of Leads: <a href="https://bpicomph.sharepoint.com/:w:/r/sites/UnsecuredLendingandCardsGroup/_layouts/15/Doc.aspx?sourcedoc=%7B54568E36-F2CA-4048-B19F-82D0D204021E%7D&file=Credit%20Card%20Campaign.docx&action=default&mobileredirect=true">TSA - Credit Card Campaign.docx</a></h1>
 
                         </div>
                         <ol>
@@ -117,7 +116,7 @@ const Campaign = () => {
 
 
             <div className="navigation">
-                <div className="prev">
+                <div className="prev" onClick={() => {nav('/campaign/exception-handling')}}>
                     <ion-icon name="arrow-back-outline"></ion-icon> Prev
                 </div>
 
@@ -125,7 +124,7 @@ const Campaign = () => {
                     Page (1)
                 </div>
 
-                <div className="next" onClick={() => { nav('/call-flow-and-spiels'); window.scrollTo(0, 0) }}>
+                <div className="next" onClick={() => { nav('/campaign/call-flow-and-spiels'); window.scrollTo(0, 0) }}>
                     Next <ion-icon name="arrow-forward-outline"></ion-icon>
                 </div>
             </div>

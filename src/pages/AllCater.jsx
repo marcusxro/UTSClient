@@ -5,7 +5,7 @@ import samplePic from '../images/IMG_6579.png'
 
 const AllCater = () => {
     return (
-        <div className='AllCater'>
+        <div className='AllCater closer'>
             <Header />
             <div className="headerImage">
 

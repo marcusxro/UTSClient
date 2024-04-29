@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Header from '../comp/Header'
-import { dataSearch } from '../Resources/SearchedObject'
+import { dataSearch } from '../CampaignResources/SearchedObject'
 import Footer from '../comp/Footer'
 const SearchedItem = () => {
     const { id } = useParams()
@@ -29,7 +29,7 @@ const SearchedItem = () => {
 
 
     return (
-        <div className='SearchedItem'>
+        <div className='SearchedItem closer' >
             <Header />
 
             <div className="Homepage">
@@ -63,7 +63,7 @@ const SearchedItem = () => {
                             filteredObject.map((itm) => (
                                 <div key={itm.link} className="searchedTitle">
                                     <div className="Title">
-                                        {itm.title}
+                                        <span>{itm.headerTitle}</span> |  {itm.title}
                                     </div>
                                     <button onClick={() => {nav(itm.link)}}>
                                         NAVIGATE  <ion-icon name="arrow-forward-outline"></ion-icon>

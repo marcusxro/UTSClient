@@ -6,13 +6,13 @@ import { useNavigate } from 'react-router-dom'
 const Documentation = () => {
     const nav = useNavigate()
     return (
-        <div className='CampaignPage'>
+        <div className='CampaignPage closer'>
             <Header />
             <div className="pageTitle">
             </div>
             <div className="Homepage">
+            <h1>Documentation</h1>
                 <section>
-                    <h2>Documentation</h2>
                     <h3>a. Create Callback Cases for successful and unsuccessful call outs.</h3>
                     <h3>b. Create Application Cases for Interested Calls.</h3>
                     <h3>c. Indicate complete call out details in Salesforce Comments.</h3>
@@ -328,7 +328,7 @@ const Documentation = () => {
 
 
             <div className="navigation">
-                <div className="prev" onClick={() => { nav('/call-flow-and-spiels'); window.scrollTo(0, 0) }}>
+                <div className="prev" onClick={() => { nav('/campaign/call-flow-and-spiels'); window.scrollTo(0, 0) }}>
                     <ion-icon name="arrow-back-outline"></ion-icon> Prev
                 </div>
 
@@ -336,7 +336,7 @@ const Documentation = () => {
                     Page (3)
                 </div>
 
-                <div className="next" onClick={() => { nav('/exception-handling'); window.scrollTo(0, 0) }}>
+                <div className="next" onClick={() => { nav('/campaign/exception-handling'); window.scrollTo(0, 0) }}>
                     Next <ion-icon name="arrow-forward-outline"></ion-icon>
                 </div>
             </div>

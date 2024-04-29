@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 const CallAndSpiels = () => {
     const nav = useNavigate('')
     return (
-        <div className='CampaignPage'>
+        <div className='CampaignPage closer'>
             <Header />
             <div className="pageTitle">
             </div>
@@ -348,7 +348,7 @@ const CallAndSpiels = () => {
 
 
             <div className="navigation">
-                <div className="prev" onClick={() => { nav('/filtering-of-leads'); window.scrollTo(0, 0) }}>
+                <div className="prev" onClick={() => { nav('/campaign/filtering-of-leads'); window.scrollTo(0, 0) }}>
                     <ion-icon name="arrow-back-outline"></ion-icon> Prev
                 </div>
 
@@ -356,7 +356,7 @@ const CallAndSpiels = () => {
                     Page (2)
                 </div>
 
-                <div className="next" onClick={() => { nav('/documentation'); window.scrollTo(0, 0) }}>
+                <div className="next" onClick={() => { nav('/campaign/documentation'); window.scrollTo(0, 0) }}>
                     Next <ion-icon name="arrow-forward-outline"></ion-icon>
                 </div>
             </div>

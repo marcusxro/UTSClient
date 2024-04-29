@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 const Exception = () => {
     const nav = useNavigate()
     return (
-        <div className='CampaignPage'>
+        <div className='CampaignPage closer'>
             <Header />
             <div className="pageTitle">
             </div>
@@ -315,7 +315,7 @@ const Exception = () => {
 
 
             <div className="navigation">
-                <div className="prev" onClick={() => { nav('/documentation'); window.scrollTo(0, 0) }}>
+                <div className="prev" onClick={() => { nav('/campaign/documentation'); window.scrollTo(0, 0) }}>
                     <ion-icon name="arrow-back-outline"></ion-icon> Prev
                 </div>
 
@@ -324,7 +324,7 @@ const Exception = () => {
                 </div>
 
                 <div className="next">
-                    max
+                    end
                 </div>
             </div>
 
