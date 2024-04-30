@@ -276,6 +276,10 @@ header .firstLayer .Menu .lines {
 
 }
 
+.menuEl .absoMenu {
+  position: static;
+}
+
 .menuEl button {
   background-color: transparent;
   border: none;
@@ -581,17 +585,18 @@ header .menuEl button .DropText span {
 
 .seeMore button:hover {
   border-radius: 10px;
-  font-weight: bold;
 }
 
 .imageGallery .imageItem .desc button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 130ms ease-in-out;
 }
 
 
 .imageGallery .imageItem .desc button:hover {
-  border-radius: 10px;
-  font-weight: bold;
+  gap: 20px;
 }
 
 .lowerSection {
@@ -647,8 +652,7 @@ header .menuEl button .DropText span {
 }
 
 .lowerSection .desc button:hover {
-  border-radius: 10px;
-  font-weight: bold;
+  gap: 20px;
 }
 
 
@@ -1166,8 +1170,7 @@ html {
 }
 
 .searchedTitle button:hover {
-  border-radius: 10px;
-  font-weight: bold;
+  gap: 20px;
 }
 
 .sorry {
@@ -1553,5 +1556,116 @@ html {
 @media only screen and (max-width: 750px) {
   .SIPDocu .Homepage {
     padding-inline: 10%;
+  }
+}
+
+
+/* Category page */
+
+.CaterPage .CaterPageContent {
+  background-color: #f5f5f5;
+  padding: 20px 20%;
+  min-height: 100vh; /* Change this line */
+}
+.CaterPageContent .results {
+  font-size: clamp(1rem, 5vw, 2rem);
+  font-weight: bold;
+  color: #a8181f;
+}
+
+
+
+.CaterPage .pageTitle {
+  margin-top: 73px;
+}
+
+.CaterPage .pageTitle {
+  width: 100%;
+  background-color: #a8181f;
+  height: 60vh;
+  background-image: url('./images/IMG_6582.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  position: relative;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.absoText {
+  font-size: clamp(1.5rem, 7vw, 7rem);
+  font-weight: 900;
+  color: #cab641;
+  height: 100%;
+  width:  100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(63, 56, 56, 0.5);
+}
+
+.caterIttem {
+  background-color: #fff;
+  flex: 3; /* Change this line */
+  color: black;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px;
+  display: flex; 
+  height: 100%;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.caterIttem button {
+  padding: 10px 15px;
+  background-color: #a8181f;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+  transition: all 130ms ease-in-out;
+}
+.caterIttem button:hover {
+gap: 20px;
+}
+
+.subCaterTitle {
+  width: 100%;
+  min-height: fit-content;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  height: 100%;
+}
+
+.subCon {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 750px) {
+  .CaterPage .CaterPageContent {
+    background-color: #f5f5f5;
+    padding: 20px 10%;
+  }
+  .caterIttem {
+    flex-direction: column;
+  }
+  .subCon {
+    width: 100%;
   }
 }

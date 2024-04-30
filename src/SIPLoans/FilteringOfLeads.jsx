@@ -57,7 +57,7 @@ const FilteringOfLeads = () => {
                 </div>
 
                 <div className="next" onClick={() => { nav('/SIP-loan/documentation'); window.scrollTo(0, 0) }}>
-                    next
+                    next  <ion-icon name="arrow-forward-outline"></ion-icon>
                 </div>
             </div>
 

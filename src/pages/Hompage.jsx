@@ -39,7 +39,6 @@ const Hompage = () => {
   return (
     <div className='Homepage closer'>
       <Header />
-
       <div className="HomepageContent">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay]}
@@ -90,7 +89,7 @@ const Hompage = () => {
               ADVISORIES
             </div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, esse!</p>
-            <button>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
+            <button onClick={() => {nav('/category/advisories'); window.scrollTo(0,0)}}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
           </div>
         </div>
 
@@ -102,7 +101,7 @@ const Hompage = () => {
               GUIDELINES
             </div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, esse!</p>
-            <button>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
+            <button onClick={() => {nav('/category/campaign guidelines');  window.scrollTo(0,0)  }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
           </div>
           <div className="imgCon">
             <img src={figureThee} alt="" />
@@ -118,7 +117,7 @@ const Hompage = () => {
               TRAINING
             </div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, esse!</p>
-            <button>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
+            <button onClick={() => {nav('/category/training');  window.scrollTo(0,0)  }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
           </div>
         </div>
 
@@ -130,7 +129,7 @@ const Hompage = () => {
               CUSTOMER
             </div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, esse!</p>
-            <button>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
+            <button onClick={() => {nav('/category/our customer');  window.scrollTo(0,0)  }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
           </div>
           <div className="imgCon">
             <img src={figueFive} alt="" />

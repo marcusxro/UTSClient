@@ -65,7 +65,7 @@ const SearchedItem = () => {
                                     <div className="Title">
                                         <span>{itm.headerTitle}</span> |  {itm.title}
                                     </div>
-                                    <button onClick={() => {nav(itm.link)}}>
+                                    <button onClick={() => {nav(itm.link); window.scrollTo(0,0)}}>
                                         NAVIGATE  <ion-icon name="arrow-forward-outline"></ion-icon>
                                     </button>
                                 </div>
