@@ -55,7 +55,7 @@ const Hompage = () => {
               <div className="text">
                 ULC TELESALES
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio hic, nisi dolores repudiandae nesciunt?</p>
+    <p>We're the ULC Telesales Team, part of SDCM, specializing in financial services like credit cards, personal loans, and SIP loans from BPI. We Win as One!</p>
               <button>DISCOVER</button>
             </div>
           </SwiperSlide>
@@ -72,7 +72,6 @@ const Hompage = () => {
           <div className="title">
             CHOOSE WHAT CATEGORY
           </div>
-          <p>Pariatur consequuntur amet cumque aliquid doloribus repellendus exercitationem commodi quam quasi? Ea?</p>
           <div className="line">
 
           </div>
@@ -88,7 +87,7 @@ const Hompage = () => {
             <div className="title">
               ADVISORIES
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, esse!</p>
+            <p>Stay informed with our advisory updates, providing essential information and guidance on our current developments</p>
             <button onClick={() => {nav('/category/advisories'); window.scrollTo(0,0)}}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
           </div>
         </div>
@@ -100,7 +99,7 @@ const Hompage = () => {
               CAMPAIGN
               GUIDELINES
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, esse!</p>
+            <p>Navigate your campaign with confidence using our comprehensive guidelines, offering strategic insights and practical advice.</p>
             <button onClick={() => {nav('/category/campaign guidelines');  window.scrollTo(0,0)  }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
           </div>
           <div className="imgCon">
@@ -116,7 +115,9 @@ const Hompage = () => {
             <div className="title">
               TRAINING
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, esse!</p>
+            <p>
+
+            Empower your self with our specialized training programs, designed to enhance skills and foster professional growth the UTS way.            </p>
             <button onClick={() => {nav('/category/training');  window.scrollTo(0,0)  }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
           </div>
         </div>
@@ -128,7 +129,10 @@ const Hompage = () => {
               OUR
               CUSTOMER
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, esse!</p>
+            <p>
+              
+Our valued customers. We prioritize your needs, ensuring a seamless experience and personalized solutions every step of the way.
+            </p>
             <button onClick={() => {nav('/category/our customer');  window.scrollTo(0,0)  }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
           </div>
           <div className="imgCon">
@@ -164,7 +168,7 @@ const Hompage = () => {
           <div className="title">
             WHO WE ARE
           </div>
-          <p>We aer the ULC Telesales Team, Operating under the umbrella of SDCM. Specializing in financial services, we offer tailored solutions including credit cards, personal loans, and SIP loans.
+          <p>We are the ULC Telesales Team, Operating under the umbrella of SDCM. Specializing in financial services, we offer tailored solutions including credit cards, personal loans, and SIP loans.
             With a focus on providing excellent custmer service and meeting individual financial needs, we strive to ensure our clients have access to the best financial products BPI has to offer
           </p>
           <button>LEARN MORE<ion-icon name="arrow-forward-outline"></ion-icon></button>
@@ -176,9 +180,7 @@ const Hompage = () => {
           LET'S GET STARTED!
         </div>
         <div className="line">
-
         </div>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur ad quo accusantium dolore incidunt, neque voluptates aliquid minus accusamus quia exercitationem dolorum architecto magnam saepe numquam cumque placeat iusto fuga.</p>
         <form onSubmit={submitQuery} className="searchForm">
           <input value={query} onChange={(e) => {setQuery(e.target.value)}} type="text" placeholder='What do you want to learn?' />
           <button type='submit'><ion-icon name="arrow-forward-outline"></ion-icon></button>

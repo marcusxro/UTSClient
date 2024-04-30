@@ -423,6 +423,7 @@ header .menuEl button .DropText span {
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
+  gap: 10px;
 }
 
 .midContainer .textCon .title {
@@ -678,7 +679,9 @@ header .menuEl button .DropText span {
   text-align: center;
   width: 100%;
 }
-
+.getStarted form {
+  margin-top: 20px;
+}
 .getStarted .line {
   width: 40%;
   height: 5px;
@@ -1570,6 +1573,7 @@ html {
 .CaterPageContent .results {
   font-size: clamp(1rem, 5vw, 2rem);
   font-weight: bold;
+  margin-bottom: 50px;
   color: #a8181f;
 }
 
