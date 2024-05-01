@@ -12,7 +12,8 @@ const FilteringOfLeads = () => {
 
             </div>
             <div className="Homepage">
-                <h1>Filtering of Leads</h1>
+            <div className='titleForPage'>FILTERING OF LEADS</div>
+                <div className="margLeft">
                 <h3>Outbound Sales</h3>
                 <p>Business Intelligence/Cards Marketing filters leads based on parameters.</p>
                 <p><strong>Outbound Sales Campaign Administrator/Outbound Sales In-Charge assigns the leads for call-out of Outbound Sales Associates (OSA).</strong></p>
@@ -44,6 +45,7 @@ const FilteringOfLeads = () => {
                 <h3>Customer Promo Code Checker</h3>
                 <p>SMS invitation will no longer require the CHs to input their names and customer number in the SMS opt-ins.</p>
                 <p>Search the ref code to determine the names of clients. If the promo code is not found, ask for the account details from the client.</p>
+                </div>
             </div>
 
 

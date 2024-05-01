@@ -11,7 +11,8 @@ const PloanCall = () => {
             <div className="pageTitle">
             </div>
             <div className="Homepage">
-                <h1>Call Flow and Spiels</h1>
+                <div className='titleForPage'>CALL FLOW AND SPIELS</div>
+                <div className="margLeft">
                 <ol>
                     <li>
                         <h3>Opening Spiel</h3>
@@ -295,6 +296,7 @@ const PloanCall = () => {
 
                 <h2>10. Closing Spiel</h2>
                 <p>"Thank you for availing our BPI Personal Loan. Kindly take note of this service request number _______ as reference for this call out/application. Thank you for your time.”</p>
+                </div>
             </div>
 
 

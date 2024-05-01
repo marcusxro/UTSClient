@@ -1673,3 +1673,18 @@ gap: 20px;
     width: 100%;
   }
 }
+
+.margLeft {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-top: 2px solid #ccc;
+}
+
+.titleForPage {
+  font-size: clamp(1.5rem, 7vw, 4rem);
+  color: #a8181f;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 100%;
+}

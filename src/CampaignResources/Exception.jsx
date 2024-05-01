@@ -11,7 +11,8 @@ const Exception = () => {
             <div className="pageTitle">
             </div>
             <div className="Homepage">
-                <h1>Exception Handling</h1>
+            <div className='titleForPage'>EXCEPTION HANDLING</div>
+                <div className="margLeft">
                 <article>
                     <h2>Mother’s Maiden Name Discrepancy</h2>
                     <ol>
@@ -310,6 +311,7 @@ const Exception = () => {
                 </ol>
 
                 </section>
+                </div>
 
             </div>
 

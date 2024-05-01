@@ -16,8 +16,9 @@ const PloanOther = () => {
             </div>
 
             <div className="Homepage">
-                <h1>Other Guidelines for DocuSign</h1>
-                <p><strong>Previously Approved Applications that remains unsigned/unbooked</strong></p>
+                <div className='titleForPage'>OTHER GUIDELINES FOR DOCUSIGN</div>
+               <div className="margLeft">
+               <p><strong>Previously Approved Applications that remains unsigned/unbooked</strong></p>
                 <ul>
                     <li>We can offer the DocuSign option to clients who have not yet signed their loan documents in the branch as long as the DocuSign conditions are met.</li>
                     <li>Call the client to follow up the signing of his loan documents and confirm if he would like to sign the loan documents through DocuSign.</li>
@@ -31,6 +32,7 @@ const PloanOther = () => {
                     <li>We can cater to clients who are currently abroad as long as DocuSign conditions are met.</li>
                     <li>The clients must be able to receive an SMS in their registered mobile number.</li>
                 </ul>
+               </div>
             </div>
 
 

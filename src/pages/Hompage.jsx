@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Header from '../comp/Header'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -16,6 +16,8 @@ import figueFive from '../images/IMG_6627.png'
 import figureSlider from '../images/IMG_6585.png'
 import Footer from '../comp/Footer';
 import { useNavigate } from 'react-router-dom';
+import gsap from 'gsap'
+
 const Hompage = () => {
 
   const nav = useNavigate('')

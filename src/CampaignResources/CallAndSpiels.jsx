@@ -11,7 +11,8 @@ const CallAndSpiels = () => {
             <div className="pageTitle">
             </div>
             <div className="Homepage">
-                <h1>CALL FLOW AND SPIELS</h1>
+            <div className='titleForPage'>CALL FLOW AND SPIELS</div>
+                <div className="margLeft">
                 <h2>1. OPENING SPIEL</h2>
                 <h3>OUTBOUND:</h3>
                 <p>"Good Morning/Afternoon/Evening! This is (Insert Name) from Bank of the Philippine Islands. May I speak with (name of client)?" - should be verbatim</p>
@@ -344,6 +345,7 @@ const CallAndSpiels = () => {
                 <p>“Thank you for your time."</p>
                 <h3>Inbound:</h3>
                 <p>"Thank you for choosing BPI. Thank you for calling."</p>
+                </div>
             </div>
 
 

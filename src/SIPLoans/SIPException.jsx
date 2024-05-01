@@ -14,8 +14,9 @@ const SIPException = () => {
 
 
             <div className="Homepage">
-                <h1>EXCEPTION HANDLING</h1>
-                <h3>A. SPECIAL HANDLING</h3>
+            <div className='titleForPage'>EXCEPTION HANDLING</div>
+            <div className="margLeft">
+            <h3>A. SPECIAL HANDLING</h3>
                 <h3>1. SIP Loan Application – AMF Reversal Requests</h3>
                 <ul>
                     <li>OSA may already assist clients who pro-actively request for AMF reversal even if no PB endorsement as long as:</li>
@@ -565,6 +566,7 @@ const SIPException = () => {
                 <div className="image">
                     <img src={loanSched} alt="" />
                 </div>
+            </div>
 
             </div>
 

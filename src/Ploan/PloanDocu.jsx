@@ -10,7 +10,8 @@ const PloanDocu = () => {
             <div className="pageTitle">
             </div>
             <div className="Homepage">
-                <h1>Documentation</h1>
+            <div className='titleForPage'>DOCUMENTATION</div>
+                <div className="margLeft">
                 <ol>
                     <li>Create Callback Cases for successful and unsuccessful call outs.</li>
                     <li>Create Inquiry Cases for Inbound calls.</li>
@@ -134,6 +135,7 @@ const PloanDocu = () => {
                         </ul>
                     </ul>
                 </ul>
+                </div>
             </div>
 
             <div className="navigation">

@@ -12,8 +12,9 @@ const Ploan = () => {
             <div className="pageTitle">
             </div>
             <div className="Homepage">
-                <h1>Filtering of Leads - Personal Loan Campaign</h1>
-                <p>a. Should be a Filipino Citizen (N/Q - Non-Filipino Citizen)</p>
+                <div className='titleForPage'>FILTERING OF LEADS</div>
+            <div className="margLeft">
+            <p>a. Should be a Filipino Citizen (N/Q - Non-Filipino Citizen)</p>
                 <p>b. Checks ALS if with existing Personal Loan Account. (N/Q - With existing PL Account)</p>
                 <p>c. Check if client has existing application in ALFES (N/Q - With Pending PL Application)</p>
                 <ul>
@@ -28,6 +29,7 @@ const Ploan = () => {
                     <li>We can cater to clients who are currently abroad as long as DocuSign conditions are met.</li>
                     <li>The clients must be able to receive an SMS in their registered mobile number.</li>
                 </ul>
+            </div>
             </div>
 
 

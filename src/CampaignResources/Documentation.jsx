@@ -11,7 +11,8 @@ const Documentation = () => {
             <div className="pageTitle">
             </div>
             <div className="Homepage">
-            <h1>Documentation</h1>
+            <div className='titleForPage'>DOCUMENTATION</div>
+                <div className="margLeft">
                 <section>
                     <h3>a. Create Callback Cases for successful and unsuccessful call outs.</h3>
                     <h3>b. Create Application Cases for Interested Calls.</h3>
@@ -323,6 +324,7 @@ const Documentation = () => {
                         <p>Case will be submitted to TSA Sales Admin Group and the Sales support admin will work on the case.</p>
                     </section>
                 </article>
+                </div>
 
             </div>
 
