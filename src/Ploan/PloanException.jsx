@@ -189,7 +189,7 @@ const PloanException = () => {
                 </div>
 
                 <div className="next">
-                    max
+                    end
                 </div>
             </div>
             <Footer />
