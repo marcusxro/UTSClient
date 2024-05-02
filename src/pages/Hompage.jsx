@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../comp/Header'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -22,21 +22,20 @@ const Hompage = () => {
 
   const nav = useNavigate('')
 
-  
+
   const [query, setQuery] = useState('')
 
   const submitQuery = (e) => {
-      e.preventDefault()
-      if (!query) {
-          alert("Please type something")
-      } else {
-          nav(`/query/${query}`)
-          setQuery('')
-          window.scrollTo(0,0)
-      }
+    e.preventDefault()
+    if (!query) {
+      alert("Please type something")
+    } else {
+      nav(`/query/${query}`)
+      setQuery('')
+      window.scrollTo(0, 0)
+    }
 
   }
-
 
   return (
     <div className='Homepage closer'>
@@ -57,7 +56,7 @@ const Hompage = () => {
               <div className="text">
                 ULC TELESALES
               </div>
-    <p>We're the ULC Telesales Team, part of SDCM, specializing in financial services like credit cards, personal loans, and SIP loans from BPI. We Win as One!</p>
+              <p>We're the ULC Telesales Team, part of SDCM, specializing in financial services like credit cards, personal loans, and SIP loans from BPI. We Win as One!</p>
               <button>DISCOVER</button>
             </div>
           </SwiperSlide>
@@ -90,7 +89,7 @@ const Hompage = () => {
               ADVISORIES
             </div>
             <p>Stay informed with our advisory updates, providing essential information and guidance on our current developments</p>
-            <button onClick={() => {nav('/category/advisories'); window.scrollTo(0,0)}}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
+            <button onClick={() => { nav('/category/advisories'); window.scrollTo(0, 0) }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
           </div>
         </div>
 
@@ -102,7 +101,7 @@ const Hompage = () => {
               GUIDELINES
             </div>
             <p>Navigate your campaign with confidence using our comprehensive guidelines, offering strategic insights and practical advice.</p>
-            <button onClick={() => {nav('/category/campaign guidelines');  window.scrollTo(0,0)  }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
+            <button onClick={() => { nav('/category/campaign guidelines'); window.scrollTo(0, 0) }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
           </div>
           <div className="imgCon">
             <img src={figureThee} alt="" />
@@ -119,8 +118,8 @@ const Hompage = () => {
             </div>
             <p>
 
-            Empower your self with our specialized training programs, designed to enhance skills and foster professional growth the UTS way.            </p>
-            <button onClick={() => {nav('/category/training');  window.scrollTo(0,0)  }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
+              Empower your self with our specialized training programs, designed to enhance skills and foster professional growth the UTS way.            </p>
+            <button onClick={() => { nav('/category/training'); window.scrollTo(0, 0) }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
           </div>
         </div>
 
@@ -132,18 +131,17 @@ const Hompage = () => {
               CUSTOMER
             </div>
             <p>
-              
-Our valued customers. We prioritize your needs, ensuring a seamless experience and personalized solutions every step of the way.
+
+              Our valued customers. We prioritize your needs, ensuring a seamless experience and personalized solutions every step of the way.
             </p>
-            <button onClick={() => {nav('/category/our customer');  window.scrollTo(0,0)  }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
+            <button onClick={() => { nav('/category/our customer'); window.scrollTo(0, 0) }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
           </div>
           <div className="imgCon">
             <img src={figueFive} alt="" />
           </div>
         </div>
-
         <div className="seeMore">
-          <button onClick={() => {nav('/all-categories')}}>
+          <button onClick={() => { nav('/all-categories'); window.scrollTo(0,0) }}>
             SEE MORE <ion-icon name="apps-outline"></ion-icon>
           </button>
         </div>
@@ -159,9 +157,7 @@ Our valued customers. We prioritize your needs, ensuring a seamless experience a
             This builds trust and makes customers feel confident about their decision to get a personal loan. Remember, clarity sells!
           </p>
         </div>
-
       </div>
-
       <div className="lowerSection">
         <div className="imgCon">
           <img src={figureSlider} alt="" />
@@ -176,7 +172,6 @@ Our valued customers. We prioritize your needs, ensuring a seamless experience a
           <button>LEARN MORE<ion-icon name="arrow-forward-outline"></ion-icon></button>
         </div>
       </div>
-
       <div className="getStarted">
         <div className="title">
           LET'S GET STARTED!
@@ -184,11 +179,10 @@ Our valued customers. We prioritize your needs, ensuring a seamless experience a
         <div className="line">
         </div>
         <form onSubmit={submitQuery} className="searchForm">
-          <input value={query} onChange={(e) => {setQuery(e.target.value)}} type="text" placeholder='What do you want to learn?' />
+          <input value={query} onChange={(e) => { setQuery(e.target.value) }} type="text" placeholder='What do you want to learn?' />
           <button type='submit'><ion-icon name="arrow-forward-outline"></ion-icon></button>
         </form>
       </div>
-
       <Footer />
     </div >
 

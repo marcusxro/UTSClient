@@ -9,9 +9,9 @@ const Header = () => {
     const nav = useNavigate()
 
     const optionsForAdvisories = [
-        { title: 'New campaigns', links: ['/new-campaigns'] },
-        { title: 'Promos', links: ['/promos'] },
-        { title: 'New guidelines', links: ['/new-guidelines'] },
+        { title: 'New campaigns', links: ['/'] },
+        { title: 'Promos', links: ['/'] },
+        { title: 'New guidelines', links: ['/'] },
     ]
 
     const optionsForCampaign = [
@@ -49,44 +49,44 @@ const Header = () => {
 
     ]
     const optionForTraining = [
-        { title: 'Supported Products', links: ['/supported-products'] },
-        { title: 'Credit Cards', links: ['/credit-cards'] },
-        { title: 'SIP Loans', links: ['/sip-loans'] },
-        { title: 'Personal Loan', links: ['/personal-loan'] },
-        { title: 'Deposit Products', links: ['/deposit-products'] },
-        { title: 'Other Bank Products', links: ['/other-bank-products'] },
-        { title: 'Handling Objections', links: ['/handling-objections'] },
-        { title: 'Sales Tips for the Month', links: ['/sales-tips'] },
+        { title: 'Supported Products', links: ['/'] },
+        { title: 'Credit Cards', links: ['/'] },
+        { title: 'SIP Loans', links: ['/'] },
+        { title: 'Personal Loan', links: ['/'] },
+        { title: 'Deposit Products', links: ['/'] },
+        { title: 'Other Bank Products', links: ['/'] },
+        { title: 'Handling Objections', links: ['/'] },
+        { title: 'Sales Tips for the Month', links: ['/'] },
         { title: 'FAQS', links: ['/faqs'] },
     ]
 
     const optionForCustomers = [
-        { title: 'Different Personas', links: ['/different-personas'] },
-        { title: 'Competitor Analysis', links: ['/competitor-analysis'] },
-        { title: 'Competitor Products', links: ['/competitor-products'] },
-        { title: 'Key Differentiators', links: ['/key-differentiators'] },
+        { title: 'Different Personas', links: ['/'] },
+        { title: 'Competitor Analysis', links: ['/-'] },
+        { title: 'Competitor Products', links: ['/'] },
+        { title: 'Key Differentiators', links: ['/'] },
     ]
     const optionForPerfomance = [
-        { title: 'Sales Reports', links: ['/sales-reports'] },
-        { title: 'MIS', links: ['/mis'] },
-        { title: 'Quality Monitoring Corner', links: ['/quality-monitoring'] },
-        { title: 'QM Guidelines', links: ['/qm-guidelines'] },
-        { title: 'Top QM Performers', links: ['/top-qm-performers'] },
-        { title: 'QM Grades', links: ['/qm-grades'] },
-        { title: 'Commendations', links: ['/commendations'] },
+        { title: 'Sales Reports', links: ['/'] },
+        { title: 'MIS', links: ['/'] },
+        { title: 'Quality Monitoring Corner', links: ['/'] },
+        { title: 'QM Guidelines', links: ['/'] },
+        { title: 'Top QM Performers', links: ['/'] },
+        { title: 'QM Grades', links: ['/'] },
+        { title: 'Commendations', links: ['/'] },
     ]
 
     const optionForTeam = [
-        { title: 'Table of Organization', links: ['/table-of-organization'] },
-        { title: 'Top Performers', links: ['/top-performers'] },
+        { title: 'Table of Organization', links: ['/'] },
+        { title: 'Top Performers', links: ['/'] },
     ]
 
     const optionForSales = [
-        { title: 'Announcements', links: ['/announcements'] },
-        { title: 'Transmittal and Assignment Process', links: ['/transmittal-assignment'] },
-        { title: 'Validation Process', links: ['/validation-process'] },
-        { title: 'Guide to Handling Verifs', links: ['/handling-verifs'] },
-        { title: 'Guide to Handling Deficiencies', links: ['/handling-deficiencies'] },
+        { title: 'Announcements', links: ['/'] },
+        { title: 'Transmittal and Assignment Process', links: ['/'] },
+        { title: 'Validation Process', links: ['/'] },
+        { title: 'Guide to Handling Verifs', links: ['/'] },
+        { title: 'Guide to Handling Deficiencies', links: ['/'] },
 
     ]
     const [isClose, setIsClose] = useState(false)
@@ -275,8 +275,7 @@ const Header = () => {
     return (
         <header>
             <div className="firstLayer">
-                <div className="logo" onClick={() => { nav('/') }}>UTS.com</div>
-
+                <div className="logo" onClick={() => { nav('/'); window.scrollTo(0,0) }}>UTS.com</div>
                 {isSearch === false ? (
                     <div className="dropdowns">
                         <button className='AdvisoriesBtn' onClick={() => { openModal("Advisories") }}>

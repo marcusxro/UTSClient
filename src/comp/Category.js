@@ -5,17 +5,17 @@ export const CategoryOBJ = [
             {
                 title: "Credit Cards",
                 content: [
-                    { title: "New Campaigns", link: "/campaign" },
-                    { title: "Promos", link: "/campaign" },
-                    { title: "New guidelines", link: "/campaign" },
+                    { title: "New Campaigns", link: "/" },
+                    { title: "Promos", link: "/" },
+                    { title: "New guidelines", link: "/" },
                 ]
             },
             {
                 title: "Personal Loans",
                 content: [
-                    { title: "New Campaigns", link: "/campaign" },
-                    { title: "Promos", link: "/campaign" },
-                    { title: "New guidelines", link: "/campaign" },
+                    { title: "New Campaigns", link: "/" },
+                    { title: "Promos", link: "/" },
+                    { title: "New guidelines", link: "/" },
                 ]
             },
             {
@@ -68,30 +68,30 @@ export const CategoryOBJ = [
     {
         title: "Our Customer",
         subCater: [
-            { title: "Different Personas", link: "/test" },
-            { title: "Competitor Analysis", link: "/test" },
-            { title: "Competitor Products", link: "/test" },
-            { title: "Key Differentiators", link: "/test" },
+            { title: "Different Personas", link: "/" },
+            { title: "Competitor Analysis", link: "/" },
+            { title: "Competitor Products", link: "/" },
+            { title: "Key Differentiators", link: "/" },
         ]
     },
 
     {
         title: "Performance",
         subCater: [
-            { title: "Sales Reports", link: "/test" },
-            { title: "MIS", link: "/test" },
-            { title: "Quality Monitoring Corner", link: "/test" },
-            { title: "QM Guidelines", link: "/test" },
-            { title: "Top QM Performers", link: "/test" },
-            { title: "QM Grades", link: "/test" },
-            { title: "Commendations", link: "/test" },
+            { title: "Sales Reports", link: "/" },
+            { title: "MIS", link: "/" },
+            { title: "Quality Monitoring Corner", link: "/" },
+            { title: "QM Guidelines", link: "/" },
+            { title: "Top QM Performers", link: "/" },
+            { title: "QM Grades", link: "/" },
+            { title: "Commendations", link: "/" },
         ]
     },
     {
         title: "Team Updates",
         subCater: [
-            { title: "Table of Organization", link: "/test" },
-            { title: "Top Performers", link: "/test" },
+            { title: "Table of Organization", link: "/" },
+            { title: "Top Performers", link: "/" },
         ]
     },
 
@@ -99,25 +99,25 @@ export const CategoryOBJ = [
     {
         title: "Sales Support Corner",
         subCater: [
-            { title: "Announcements", link: "/test" },
-            { title: "Transmittal and Assignment Process", link: "/test" },
-            { title: "Validation Process", link: "/test" },
-            { title: "Guide to Handling Verifs", link: "/test" },
-            { title: "Guide to Handling Deficiencies", link: "/test" },
+            { title: "Announcements", link: "/" },
+            { title: "Transmittal and Assignment Process", link: "/" },
+            { title: "Validation Process", link: "/" },
+            { title: "Guide to Handling Verifs", link: "/" },
+            { title: "Guide to Handling Deficiencies", link: "/" },
         ]
     },
     {
         title: "Training",
         subCater: [
-            { title: "Supported Products", link: "/test" },
-            { title: "Credit Cards", link: "/test" },
-            { title: "SIP Loans", link: "/test" },
-            { title: "Personal Loan", link: "/test" },
-            { title: "Deposit Products", link: "/test" },
-            { title: "Other Bank Products", link: "/test" },
-            { title: "Handling Objections", link: "/test" },
-            { title: "Sales Tips for the Month", link: "/test" },
-            { title: "FAQS", link: "/test" },
+            { title: "Supported Products", link: "/" },
+            { title: "Credit Cards", link: "/" },
+            { title: "SIP Loans", link: "/" },
+            { title: "Personal Loan", link: "/" },
+            { title: "Deposit Products", link: "/" },
+            { title: "Other Bank Products", link: "/" },
+            { title: "Handling Objections", link: "/" },
+            { title: "Sales Tips for the Month", link: "/" },
+            { title: "FAQS", link: "/" },
         ]
     },
 
