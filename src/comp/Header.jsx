@@ -9,9 +9,9 @@ const Header = () => {
     const nav = useNavigate()
 
     const optionsForAdvisories = [
-        { title: 'New campaigns', links: ['/'] },
-        { title: 'Promos', links: ['/'] },
-        { title: 'New guidelines', links: ['/'] },
+        { title: 'New campaigns', links: ['/under-development'] },
+        { title: 'Promos', links: ['/under-development'] },
+        { title: 'New guidelines', links: ['/under-development'] },
     ]
 
     const optionsForCampaign = [
@@ -49,44 +49,44 @@ const Header = () => {
 
     ]
     const optionForTraining = [
-        { title: 'Supported Products', links: ['/'] },
-        { title: 'Credit Cards', links: ['/'] },
-        { title: 'SIP Loans', links: ['/'] },
-        { title: 'Personal Loan', links: ['/'] },
-        { title: 'Deposit Products', links: ['/'] },
-        { title: 'Other Bank Products', links: ['/'] },
-        { title: 'Handling Objections', links: ['/'] },
-        { title: 'Sales Tips for the Month', links: ['/'] },
+        { title: 'Supported Products', links: ['/under-development'] },
+        { title: 'Credit Cards', links: ['/under-development'] },
+        { title: 'SIP Loans', links: ['/under-development'] },
+        { title: 'Personal Loan', links: ['/under-development'] },
+        { title: 'Deposit Products', links: ['/under-development'] },
+        { title: 'Other Bank Products', links: ['/under-development'] },
+        { title: 'Handling Objections', links: ['/under-development'] },
+        { title: 'Sales Tips for the Month', links: ['/under-development'] },
         { title: 'FAQS', links: ['/faqs'] },
     ]
 
     const optionForCustomers = [
-        { title: 'Different Personas', links: ['/'] },
+        { title: 'Different Personas', links: ['/under-development'] },
         { title: 'Competitor Analysis', links: ['/-'] },
-        { title: 'Competitor Products', links: ['/'] },
-        { title: 'Key Differentiators', links: ['/'] },
+        { title: 'Competitor Products', links: ['/under-development'] },
+        { title: 'Key Differentiators', links: ['/under-development'] },
     ]
     const optionForPerfomance = [
-        { title: 'Sales Reports', links: ['/'] },
-        { title: 'MIS', links: ['/'] },
-        { title: 'Quality Monitoring Corner', links: ['/'] },
-        { title: 'QM Guidelines', links: ['/'] },
-        { title: 'Top QM Performers', links: ['/'] },
-        { title: 'QM Grades', links: ['/'] },
-        { title: 'Commendations', links: ['/'] },
+        { title: 'Sales Reports', links: ['/under-development'] },
+        { title: 'MIS', links: ['/under-development'] },
+        { title: 'Quality Monitoring Corner', links: ['/under-development'] },
+        { title: 'QM Guidelines', links: ['/under-development'] },
+        { title: 'Top QM Performers', links: ['/under-development'] },
+        { title: 'QM Grades', links: ['/under-development'] },
+        { title: 'Commendations', links: ['/under-development'] },
     ]
 
     const optionForTeam = [
-        { title: 'Table of Organization', links: ['/'] },
-        { title: 'Top Performers', links: ['/'] },
+        { title: 'Table of Organization', links: ['/under-development'] },
+        { title: 'Top Performers', links: ['/under-development'] },
     ]
 
     const optionForSales = [
-        { title: 'Announcements', links: ['/'] },
-        { title: 'Transmittal and Assignment Process', links: ['/'] },
-        { title: 'Validation Process', links: ['/'] },
-        { title: 'Guide to Handling Verifs', links: ['/'] },
-        { title: 'Guide to Handling Deficiencies', links: ['/'] },
+        { title: 'Announcements', links: ['/under-development'] },
+        { title: 'Transmittal and Assignment Process', links: ['/under-development'] },
+        { title: 'Validation Process', links: ['/under-development'] },
+        { title: 'Guide to Handling Verifs', links: ['/under-development'] },
+        { title: 'Guide to Handling Deficiencies', links: ['/under-development'] },
 
     ]
     const [isClose, setIsClose] = useState(false)

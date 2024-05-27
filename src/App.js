@@ -17,6 +17,7 @@ import FilteringOfLeads from './SIPLoans/FilteringOfLeads';
 import SIPDocu from './SIPLoans/SIPDocu';
 import SIPException from './SIPLoans/SIPException';
 import CaterPage from './pages/CaterPage';
+import UnderDev from './pages/UnderDev';
 
 function App() {
   return (
@@ -54,8 +55,8 @@ function App() {
           <Route path='/personal-loan/documentation' element={<PloanDocu />} />  
           <Route path='/personal-loan/exception-handling' element={<PloanException />} />   */}
 
-
-
+          {/* Under Development Route */}
+          <Route path='/under-development' element={<UnderDev />} />
         </Routes>
       </div>
     </Router>
