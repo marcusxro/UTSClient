@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Header from '../comp/Header'
 import { dataSearch } from '../CampaignResources/SearchedObject'
 import Footer from '../comp/Footer'
+
+
 const SearchedItem = () => {
     const { id } = useParams()
     console.log(id)
@@ -41,7 +43,6 @@ const SearchedItem = () => {
                     </form>
 
                 </div>
-
                 <div className="result">
                     {filteredObject.length != 0 ? (
                         <div className="resultText">
@@ -53,7 +54,6 @@ const SearchedItem = () => {
                         </div>
                     )}
                     <div className="resultCon">
-
                         {filteredObject.length === 0 ? (
                             <div className="sorry">
                                 <span><ion-icon name="search-outline"></ion-icon></span>
@@ -71,7 +71,6 @@ const SearchedItem = () => {
                                 </div>
                             ))
                         )}
-
                     </div>
                 </div>
             </div>
