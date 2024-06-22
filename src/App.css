@@ -83,7 +83,7 @@ header .firstLayer .dropdowns button .DropText span {
 header .firstLayer .absoMenu {
   position: absolute;
   top: 110%;
-  left: 0;
+  right: 5%;
   width: auto;
   text-align: left;
   background-color: #faf8f4;
@@ -1803,4 +1803,141 @@ html {
 .UnderDev .midCon span:hover {
 
   color: #cab641;
+}
+
+
+.SignIn {
+  height: 100vh;
+  display: flex;
+  box-sizing: border-box;
+}
+
+
+.SignIn .Filler {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  overflow: hidden;
+}
+
+.SignIn .Filler img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.SignIn .copyright {
+  position: absolute;
+  z-index: 10;
+  bottom: 10%;
+  font-size: 10px;
+  color: #696969;
+}
+
+.SignIn .SignInContent {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  background-color: rgb(243, 238, 238);
+}
+
+.SignIn .seePass {
+  display: flex;
+  width: auto;
+  gap: 5px;
+  align-items: center;
+  align-self: flex-start;
+  justify-content: flex-start;
+}
+
+.SignIn .seePass input[type='checkbox'] {
+  width: auto;
+  height: 15px;
+  width: 15px;
+}
+
+.SignIn .seePass .txt {
+  font-size: 15px;
+  color: #696969;
+}
+
+@media only screen and (max-width: 850px) {
+  .SignIn .Filler {
+    display: none;
+  }
+
+  .SignIn .SignInContent {
+    width: 100%;
+  }
+}
+
+.SignIn .title {
+  color: #3f3e3e;
+  font-size: 14px;
+  text-align: center;
+}
+
+.SignIn .SignInContent form {
+  z-index: 19999990;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.SignIn .SignInContent form input {
+  height: 40px;
+  width: 95%;
+  outline: none;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-inline: 10px;
+}
+
+.SignIn .SignInContent form input:focus {
+  border: 1px solid #cab641;
+}
+
+.SignIn button {
+  height: 40px;
+  width: 200px;
+  background-color: #cab641;
+  outline: none;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  padding-inline: 10px;
+}
+
+
+.logout {
+  background-color: #cab641;
+  width: 30px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a8181f;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.menuEl .absoMenu .Advisories {
+  display: flex;
+  flex-direction: column;
+}
+
+.PloanCall a {
+  word-break: break-all;
 }

@@ -3,6 +3,7 @@ import 'react-dropdown/style.css';
 import { useDropdown } from './Advisories';
 import gsap from 'gsap';
 import { useNavigate } from 'react-router-dom';
+import LogOut from './LogOut';
 
 const Header = () => {
     const [isSelected, setSelected] = useState("")
@@ -118,6 +119,7 @@ const Header = () => {
         setSubCategoryPosition(position);
         setSelectedCategory(selectedCategory === title ? null : title);
     };
+
     const renderMenu = () => {
         switch (isSelected) {
             case 'Advisories':
@@ -275,7 +277,7 @@ const Header = () => {
     return (
         <header>
             <div className="firstLayer">
-                <div className="logo" onClick={() => { nav('/'); window.scrollTo(0,0) }}>UTS.com</div>
+                <div className="logo" onClick={() => { nav('/Home'); window.scrollTo(0, 0) }}>UTS.com</div>
                 {isSearch === false ? (
                     <div className="dropdowns">
                         <button className='AdvisoriesBtn' onClick={() => { openModal("Advisories") }}>
@@ -357,75 +359,72 @@ const Header = () => {
                     <div className="Menu" onClick={() => { showMenu() }}>
                         {isShow === true ? <ion-icon name="close-outline"></ion-icon> : <ion-icon name="menu-outline"></ion-icon>}
                     </div>
+                <LogOut />
                 </div>
 
                 <div className="menuEl">
-                <button className='AdvisoriesBtn' onClick={() => { openModal("Advisories") }}>
-                            <div className="DropText">Advisories <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
-                            {isSelected === "Advisories" && (
-                                <div className="absoMenu" onClick={() => { setIsClose(false); setSelected("Advisories") }}>
-                                    {renderMenu()}
-                                </div>
-                            )}
+                    <button className='AdvisoriesBtn' onClick={() => { openModal("Advisories") }}>
+                        <div className="DropText">Advisories <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                        {isSelected === "Advisories" && (
+                            <div className="absoMenu" onClick={() => { setIsClose(false); setSelected("Advisories"); }}>
+                                {renderMenu()}
+                            </div>
+                        )}
 
-                        </button>
+                    </button>
 
+                    <button className='CampaignBtn' onClick={() => { openModal("Campaign") }}>
+                        <div className="DropText">Campaign Guidelines  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                        {isSelected === "Campaign" && (
+                            <div className="absoMenu">
+                                {renderMenu()}
+                            </div>
+                        )}
 
-                        <button className='CampaignBtn' onClick={() => { openModal("Campaign") }}>
-                            <div className="DropText">Campaign Guidelines  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
-                            {isSelected === "Campaign" && (
-                                <div className="absoMenu">
-                                    {renderMenu()}
-                                </div>
-                            )}
+                    </button>
 
-                        </button>
+                    <button className='TrainingBtn' onClick={() => { openModal("Training") }}>
+                        <div className="DropText">Training  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                        {isSelected === "Training" && (
+                            <div className="absoMenu">
+                                {renderMenu()}
+                            </div>
+                        )}
+                    </button>
+                    <button className='CustomersBtn' onClick={() => { openModal("Customers") }}>
+                        <div className="DropText">Our Customers  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                        {isSelected === "Customers" && (
+                            <div className="absoMenu">
+                                {renderMenu()}
+                            </div>
+                        )}
+                    </button>
 
-                        <button className='TrainingBtn' onClick={() => { openModal("Training") }}>
-                            <div className="DropText">Training  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
-                            {isSelected === "Training" && (
-                                <div className="absoMenu">
-                                    {renderMenu()}
-                                </div>
-                            )}
+                    <button className='PerformanceBtn' onClick={() => { openModal("Performance") }}>
+                        <div className="DropText">Performance  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                        {isSelected === "Performance" && (
+                            <div className="absoMenu">
+                                {renderMenu()}
+                            </div>
+                        )}
+                    </button>
 
-                        </button>
-
-                        <button className='CustomersBtn' onClick={() => { openModal("Customers") }}>
-                            <div className="DropText">Our Customers  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
-                            {isSelected === "Customers" && (
-                                <div className="absoMenu">
-                                    {renderMenu()}
-                                </div>
-                            )}
-                        </button>
-
-                        <button className='PerformanceBtn' onClick={() => { openModal("Performance") }}>
-                            <div className="DropText">Performance  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
-                            {isSelected === "Performance" && (
-                                <div className="absoMenu">
-                                    {renderMenu()}
-                                </div>
-                            )}
-                        </button>
-
-                        <button className='TeamBtn' onClick={() => { openModal("Team") }}>
-                            <div className="DropText">Team Updates  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
-                            {isSelected === "Team" && (
-                                <div className="absoMenu">
-                                    {renderMenu()}
-                                </div>
-                            )}
-                        </button>
-
-                        <button className='SalesBtn' onClick={() => { openModal("Sales") }}>
-                            <div className="DropText">Sales Support Corner  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
-                            {isSelected === "Sales" && (
-                                <div className="absoMenu">
-                                    {renderMenu()}
-                                </div>
-                            )}
-                        </button>
+                    <button className='TeamBtn' onClick={() => { openModal("Team") }}>
+                        <div className="DropText">Team Updates  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                        {isSelected === "Team" && (
+                            <div className="absoMenu">
+                                {renderMenu()}
+                            </div>
+                        )}
+                    </button>
+                    <button className='SalesBtn' onClick={() => { openModal("Sales") }}>
+                        <div className="DropText">Sales Support Corner  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                        {isSelected === "Sales" && (
+                            <div className="absoMenu">
+                                {renderMenu()}
+                            </div>
+                        )}
+                    </button>
                 </div>
 
             </div>

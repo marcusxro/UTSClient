@@ -9,13 +9,13 @@ const AllCater = () => {
             <Header />
             <div className="headerImage">
 
-                </div>
+            </div>
 
-                <div className="caterText">
+            <div className="caterText">
                 <div className="text">
-                Categories
+                    Categories
                 </div>
-                </div>
+            </div>
             <div className="AllCaterContent Homepage">
 
 

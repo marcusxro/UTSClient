@@ -18,48 +18,60 @@ import SIPDocu from './SIPLoans/SIPDocu';
 import SIPException from './SIPLoans/SIPException';
 import CaterPage from './pages/CaterPage';
 import UnderDev from './pages/UnderDev';
+import SignIn from './pages/SignIn';
+import React, { useEffect, useState } from 'react';
+import ProtectedRoute from './ProtectedRoute';
+
+import { onAuthStateChanged } from 'firebase/auth';
+import { Auth } from './Authentication';
+
+
+export const Context = React.createContext()
+
 
 function App() {
+
+  const [activeUser, setActiveUser] = useState(null);
+
+  useEffect(() => {
+    const isUser = onAuthStateChanged(Auth, (user) => {
+      if (user) {
+        setActiveUser(user)
+      } else {
+        setActiveUser(null)
+      }
+    })
+
+    return () => isUser()
+  }, [activeUser])
+
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path='/' element={<Hompage />} />
-          <Route path='/all-categories' element={<AllCater />} />
-          <Route path='/query/:id' element={<SearchedItem />} />
-
-          {/* categories page */}
-          <Route path='/category/:item' element={<CaterPage />} />
-
-
-          {/* //campain guidlines */}
-          <Route path='/campaign/filtering-of-leads' element={<Campaign />} />
-          <Route path='/campaign/call-flow-and-spiels' element={<CallAndSpiels />} />
-          <Route path='/campaign/documentation' element={<Documentation />} />
-          <Route path='/campaign/exception-handling' element={<Exception />} />
-          {/* 
-          PersonalLoan */}
-          <Route path='/personal-loan/filtering-of-leads' element={<Ploan />} />
-          <Route path='/personal-loan/call-flow-and-spiels' element={<PloanCall />} />
-          <Route path='/personal-loan/other-guidlines-for-docusign' element={<PloanOther />} />
-          <Route path='/personal-loan/documentation' element={<PloanDocu />} />
-          <Route path='/personal-loan/exception-handling' element={<PloanException />} />
-
-
-          {/* SIP Loans */}
-          <Route path='/SIP-loan/filtering-of-leads' element={<FilteringOfLeads />} />
-          <Route path='/SIP-loan/documentation' element={<SIPDocu />} />
-          <Route path='/SIP-loan/exception-handling' element={<SIPException />} />
-          {/* <Route path='/personal-loan/call-flow-and-spiels' element={<PloanCall />} />  
-          <Route path='/personal-loan/other-guidlines-for-docusign' element={<PloanOther />} />  
-          <Route path='/personal-loan/documentation' element={<PloanDocu />} />  
-          <Route path='/personal-loan/exception-handling' element={<PloanException />} />   */}
-
-          {/* Under Development Route */}
-          <Route path='/under-development' element={<UnderDev />} />
-        </Routes>
-      </div>
-    </Router>
+    <Context.Provider value={[activeUser, setActiveUser]}>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path='/' element={<SignIn />} />
+            <Route path='/Home' element={<ProtectedRoute element={<Hompage />} />} />
+            <Route path='/all-categories' element={<ProtectedRoute element={activeUser ? <AllCater /> : <></>} />} />
+            <Route path='/query/:id' element={<ProtectedRoute element={activeUser ? <SearchedItem /> : <></>} />} />
+            <Route path='/category/:item' element={<ProtectedRoute element={activeUser ? <CaterPage /> : <></>} />} />
+            <Route path='/campaign/filtering-of-leads' element={<ProtectedRoute element={activeUser ? <Campaign /> : <></>} />} />
+            <Route path='/campaign/call-flow-and-spiels' element={<ProtectedRoute element={activeUser ? <CallAndSpiels /> : <></>} />} />
+            <Route path='/campaign/documentation' element={<ProtectedRoute element={activeUser ? <Documentation /> : <></>} />} />
+            <Route path='/campaign/exception-handling' element={<ProtectedRoute element={activeUser ? <Exception /> : <></>} />} />
+            <Route path='/personal-loan/filtering-of-leads' element={<ProtectedRoute element={activeUser ? <Ploan /> : <></>} />} />
+            <Route path='/personal-loan/call-flow-and-spiels' element={<ProtectedRoute element={activeUser ? <PloanCall /> : <></>} />} />
+            <Route path='/personal-loan/other-guidlines-for-docusign' element={<ProtectedRoute element={activeUser ? <PloanOther /> : <></>} />} />
+            <Route path='/personal-loan/documentation' element={<ProtectedRoute element={activeUser ? <PloanDocu /> : <></>} />} />
+            <Route path='/personal-loan/exception-handling' element={<ProtectedRoute element={activeUser ? <PloanException /> : <></>} />} />
+            <Route path='/SIP-loan/filtering-of-leads' element={<ProtectedRoute element={activeUser ? <FilteringOfLeads /> : <></>} />} />
+            <Route path='/SIP-loan/documentation' element={<ProtectedRoute element={activeUser ? <SIPDocu /> : <></>} />} />
+            <Route path='/SIP-loan/exception-handling' element={<ProtectedRoute element={activeUser ? <SIPException /> : <></>} />} />
+            <Route path='/under-development' element={<ProtectedRoute element={activeUser ? <UnderDev /> : <></>} />} />
+          </Routes>
+        </div>
+      </Router>
+    </Context.Provider>
   );
 }
 
