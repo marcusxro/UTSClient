@@ -51,7 +51,7 @@ function App() {
         <div className="App">
           <Routes>
             <Route path='/' element={<SignIn />} />
-            <Route path='/Home' element={<ProtectedRoute element={activeUser ? <Hompage />} : <></> />} />
+            <Route path='/Home' element={<ProtectedRoute element={activeUser ? <Hompage /> : <></>}  />} />
             <Route path='/all-categories' element={<ProtectedRoute element={activeUser ? <AllCater /> : <></>} />} />
             <Route path='/query/:id' element={<ProtectedRoute element={activeUser ? <SearchedItem /> : <></>} />} />
             <Route path='/category/:item' element={<ProtectedRoute element={activeUser ? <CaterPage /> : <></>} />} />
