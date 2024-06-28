@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Hompage from './pages/Hompage';
 import Campaign from './pages/Campaign';
 import CallAndSpiels from './CampaignResources/CallAndSpiels';
@@ -21,36 +20,28 @@ import UnderDev from './pages/UnderDev';
 import SignIn from './pages/SignIn';
 import React, { useEffect, useState } from 'react';
 import ProtectedRoute from './ProtectedRoute';
-
 import { onAuthStateChanged } from 'firebase/auth';
 import { Auth } from './Authentication';
-
 
 export const Context = React.createContext()
 
 
 function App() {
-
   const [activeUser, setActiveUser] = useState(null);
 
   useEffect(() => {
-    const isUser = onAuthStateChanged(Auth, (user) => {
-      if (user) {
-        setActiveUser(user)
-      } else {
-        setActiveUser(null)
-      }
-    })
-
-    return () => isUser()
-  }, [activeUser])
+    const unsubscribe = onAuthStateChanged(Auth, (user) => {
+      setActiveUser(user ? user : null);
+    });
+    return () => unsubscribe();
+  }, [activeUser]);
 
   return (
     <Context.Provider value={[activeUser, setActiveUser]}>
       <Router>
         <div className="App">
           <Routes>
-            <Route path='/' element={<SignIn />} />
+            <Route path='/' element={activeUser ? <></> : <SignIn />} />
             <Route path='/Home' element={<ProtectedRoute element={activeUser ? <Hompage /> : <></>}  />} />
             <Route path='/all-categories' element={<ProtectedRoute element={activeUser ? <AllCater /> : <></>} />} />
             <Route path='/query/:id' element={<ProtectedRoute element={activeUser ? <SearchedItem /> : <></>} />} />

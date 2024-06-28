@@ -1,145 +1,51 @@
 import React from 'react'
 import Header from '../comp/Header'
 import Footer from '../comp/Footer'
-import samplePic from '../images/IMG_6579.png'
+import { CategoryOBJ } from '../comp/Category'
+import { useNavigate } from 'react-router-dom'
 
 const AllCater = () => {
+    const nav = useNavigate()
     return (
         <div className='AllCater closer'>
             <Header />
+
             <div className="headerImage">
-
-            </div>
-
-            <div className="caterText">
                 <div className="text">
-                    Categories
+                    CATEGORIES
                 </div>
             </div>
             <div className="AllCaterContent Homepage">
+                {
+                    CategoryOBJ.map((item) => (
+                        <div className="ItemCategory">
+                            <div className="ItemDesc">
+                                <div className="title">
+                                    {item?.title}
+                                </div>
+                                <div className="desc">
+                                    {item?.desc}
+                                </div>
+                                <div className="SubCater">
+                                    {
+                                        item?.subCater?.map((sub, index) => (
+                                            <div className="item" key={index} onClick={() => {nav(sub.link); window.scrollTo(0, 0)}}>{index + 1}. {sub.title}</div>
+                                        ))
+                                    }
+                                </div>
 
-
-                <div className="ItemCategory">
-                    <div className="img">
-                        <img src={samplePic} alt="" />
-                    </div>
-                    <div className="ItemDesc">
-                        <div className="title">
-                            Advisories
+                            </div>
                         </div>
-                        <div className="SubCater">
-                            <div className="item">New Campaigns</div>
-                            <div className="item">Promos</div>
-                            <div className="item">New Guidelines</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="ItemCategory">
-                    <div className="img">
-                        <img src={samplePic} alt="" />
-                    </div>
-                    <div className="ItemDesc">
-                        <div className="title">
-                            Campaign Guidelines
-                        </div>
-                        <div className="SubCater">
-                            <div className="item">Filtering of Leads</div>
-                            <div className="item">Call Flow and Spiels</div>
-                            <div className="item">Documentation</div>
-                            <div className="item">Exception Handling</div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div className="ItemCategory">
-                    <div className="img">
-                        <img src={samplePic} alt="" />
-                    </div>
-                    <div className="ItemDesc">
-                        <div className="title">
-                            Training
-                        </div>
-                        <div className="SubCater">
-                            <div className="item">New Campaigns</div>
-                            <div className="item">Promos</div>
-                            <div className="item">New Guidelines</div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div className="ItemCategory">
-                    <div className="img">
-                        <img src={samplePic} alt="" />
-                    </div>
-                    <div className="ItemDesc">
-                        <div className="title">
-                            Our Customers
-                        </div>
-                        <div className="SubCater">
-                            <div className="item">New Campaigns</div>
-                            <div className="item">Promos</div>
-                            <div className="item">New Guidelines</div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div className="ItemCategory">
-                    <div className="img">
-                        <img src={samplePic} alt="" />
-                    </div>
-                    <div className="ItemDesc">
-                        <div className="title">
-                            Performance
-                        </div>
-                        <div className="SubCater">
-                            <div className="item">New Campaigns</div>
-                            <div className="item">Promos</div>
-                            <div className="item">New Guidelines</div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div className="ItemCategory">
-                    <div className="img">
-                        <img src={samplePic} alt="" />
-                    </div>
-                    <div className="ItemDesc">
-                        <div className="title">
-                            Team Updates
-                        </div>
-                        <div className="SubCater">
-                            <div className="item">New Campaigns</div>
-                            <div className="item">Promos</div>
-                            <div className="item">New Guidelines</div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div className="ItemCategory">
-                    <div className="img">
-                        <img src={samplePic} alt="" />
-                    </div>
-                    <div className="ItemDesc">
-                        <div className="title">
-                            Sales Support Corner
-                        </div>
-                        <div className="SubCater">
-                            <div className="item">New Campaigns</div>
-                            <div className="item">Promos</div>
-                            <div className="item">New Guidelines</div>
-                        </div>
-                    </div>
-                </div>
-
+                    ))
+                }
             </div>
 
+
+                <div className="naviBack">
+                    <button onClick={() => {nav('/Home'); window.scrollTo(0,0)}}>
+                        HOME <ion-icon name="home-outline"></ion-icon>
+                    </button>
+                </div>
 
             <Footer />
         </div>

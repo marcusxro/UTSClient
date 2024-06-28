@@ -1,36 +1,23 @@
 export const CategoryOBJ = [
     {
         title: "Advisories",
+        desc: "Stay informed with our advisory updates, providing essential information and guidance on our current developments",
         subCater: [
             {
-                title: "Credit Cards",
-                content: [
-                    { title: "New Campaigns", link: "/" },
-                    { title: "Promos", link: "/" },
-                    { title: "New guidelines", link: "/" },
-                ]
+                title: "Credit Cards",  link: "/under-development" 
+            },
+            { 
+                title: "Personal Loans",  link: "/under-development" 
             },
             {
-                title: "Personal Loans",
-                content: [
-                    { title: "New Campaigns", link: "/" },
-                    { title: "Promos", link: "/" },
-                    { title: "New guidelines", link: "/" },
-                ]
-            },
-            {
-                title: "SIP Loans",
-                content: [
-                    { title: "New Campaigns", link: "/campaign" },
-                    { title: "Promos", link: "/campaign" },
-                    { title: "New guidelines", link: "/campaign" },
-                ]
+                title: "SIP Loans",  link: "/under-development" 
             }
         ]
     },
 
     {
         title: "Campaign Guidelines",
+        desc: "Navigate your campaign with confidence using our comprehensive guidelines, offering strategic insights and practical advice.",
         subCater: [
             {
                 title: "Credit Cards",
@@ -63,67 +50,64 @@ export const CategoryOBJ = [
     },
 
 
-
-
     {
         title: "Our Customer",
+        desc: "Our valued customers. We prioritize your needs, ensuring a seamless experience and personalized solutions every step of the way.",
         subCater: [
-            { title: "Different Personas", link: "/" },
-            { title: "Competitor Analysis", link: "/" },
-            { title: "Competitor Products", link: "/" },
-            { title: "Key Differentiators", link: "/" },
+            { title: "Different Personas", link: "/under-development" },
+            { title: "Competitor Analysis", link: "/under-development" },
+            { title: "Competitor Products", link: "/under-development" },
+            { title: "Key Differentiators", link: "/under-development" },
         ]
     },
 
     {
         title: "Performance",
+        desc: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus nemo illum iusto architecto, labore eveniet dolore esse odio et, optio, ducimus dicta delectus dolor earum repellendus tempora nulla culpa aut.",
         subCater: [
-            { title: "Sales Reports", link: "/" },
-            { title: "MIS", link: "/" },
-            { title: "Quality Monitoring Corner", link: "/" },
-            { title: "QM Guidelines", link: "/" },
-            { title: "Top QM Performers", link: "/" },
-            { title: "QM Grades", link: "/" },
-            { title: "Commendations", link: "/" },
+            { title: "Sales Reports", link: "/under-development" },
+            { title: "MIS", link: "/under-development" },
+            { title: "Quality Monitoring Corner", link: "/under-development" },
+            { title: "QM Guidelines", link: "/under-development" },
+            { title: "Top QM Performers", link: "/under-development" },
+            { title: "QM Grades", link: "/under-development" },
+            { title: "Commendations", link: "/under-development" },
         ]
     },
     {
         title: "Team Updates",
+        desc: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus nemo illum iusto architecto, labore eveniet dolore esse odio et, optio, ducimus dicta delectus dolor earum repellendus tempora nulla culpa aut.",
         subCater: [
-            { title: "Table of Organization", link: "/" },
-            { title: "Top Performers", link: "/" },
+            { title: "Table of Organization", link: "/under-development" },
+            { title: "Top Performers", link: "/under-development" },
         ]
     },
 
 
     {
         title: "Sales Support Corner",
+        desc: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus nemo illum iusto architecto, labore eveniet dolore esse odio et, optio, ducimus dicta delectus dolor earum repellendus tempora nulla culpa aut.",
         subCater: [
-            { title: "Announcements", link: "/" },
-            { title: "Transmittal and Assignment Process", link: "/" },
-            { title: "Validation Process", link: "/" },
-            { title: "Guide to Handling Verifs", link: "/" },
-            { title: "Guide to Handling Deficiencies", link: "/" },
+            { title: "Announcements", link: "/under-development" },
+            { title: "Transmittal and Assignment Process", link: "/under-development" },
+            { title: "Validation Process", link: "/under-development" },
+            { title: "Guide to Handling Verifs", link: "/under-development" },
+            { title: "Guide to Handling Deficiencies", link: "/under-development" },
         ]
     },
     {
         title: "Training",
+        desc: "Empower your self with our specialized training programs, designed to enhance skills and foster professional growth the UTS way.",
         subCater: [
-            { title: "Supported Products", link: "/" },
-            { title: "Credit Cards", link: "/" },
-            { title: "SIP Loans", link: "/" },
-            { title: "Personal Loan", link: "/" },
-            { title: "Deposit Products", link: "/" },
-            { title: "Other Bank Products", link: "/" },
-            { title: "Handling Objections", link: "/" },
-            { title: "Sales Tips for the Month", link: "/" },
-            { title: "FAQS", link: "/" },
+            { title: "Supported Products", link: "/under-development" },
+            { title: "Credit Cards", link: "/under-development" },
+            { title: "SIP Loans", link: "/under-development" },
+            { title: "Personal Loan", link: "/under-development" },
+            { title: "Deposit Products", link: "/under-development" },
+            { title: "Other Bank Products", link: "/under-development" },
+            { title: "Handling Objections", link: "/under-development" },
+            { title: "Sales Tips for the Month", link: "/under-development" },
+            { title: "FAQS", link: "/under-development" },
         ]
     },
-
-
-
-
-
-
 ];

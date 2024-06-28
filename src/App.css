@@ -11,6 +11,9 @@ header {
   left: 0;
   z-index: 999999999;
   background-color: white;
+  box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.75);
 }
 
 header .firstLayer {
@@ -94,12 +97,12 @@ header .firstLayer .dropdowns .menuItem {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  gap: 10px;
 }
 
 .navigator {
-  padding: 10px 0px;
-  width: calc(100% - 20px);
+  padding: 10px 10px;
+  width: calc(100% - 30px);
+  border-bottom: 1px solid #dad7d7;
 }
 
 header .firstLayer .dropdowns .menuItem .navigator .naviTitle:hover {
@@ -728,11 +731,13 @@ header .menuEl button .DropText span {
   padding-bottom: 30px;
   padding-inline: 5%;
   box-sizing: border-box;
-  /* Ensure padding is included in the width calculation */
   overflow: hidden;
-  /* Prevent content overflow */
   display: flex;
   flex-direction: column;
+  box-shadow: -1px -2px 9px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px -2px 9px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px -2px 9px 0px rgba(0, 0, 0, 0.75);
+  border-top: 3px solid #cab641;
 }
 
 .footer .secLayer {
@@ -812,6 +817,20 @@ header .menuEl button .DropText span {
   align-items: center;
   justify-content: center;
   color: black;
+}
+
+.goUp .arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s ease-in-out;
+}
+
+.goUp:hover {
+  .arrow {
+    transform: scale(2);
+    color: #a8181f;
+  }
 }
 
 @media only screen and (max-width: 1030px) {
@@ -968,18 +987,66 @@ html {
   overflow: hidden;
 }
 
+.AllCater .naviBack {
+  width: 100%;
+  height: auto;
+  margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    padding: 10px 30px;
+    color: red;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid #a8181f;
+    transition: border-radius .2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 15px;
+  }
+
+  button:hover {
+    border-radius: 10px;
+  }
+}
+
+.AllCater .headerImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AllCater .headerImage .text {
+  color: #cab641;
+  font-size: 6vw;
+  font-weight: 900;
+  z-index: 100;
+}
+
 .AllCaterContent {
   padding-inline: 20%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  /* Allow columns to fit dynamically */
+  grid-template-columns: repeat(auto-fit, minmax(50vh, 1fr));
   gap: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+  /* Ensures padding and border are included in the element's width and height */
 }
 
 .AllCaterContent .ItemCategory {
   color: white;
   padding: 10px;
+  overflow: hidden;
+}
 
+.AllCaterContent .ItemCategory .desc {
+  color: rgb(180, 178, 178);
+  margin: 15px 0px;
 }
 
 .AllCaterContent .ItemCategory .img {
@@ -990,7 +1057,7 @@ html {
 .AllCaterContent .ItemCategory .ItemDesc {
   background-color: #a8181f;
   padding: 10px;
-
+  border-radius: 10px;
   color: black;
 }
 
@@ -1010,8 +1077,15 @@ html {
 .AllCaterContent .ItemCategory .ItemDesc .SubCater .item {
   background-color: #cab641;
   color: black;
-  font-size: 10px;
+  font-size: 15px;
+  border-radius: 5px;
   padding: 5px 10px;
+
+}
+
+.AllCaterContent .ItemCategory .ItemDesc .SubCater .item:hover {
+  background-color: #d8c767;
+  cursor: pointer;
 
 }
 
@@ -1035,13 +1109,11 @@ html {
 
 .caterText {
   width: calc(100% - 50px);
-  /* Adjust width based on the padding values */
   font-size: clamp(.6rem, 7vw, 1.5rem);
   font-weight: 700;
   background-color: #a8181f;
   color: white;
   padding: 50px 20%;
-  /* Keep padding values consistent */
 }
 
 
@@ -1940,4 +2012,34 @@ html {
 
 .PloanCall a {
   word-break: break-all;
+}
+
+
+
+.menuEl {
+  display: none;
+}
+
+@media only screen and (max-width: 1240px) {
+  .menuEl {
+    display: flex;
+  }
+}
+
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+
+Header .progress {
+  width: 100%;
+  background-color: #cab641;
+  height: 5px;
+
+  .progress-bar {
+    background-color: #a8181f;
+    height: 100%;
+    transition: width .5s ease-in-out;
+  }
 }

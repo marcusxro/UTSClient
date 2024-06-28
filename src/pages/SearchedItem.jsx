@@ -3,15 +3,11 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Header from '../comp/Header'
 import { dataSearch } from '../CampaignResources/SearchedObject'
 import Footer from '../comp/Footer'
-
-
 const SearchedItem = () => {
     const { id } = useParams()
     console.log(id)
     const nav = useNavigate()
     const [query, setQuery] = useState('')
-
-
     const submitQuery = (e) => {
         e.preventDefault()
         if (!query) {
@@ -22,18 +18,15 @@ const SearchedItem = () => {
         }
 
     }
-
     const [filteredObject, SetFiltered] = useState([])
     useEffect(() => {
         const filteredData = dataSearch.filter(item => item.title.toLowerCase().includes(id.toLowerCase()));
         SetFiltered(filteredData);
     }, [id,]);
 
-
     return (
         <div className='SearchedItem closer' >
             <Header />
-
             <div className="Homepage">
 
                 <div className="searchForm">

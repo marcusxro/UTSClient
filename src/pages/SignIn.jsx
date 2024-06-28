@@ -1,24 +1,26 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import fillerImg from '../images/20240503_172546.jpg'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Auth, Auths } from '../Authentication'
-import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+import { Auth } from '../Authentication'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom';
-
 import gsap from 'gsap';
-
+import IsLoggedIn from '../comp/IsLoggedIn';
 
 const SignIn = () => {
+
+
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [seePass, setSeePass] = useState(false)
 
-    const successLogin = () => {
 
+
+    const successLogin = () => {
         gsap.to([emailRef.current, passwordRef.current], {
             border: '1px solid #ccc'
         })
@@ -37,8 +39,6 @@ const SignIn = () => {
     }
 
     const errorLogin = (params) => {
-
-
         gsap.to([emailRef.current, passwordRef.current], {
             border: '1px solid red'
         })
@@ -61,6 +61,8 @@ const SignIn = () => {
     const emailRef = useRef()
     const passwordRef = useRef()
 
+
+
     const signInAccount = e => {
         e.preventDefault()
         if (!password || !email) {
@@ -81,12 +83,13 @@ const SignIn = () => {
                     }
                 })
         }
-
     }
 
     return (
         <div className='SignIn'>
             <ToastContainer />
+            <IsLoggedIn />
+
             <div className="SignInContent">
                 <form
                     onSubmit={signInAccount}

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import 'react-dropdown/style.css';
-import { useDropdown } from './Advisories';
 import gsap from 'gsap';
 import { useNavigate } from 'react-router-dom';
 import LogOut from './LogOut';
@@ -58,12 +57,12 @@ const Header = () => {
         { title: 'Other Bank Products', links: ['/under-development'] },
         { title: 'Handling Objections', links: ['/under-development'] },
         { title: 'Sales Tips for the Month', links: ['/under-development'] },
-        { title: 'FAQS', links: ['/faqs'] },
+        { title: 'FAQS', links: ['/under-development'] },
     ]
 
     const optionForCustomers = [
         { title: 'Different Personas', links: ['/under-development'] },
-        { title: 'Competitor Analysis', links: ['/-'] },
+        { title: 'Competitor Analysis', links: ['//under-development'] },
         { title: 'Competitor Products', links: ['/under-development'] },
         { title: 'Key Differentiators', links: ['/under-development'] },
     ]
@@ -114,7 +113,6 @@ const Header = () => {
         const position = {
             top: rect.top + window.scrollY,
             left: rect.left + window.scrollX,
-            width: rect.width
         };
         setSubCategoryPosition(position);
         setSelectedCategory(selectedCategory === title ? null : title);
@@ -143,7 +141,8 @@ const Header = () => {
                                     </div>
                                 </div>
                                 {selectedCategory === item.title && (
-                                    <div className="subContent" style={{ ...subCategoryPosition }}>
+                                    <div className="subContent" style={{ subCategoryPosition }}>
+
                                         {item.content.map((subItem) => (
                                             <div className="subItem" key={subItem.title} onClick={() => { nav(subItem.links.join('')); window.scrollTo(0, 0) }}>
                                                 {subItem.title}
@@ -220,10 +219,11 @@ const Header = () => {
 
         const homepageContent = document.querySelector('.closer');
 
-        // Add event listener when component mounts
         homepageContent.addEventListener('click', handleClickOutside);
         homepageContent.addEventListener('click', setIsActive(''));
-        // Remove event listener when component unmounts
+        homepageContent.addEventListener('click', setSelectedCategory(''));
+        
+
         return () => {
             homepageContent.removeEventListener('click', handleClickOutside);
         };
@@ -274,6 +274,23 @@ const Header = () => {
         }
 
     }
+
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const handleScroll = () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercentage = (scrollTop / scrollHeight) * 100;
+        setScrollPosition(scrollPercentage);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <header>
             <div className="firstLayer">
@@ -359,7 +376,7 @@ const Header = () => {
                     <div className="Menu" onClick={() => { showMenu() }}>
                         {isShow === true ? <ion-icon name="close-outline"></ion-icon> : <ion-icon name="menu-outline"></ion-icon>}
                     </div>
-                <LogOut />
+                    <LogOut />
                 </div>
 
                 <div className="menuEl">
@@ -441,7 +458,9 @@ const Header = () => {
                 </div>
             ) : <></>}
 
-
+            <div className="progress">
+                <div className="progress-bar" style={{ width: `${scrollPosition}%` }}></div>
+            </div>
         </header>
     )
 }

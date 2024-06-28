@@ -19,7 +19,7 @@ const UnderDev = () => {
                     Please bear with us as we work diligently to update the content. Thank you for your patience.
                 </div>
                 <div className="navs">
-                    <span onClick={() => {nav('/')}}>Home</span>
+                    <span onClick={() => {nav('/Home')}}>Home</span>
                 </div>
             </div>
             <Footer />

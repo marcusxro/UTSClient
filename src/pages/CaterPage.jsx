@@ -3,6 +3,8 @@ import Header from '../comp/Header'
 import Footer from '../comp/Footer'
 import { useNavigate, useParams } from 'react-router-dom'
 import { CategoryOBJ } from '../comp/Category'
+
+
 const CaterPage = () => {
     const { item } = useParams()
 
@@ -15,7 +17,11 @@ const CaterPage = () => {
         const filteredObj = CategoryOBJ.filter((itm) => itm.title.toLowerCase() === item.toLowerCase())
         console.log(filteredObj)
         setData(filteredObj)
+
     }, [item, CategoryOBJ])
+
+
+
 
     const nav = useNavigate()
     return (

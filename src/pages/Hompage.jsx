@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
-import { Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, EffectFade, } from 'swiper/modules';
 import firstSlide from '../images/IMG_6582.png'
 import figureThee from '../images/IMG_6590.png'
 import figureTwo from '../images/IMG_6602.png'
@@ -18,10 +18,7 @@ import figueFive from '../images/IMG_6627.png'
 import figureSlider from '../images/IMG_6585.png'
 import Footer from '../comp/Footer';
 import { useNavigate } from 'react-router-dom';
-import gsap from 'gsap'
-
-import { onAuthStateChanged } from 'firebase/auth';
-import { Auth } from '../Authentication';
+import ImageLoader from '../comp/ImageLoader';
 
 const Hompage = () => {
 
@@ -30,8 +27,36 @@ const Hompage = () => {
   const nav = useNavigate('')
 
 
-  const [query, setQuery] = useState('')
+  const [imgList] = useState([
+    { FirstIMG: firstSlide },
+    { SecIMG: figureTwo },
+    { ThirdIMG: figureThee },
+    { FourthIMG: figureFour },
+    { FifthIMG: figueFive },
+    { FigureSlider: figureSlider },
+  ]);
 
+  const [loadedImages, setLoadedImages] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setLoadedImages((prev) => prev + 1);
+    setLoading(false);
+  };
+
+  const handleImageError = () => {
+    setLoadedImages((prev) => prev + 1); // Optionally handle errors
+  };
+
+  useEffect(() => {
+    if (loadedImages === imgList.length) {
+      setLoading(false);
+    }
+  }, [loadedImages, imgList.length, loading]);
+
+
+
+  const [query, setQuery] = useState('')
   const submitQuery = (e) => {
     e.preventDefault()
     if (!query) {
@@ -44,8 +69,6 @@ const Hompage = () => {
 
   }
 
-
-
   return (
     <div className='Homepage closer'>
       {
@@ -54,8 +77,8 @@ const Hompage = () => {
             <Header />
             <div className="HomepageContent">
               <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay]}
-                Autoplay
+                modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade,]}
+              
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
@@ -63,7 +86,14 @@ const Hompage = () => {
                 onSlideChange={() => console.log('slide change')}
               >
                 <SwiperSlide>
-                  <img src={firstSlide} alt="" />
+
+                  <img
+                    src={imgList[0].FirstIMG}
+                    alt={imgList.title}
+                    onLoad={handleImageLoad}
+                    onError={handleImageError}
+                  />
+                
                   <div className="absoCon">
                     <div className="text">
                       ULC TELESALES
