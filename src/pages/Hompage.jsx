@@ -18,7 +18,10 @@ import figueFive from '../images/IMG_6627.png'
 import figureSlider from '../images/IMG_6585.png'
 import Footer from '../comp/Footer';
 import { useNavigate } from 'react-router-dom';
-import ImageLoader from '../comp/ImageLoader';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Hompage = () => {
 
@@ -45,7 +48,7 @@ const Hompage = () => {
   };
 
   const handleImageError = () => {
-    setLoadedImages((prev) => prev + 1); // Optionally handle errors
+    setLoadedImages((prev) => prev + 1); 
   };
 
   useEffect(() => {
@@ -58,9 +61,21 @@ const Hompage = () => {
 
   const [query, setQuery] = useState('')
   const submitQuery = (e) => {
+    
     e.preventDefault()
     if (!query) {
-      alert("Please type something")
+      toast.error("Please type something!", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        theme: "colored",
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        closeButton: false
+
+    });
     } else {
       nav(`/query/${query}`)
       setQuery('')
@@ -71,6 +86,7 @@ const Hompage = () => {
 
   return (
     <div className='Homepage closer'>
+                  <ToastContainer />
       {
         activeUser?.uid ?
           <>

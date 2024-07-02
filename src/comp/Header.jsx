@@ -3,92 +3,100 @@ import 'react-dropdown/style.css';
 import gsap from 'gsap';
 import { useNavigate } from 'react-router-dom';
 import LogOut from './LogOut';
+import { CategoryOBJ } from './Category';
+
 
 const Header = () => {
     const [isSelected, setSelected] = useState("")
     const nav = useNavigate()
 
-    const optionsForAdvisories = [
-        { title: 'New campaigns', links: ['/under-development'] },
-        { title: 'Promos', links: ['/under-development'] },
-        { title: 'New guidelines', links: ['/under-development'] },
-    ]
+
+    const optionsForAdvisories = CategoryOBJ[0]?.subCater ? [
+        {
+            HaveContent: CategoryOBJ[0].HaveContent,
+            content: CategoryOBJ[0].subCater.map((itm) => ({
+                title: itm?.title,
+                links: itm?.link,
+                HaveContent: itm?.HaveContent
+            }))
+        }
+    ] : [];
 
     const optionsForCampaign = [
-        {
-            title: 'Credit Cards',
-            links: ['/filtering-of-leads'],
+        ...CategoryOBJ[1].subCater.map((itm) => ({
+            title: itm.title,
+            HaveContent: itm?.HaveContent,
             content: [
-                { title: '1. Filtering of Leads', links: ['/campaign/filtering-of-leads'] },
-                { title: '2. Call flow and Spiels', links: ['/campaign/call-flow-and-spiels'] },
-                { title: '3. Documentation', links: ['/campaign/documentation'] },
-                { title: '4. Exception Handling', links: ['/campaign/exception-handling'] }
+                itm.content.map((sub) => (
+                    { title: sub.title, link: sub.link }
+                ))
             ]
-        },
+        }))
+    ];
+
+
+
+    const optionForTraining = CategoryOBJ[6]?.subCater ? [
         {
-            title: 'Personal Loans',
-            links: ['/filtering-of-leads'],
-            content: [
-                { title: '1. Filtering of Leads', links: ['/personal-loan/filtering-of-leads'] },
-                { title: '2. Call flow and Spiels', links: ['/personal-loan/call-flow-and-spiels'] },
-                { title: '3. Other Guidelines for DocuSign', links: ['/personal-loan/other-guidlines-for-docusign'] },
-                { title: '4. documentation', links: ['/personal-loan/documentation'] },
-                { title: '5. Exception Handling', links: ['/personal-loan/exception-handling'] }
-            ]
-        },
+            HaveContent: CategoryOBJ[6].HaveContent,
+            content: CategoryOBJ[6].subCater.map((itm) => ({
+                title: itm?.title,
+                links: itm?.link,
+                HaveContent: itm?.HaveContent
+            }))
+        }
+    ] : [];
 
+
+    const optionForCustomers = CategoryOBJ[2]?.subCater ? [
         {
-            title: 'SIP Loans',
-            links: ['/filtering-of-leads'],
-            content: [
-                { title: '1. Filtering of Leads', links: ['/SIP-loan/filtering-of-leads'] },
-                { title: '2. Documentation', links: ['/SIP-loan/documentation'] },
-                { title: '3. Exception Handling', links: ['/SIP-loan/exception-handling'] }
-            ]
-        },
+            HaveContent: CategoryOBJ[2].HaveContent,
+            content: CategoryOBJ[2].subCater.map((itm) => ({
+                title: itm?.title,
+                links: itm?.link,
+                HaveContent: itm?.HaveContent
+            }))
+        }
+    ] : [];
 
-    ]
-    const optionForTraining = [
-        { title: 'Supported Products', links: ['/under-development'] },
-        { title: 'Credit Cards', links: ['/under-development'] },
-        { title: 'SIP Loans', links: ['/under-development'] },
-        { title: 'Personal Loan', links: ['/under-development'] },
-        { title: 'Deposit Products', links: ['/under-development'] },
-        { title: 'Other Bank Products', links: ['/under-development'] },
-        { title: 'Handling Objections', links: ['/under-development'] },
-        { title: 'Sales Tips for the Month', links: ['/under-development'] },
-        { title: 'FAQS', links: ['/under-development'] },
-    ]
 
-    const optionForCustomers = [
-        { title: 'Different Personas', links: ['/under-development'] },
-        { title: 'Competitor Analysis', links: ['//under-development'] },
-        { title: 'Competitor Products', links: ['/under-development'] },
-        { title: 'Key Differentiators', links: ['/under-development'] },
-    ]
-    const optionForPerfomance = [
-        { title: 'Sales Reports', links: ['/under-development'] },
-        { title: 'MIS', links: ['/under-development'] },
-        { title: 'Quality Monitoring Corner', links: ['/under-development'] },
-        { title: 'QM Guidelines', links: ['/under-development'] },
-        { title: 'Top QM Performers', links: ['/under-development'] },
-        { title: 'QM Grades', links: ['/under-development'] },
-        { title: 'Commendations', links: ['/under-development'] },
-    ]
 
-    const optionForTeam = [
-        { title: 'Table of Organization', links: ['/under-development'] },
-        { title: 'Top Performers', links: ['/under-development'] },
-    ]
+    const optionForPerfomance = CategoryOBJ[3]?.subCater ? [
+        {
+            HaveContent: CategoryOBJ[3].HaveContent,
+            content: CategoryOBJ[3].subCater.map((itm) => ({
+                title: itm?.title,
+                links: itm?.link,
+                HaveContent: itm?.HaveContent
+            }))
+        }
+    ] : [];
 
-    const optionForSales = [
-        { title: 'Announcements', links: ['/under-development'] },
-        { title: 'Transmittal and Assignment Process', links: ['/under-development'] },
-        { title: 'Validation Process', links: ['/under-development'] },
-        { title: 'Guide to Handling Verifs', links: ['/under-development'] },
-        { title: 'Guide to Handling Deficiencies', links: ['/under-development'] },
 
-    ]
+    const optionForTeam = CategoryOBJ[4]?.subCater ? [
+        {
+            HaveContent: CategoryOBJ[4].HaveContent,
+            content: CategoryOBJ[4].subCater.map((itm) => ({
+                title: itm?.title,
+                links: itm?.link,
+                HaveContent: itm?.HaveContent
+            }))
+        }
+    ] : [];
+
+
+    const optionForSales = CategoryOBJ[5]?.subCater ? [
+        {
+            HaveContent: CategoryOBJ[5].HaveContent,
+            content: CategoryOBJ[5].subCater.map((itm) => ({
+                title: itm?.title,
+                links: itm?.link,
+                HaveContent: itm?.HaveContent
+            }))
+        }
+    ] : [];
+
+
     const [isClose, setIsClose] = useState(false)
 
     const openModal = (text) => {
@@ -122,9 +130,10 @@ const Header = () => {
         switch (isSelected) {
             case 'Advisories':
                 return (
-                    <div className="menuItem Advisories" onClick={handleClick}>
-                        {optionsForAdvisories.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); window.scrollTo(0, 0) }}>
+                    <div className="menuItem advisories" onClick={handleClick}>
+                        {optionsForAdvisories[0]?.content.map((item, index) => (
+                            <div className={`navigator ${optionsForAdvisories[0]?.content.link === "/under-development" ? "" : "noCon"}`}
+                                key={index} onClick={() => { nav(item.links); window.scrollTo(0, 0) }}>
                                 {item.title}
                             </div>
                         ))}
@@ -133,8 +142,8 @@ const Header = () => {
             case 'Campaign':
                 return (
                     <div className="menuItem Campaign" onClick={handleClick}>
-                        {optionsForCampaign.map((item) => (
-                            <div key={item.title} className="categoryContainer">
+                        {optionsForCampaign.map((item, index) => (
+                            <div key={index} className="categoryContainer">
                                 <div className={`navigator`} onClick={(event) => { handleCategoryClick(item.title, event); setIsActive(item.title) }}>
                                     <div className={`naviTitle ${item.title === isActive && 'activated'}`}>
                                         {item.title}
@@ -142,9 +151,9 @@ const Header = () => {
                                 </div>
                                 {selectedCategory === item.title && (
                                     <div className="subContent" style={{ subCategoryPosition }}>
-
-                                        {item.content.map((subItem) => (
-                                            <div className="subItem" key={subItem.title} onClick={() => { nav(subItem.links.join('')); window.scrollTo(0, 0) }}>
+                                        {item.content[0].map((subItem, idx) => (
+                                            <div
+                                             className="subItem" key={idx} onClick={() => { nav(subItem.link); window.scrollTo(0, 0) }}>
                                                 {subItem.title}
                                             </div>
                                         ))}
@@ -158,8 +167,10 @@ const Header = () => {
             case 'Training':
                 return (
                     <div className="menuItem Training" onClick={handleClick}>
-                        {optionForTraining.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); window.scrollTo(0, 0) }}>
+                        {optionForTraining[0]?.content.map((item, index) => (
+                            <div key={index}
+                             className={`navigator ${optionForTraining[0]?.content.link === "/under-development" ? "" : "noCon"}`}
+                                onClick={() => { nav(item.links); window.scrollTo(0, 0) }}>
                                 {item.title}
                             </div>
                         ))}
@@ -168,8 +179,11 @@ const Header = () => {
             case 'Customers':
                 return (
                     <div className="menuItem Customers" onClick={handleClick}>
-                        {optionForCustomers.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); window.scrollTo(0, 0) }}>
+                        {optionForCustomers[0].content.map((item, index) => (
+                            <div 
+                            key={index}
+                            className={`navigator ${optionForCustomers[0]?.content.link === "/under-development" ? "" : "noCon"}`}
+                                onClick={() => { nav(item.links); window.scrollTo(0, 0) }}>
                                 {item.title}
                             </div>
                         ))}
@@ -178,8 +192,11 @@ const Header = () => {
             case 'Performance':
                 return (
                     <div className="menuItem Performance" onClick={handleClick}>
-                        {optionForPerfomance.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); window.scrollTo(0, 0) }}>
+                        {optionForPerfomance[0].content.map((item, index) => (
+                            <div
+                            key={index}
+                             className={`navigator ${optionForPerfomance[0]?.content.link === "/under-development" ? "" : "noCon"}`}
+                                onClick={() => { nav(item.links); window.scrollTo(0, 0) }}>
                                 {item.title}
                             </div>
                         ))}
@@ -188,8 +205,11 @@ const Header = () => {
             case 'Team':
                 return (
                     <div className="menuItem Team" onClick={handleClick}>
-                        {optionForTeam.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); window.scrollTo(0, 0) }}>
+                        {optionForTeam[0].content.map((item, index) => (
+                            <div
+                            key={index}
+                             className={`navigator ${optionForTeam[0]?.content.link === "/under-development" ? "" : "noCon"}`}
+                                onClick={() => { nav(item.links); window.scrollTo(0, 0) }}>
                                 {item.title}
                             </div>
                         ))}
@@ -198,8 +218,10 @@ const Header = () => {
             case 'Sales':
                 return (
                     <div className="menuItem Sales" onClick={handleClick}>
-                        {optionForSales.map((item) => (
-                            <div className="navigator" key={item.title} onClick={() => { nav(item.links.join('')); window.scrollTo(0, 0) }}>
+                        {optionForSales[0].content.map((item,index) => (
+                            <div key={index}
+                             className={`navigator ${optionForSales[0]?.content.link === "/under-development" ? "" : "noCon"}`}
+                                onClick={() => { nav(item.links); window.scrollTo(0, 0) }}>
                                 {item.title}
                             </div>
                         ))}
@@ -209,6 +231,89 @@ const Header = () => {
                 return null;
         }
     };
+
+
+    // const renderMenus = () => {
+
+    
+    //     const getOptions = () => {
+    //         switch (isSelected) {
+    //             case 'Advisories':
+    //                 return optionsForAdvisories[0];
+    //             case 'Campaign':
+    //                 return optionsForCampaign;
+    //             case 'Training':
+    //                 return optionForTraining[0];
+    //             case 'Customers':
+    //                 return optionForCustomers[0];
+    //             case 'Performance':
+    //                 return optionForPerfomance[0];
+    //             case 'Team':
+    //                 return optionForTeam[0];
+    //             case 'Sales':
+    //                 return optionForSales[0];
+    //             default:
+    //                 return null;
+    //         }
+    //     };
+    //     const options = getOptions();
+
+    //     console.log(options);
+    
+    //     if (isSelected !== "Campaign") {
+    //         return (
+    //             <div className="menuItem advisories" onClick={handleClick}>
+    //                 {options?.content.map((item) => (
+    //                     <div 
+    //                         className={`navigator ${item.link === "/under-development" ? "" : "noCon"}`}
+    //                         key={item.title}
+    //                         onClick={() => { nav(item.link); window.scrollTo(0, 0); }}
+    //                     >
+    //                         {item.title}
+    //                     </div>
+    //                 ))}
+    //             </div>
+    //         );
+    //     } else {
+    //         return (
+    //             <div className="menuItem Campaign" onClick={handleClick}>
+    //                 {options.map((item) => (
+    //                     <div key={item.title} className="categoryContainer">
+    //                         <div 
+    //                             className="navigator"
+    //                             onClick={(event) => { handleCategoryClick(item.title, event); setIsActive(item.title); }}
+    //                         >
+    //                             <div className={`naviTitle ${item.title === isActive ? 'activated' : ''}`}>
+    //                                 {item.title}
+    //                             </div>
+    //                         </div>
+    //                         {selectedCategory === item.title && (
+    //                             <div className="subContent subCategoryPosition">
+    //                                 {item.content[0].map((subItem) => (
+    //                                     <div 
+    //                                         className="subItem" 
+    //                                         key={subItem.title} 
+    //                                         onClick={() => { nav(subItem.link); window.scrollTo(0, 0); }}
+    //                                     >
+    //                                         {subItem.title}
+    //                                     </div>
+    //                                 ))}
+    //                             </div>
+    //                         )}
+    //                     </div>
+    //                 ))}
+    //             </div>
+    //         );
+    //     }
+    // };
+    
+
+
+    // useEffect(() => {
+    //     renderMenus()
+    // }, [isSelected])
+
+    
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (!event.target.closest('.absoMenu') && !event.target.closest('.absoMenuBtn')) {
@@ -222,7 +327,7 @@ const Header = () => {
         homepageContent.addEventListener('click', handleClickOutside);
         homepageContent.addEventListener('click', setIsActive(''));
         homepageContent.addEventListener('click', setSelectedCategory(''));
-        
+
 
         return () => {
             homepageContent.removeEventListener('click', handleClickOutside);
@@ -298,7 +403,8 @@ const Header = () => {
                 {isSearch === false ? (
                     <div className="dropdowns">
                         <button className='AdvisoriesBtn' onClick={() => { openModal("Advisories") }}>
-                            <div className="DropText">Advisories <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                            <div className={`DropText ${optionsForAdvisories[0]?.content.link === "/under-development" ? "" : "noContent"}`} >
+                                Advisories <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
                             {isSelected === "Advisories" && (
                                 <div className="absoMenu" onClick={() => { setIsClose(false); setSelected("Advisories") }}>
                                     {renderMenu()}
@@ -309,7 +415,8 @@ const Header = () => {
 
 
                         <button className='CampaignBtn' onClick={() => { openModal("Campaign") }}>
-                            <div className="DropText">Campaign Guidelines  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                            <div className="DropText">
+                                Campaign Guidelines  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
                             {isSelected === "Campaign" && (
                                 <div className="absoMenu">
                                     {renderMenu()}
@@ -319,7 +426,8 @@ const Header = () => {
                         </button>
 
                         <button className='TrainingBtn' onClick={() => { openModal("Training") }}>
-                            <div className="DropText">Training  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                            <div className={`DropText ${optionForTraining[0]?.content.link === "/under-development" ? "" : "noContent"}`} >
+                                Training  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
                             {isSelected === "Training" && (
                                 <div className="absoMenu">
                                     {renderMenu()}
@@ -329,7 +437,8 @@ const Header = () => {
                         </button>
 
                         <button className='CustomersBtn' onClick={() => { openModal("Customers") }}>
-                            <div className="DropText">Our Customers  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                            <div className={`DropText ${optionForCustomers[0]?.content.link === "/under-development" ? "" : "noContent"}`} >
+                                Our Customers  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
                             {isSelected === "Customers" && (
                                 <div className="absoMenu">
                                     {renderMenu()}
@@ -338,7 +447,8 @@ const Header = () => {
                         </button>
 
                         <button className='PerformanceBtn' onClick={() => { openModal("Performance") }}>
-                            <div className="DropText">Performance  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                            <div className={`DropText ${optionForPerfomance[0]?.content.link === "/under-development" ? "" : "noContent"}`} >
+                                Performance  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
                             {isSelected === "Performance" && (
                                 <div className="absoMenu">
                                     {renderMenu()}
@@ -347,7 +457,8 @@ const Header = () => {
                         </button>
 
                         <button className='TeamBtn' onClick={() => { openModal("Team") }}>
-                            <div className="DropText">Team Updates  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                            <div className={`DropText ${optionForTeam[0]?.content.link === "/under-development" ? "" : "noContent"}`} >
+                                Team Updates  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
                             {isSelected === "Team" && (
                                 <div className="absoMenu">
                                     {renderMenu()}
@@ -356,7 +467,8 @@ const Header = () => {
                         </button>
 
                         <button className='SalesBtn' onClick={() => { openModal("Sales") }}>
-                            <div className="DropText">Sales Support Corner  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
+                            <div className={`DropText ${optionForSales[0]?.content.link === "/under-development" ? "" : "noContent"}`} >
+                                Sales Support Corner  <span><ion-icon name="chevron-down-outline"></ion-icon></span></div>
                             {isSelected === "Sales" && (
                                 <div className="absoMenu">
                                     {renderMenu()}

@@ -18,65 +18,58 @@ export const dataSearch = [
   { headerTitle: "SIP Loans", title: "Filtering of Leads", link: "/SIP-loan/filtering-of-leads" },
   { headerTitle: "SIP Loans", title: "Call Flow and Spiels", link: "/call-flow-and-spiels" },
   { headerTitle: "SIP Loans", title: "Documentation", link: "/SIP-loan/documentation" },
-  { headerTitle: "SIP Loans", title: "Exception Handling", link: "/SIP-loan/exception-handling "},
+  { headerTitle: "SIP Loans", title: "Exception Handling", link: "/SIP-loan/exception-handling " },
 
 
-//ADVISORIES 
-{ title: "Advisories", link: "/advisories" },
-{ headerTitle: "Advisories", title: "New Campaigns (per product)", link: "/under-development" },
-{ headerTitle: "Advisories", title: "Promos (per product)", link: "/under-development" },
-{ headerTitle: "Advisories", title: "New Guidelines (per product)", link: "/under-development" },
+  //ADVISORIES 
+  { title: "Advisories", link: "/advisories" },
+  { headerTitle: "Advisories", title: "New Campaigns (per product)", link: "/under-development" },
+  { headerTitle: "Advisories", title: "Promos (per product)", link: "/under-development" },
+  { headerTitle: "Advisories", title: "New Guidelines (per product)", link: "/under-development" },
 
 
-//TRAINING
+  //TRAINING
 
-{ headerTitle: "Training", title: "Campaign Guidelines (per product)", link: "/under-development" },
-{ headerTitle: "Training", title: "Training", link: "/under-development" },
-{ headerTitle: "Training", title: "Our Customers", link: "/under-development" },
-{ headerTitle: "Training", title: "Performance", link: "/under-development" },
-{ headerTitle: "Training", title: "Team Updates", link: "/under-development" },
-{ headerTitle: "Training", title: "Sales Support Corner", link: "/under-development" },
-{ headerTitle: "Training", title: "Announcements", link: "/under-development" },
-{ headerTitle: "Training", title: "Transmittal and Assignment Process", link: "/under-development" },
-{ headerTitle: "Training", title: "Validation Process", link: "/under-development" },
-{ headerTitle: "Training", title: "Guide to Handling Verifs", link: "/under-development" },
-{ headerTitle: "Training", title: "Guide to Handling Deficiencies", link: "/under-development" },
-{ headerTitle: "Training", title: "Sales Reports", link: "/under-development" },
-{ headerTitle: "Training", title: "MIS", link: "/under-development" },
-{ headerTitle: "Training", title: "Quality Monitoring Corner", link: "/under-development" },
-{ headerTitle: "Training", title: "Top QM Performers", link: "/under-development" },
-{ headerTitle: "Training", title: "QM Grades", link: "/under-development" },
-{ headerTitle: "Training", title: "Commendations", link: "/under-development" },
-{ headerTitle: "Training", title: "Table of Organization", link: "/under-development" },
-{ headerTitle: "Training", title: "Top Performers", link: "/under-development" },
-{ headerTitle: "Training", title: "FAQS", link: "/under-development" },
+  { headerTitle: "Training", title: "Campaign Guidelines (per product)", link: "/under-development" },
+  { headerTitle: "Training", title: "Training", link: "/under-development" },
+  { headerTitle: "Training", title: "Our Customers", link: "/under-development" },
+  { headerTitle: "Training", title: "Performance", link: "/under-development" },
+  { headerTitle: "Training", title: "Team Updates", link: "/under-development" },
+  { headerTitle: "Training", title: "Sales Support Corner", link: "/under-development" },
+  { headerTitle: "Training", title: "Announcements", link: "/under-development" },
+  { headerTitle: "Training", title: "Transmittal and Assignment Process", link: "/under-development" },
+  { headerTitle: "Training", title: "Validation Process", link: "/under-development" },
+  { headerTitle: "Training", title: "Guide to Handling Verifs", link: "/under-development" },
+  { headerTitle: "Training", title: "Guide to Handling Deficiencies", link: "/under-development" },
+  { headerTitle: "Training", title: "Sales Reports", link: "/under-development" },
+  { headerTitle: "Training", title: "MIS", link: "/under-development" },
+  { headerTitle: "Training", title: "Quality Monitoring Corner", link: "/under-development" },
+  { headerTitle: "Training", title: "Top QM Performers", link: "/under-development" },
+  { headerTitle: "Training", title: "QM Grades", link: "/under-development" },
+  { headerTitle: "Training", title: "Commendations", link: "/under-development" },
+  { headerTitle: "Training", title: "Table of Organization", link: "/under-development" },
+  { headerTitle: "Training", title: "Top Performers", link: "/under-development" },
+  { headerTitle: "Training", title: "FAQS", link: "/under-development" },
 
-{ headerTitle: "Training", title: "Different Personas", link: "/under-development" },
-{ headerTitle: "Training", title: "Competitor Analysis", link: "/under-development" },
-{ headerTitle: "Training", title: "Competitor Products", link: "/under-development" },
-{ headerTitle: "Training", title: "Key Differentiators", link: "/under-development" },
+  { headerTitle: "Training", title: "Different Personas", link: "/under-development" },
+  { headerTitle: "Training", title: "Competitor Analysis", link: "/under-development" },
+  { headerTitle: "Training", title: "Competitor Products", link: "/under-development" },
+  { headerTitle: "Training", title: "Key Differentiators", link: "/under-development" },
 
-
-
-
-
-{ headerTitle: "Training", title: "Sales Tips for the Month", link: "/under-development" },
-{ headerTitle: "", title: "Credit Cards", link: "/under-development" },
-{ headerTitle: "", title: "SIP Loans", link: "/under-development" },
-{ headerTitle: "", title: "Personal Loan", link: "/under-development" },
-{ headerTitle: "", title: "Deposit Products", link: "/under-development" },
-{ headerTitle: "", title: "Other Bank Products", link: "/under-development" },
-{ headerTitle: "", title: "Handling Objections", link: "/under-development" },
-{ headerTitle: "", title: "Sales Reports", link: "/under-development" },
-{ headerTitle: "", title: "Different Personas", link: "/under-development" },
-{ headerTitle: "", title: "Competitor Analysis", link: "/under-development" },
-{ headerTitle: "", title: "Competitor Products", link: "/under-development" },
-{ headerTitle: "", title: "Key Differentiators", link: "/under-development" },
+  { headerTitle: "Training", title: "Sales Tips for the Month", link: "/under-development" },
+  { headerTitle: "", title: "Credit Cards", link: "/under-development" },
+  { headerTitle: "", title: "SIP Loans", link: "/under-development" },
+  { headerTitle: "", title: "Personal Loan", link: "/under-development" },
+  { headerTitle: "", title: "Deposit Products", link: "/under-development" },
+  { headerTitle: "", title: "Other Bank Products", link: "/under-development" },
+  { headerTitle: "", title: "Handling Objections", link: "/under-development" },
+  { headerTitle: "", title: "Sales Reports", link: "/under-development" },
+  { headerTitle: "", title: "Different Personas", link: "/under-development" },
+  { headerTitle: "", title: "Competitor Analysis", link: "/under-development" },
+  { headerTitle: "", title: "Competitor Products", link: "/under-development" },
+  { headerTitle: "", title: "Key Differentiators", link: "/under-development" },
 ];
 
-// Example usage:
-console.log(dataSearch[0].title); // Outputs: "Advisories"
-console.log(dataSearch[0].link); // Outputs: "/advisories"
 
 
 
@@ -106,7 +99,7 @@ console.log(dataSearch[0].link); // Outputs: "/advisories"
 //   { headerTitle: "SIP Loans", title: "Exception Handling", link: "/SIP-loan/exception-handling "},
 
 
-// //ADVISORIES 
+// //ADVISORIES
 // { title: "Advisories", link: "/advisories" },
 // { headerTitle: "Advisories", title: "New Campaigns (per product)", link: "/new-campaigns" },
 // { headerTitle: "Advisories", title: "Promos (per product)", link: "/promos" },

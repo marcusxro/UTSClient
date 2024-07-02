@@ -9,7 +9,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999999999;
+  z-index: 999;
   background-color: white;
   box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.75);
@@ -1202,8 +1202,8 @@ html {
 }
 
 .resultText {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 10px;
   text-align: left;
   width: 100%;
   font-size: clamp(.6rem, 7vw, 1.5rem);
@@ -1211,13 +1211,66 @@ html {
   color: black;
 }
 
+.SearchedItem .navi {
+  color: black;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+
+  .naviItem {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .activeTabination {
+    background-color: #a8181f;
+    border-radius: 10px;
+    color: white;
+  }
+}
+
 .resultCon {
   display: flex;
   flex-direction: column;
-  padding-top: 90px;
+  padding-top: 10px;
   padding-bottom: 90px;
   color: black;
   gap: 10px;
+}
+
+.SearchedItem {
+  .filter {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+
+
+    select {  
+      padding: 10px;
+      border-radius: 10px;
+      outline: none;
+    }
+  }
+}
+
+.innertConSearched {
+  .Title {
+    width: 100%;
+    max-width: 500px;
+
+    .line {
+      border: 1px solid #ececec;
+      margin-bottom: 15px;
+
+    }
+    h3 {
+      width: 100%;
+      color: #3f3e3e;
+      cursor: pointer;
+    }
+  }
 }
 
 .searchedTitle {
@@ -2042,4 +2095,15 @@ Header .progress {
     height: 100%;
     transition: width .5s ease-in-out;
   }
+}
+
+
+.noContent {
+  color: #9b9a9a;
+}
+
+
+.noCon {
+  background-color: #333;
+  color: white;
 }

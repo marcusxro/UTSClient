@@ -13,7 +13,7 @@ const Footer = () => {
           </div>
           <div className="name">Rachel Erlyn Magsakay</div>
           <div className="number">
-            +63 917-826-0369
+            +63 917-826-0367
           </div>
         </div>
         <div className="contacts">

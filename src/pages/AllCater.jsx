@@ -29,9 +29,13 @@ const AllCater = () => {
                                 <div className="SubCater">
                                     {
                                         item?.subCater?.map((sub, index) => (
-                                            <div className="item" key={index} onClick={() => {nav(sub.link); window.scrollTo(0, 0)}}>{index + 1}. {sub.title}</div>
+                                            <>
+                                                <div className="item" key={index} onClick={() => { nav(sub.link); window.scrollTo(0, 0) }}>{index + 1}. {sub.title}</div>
+                                                .
+                                            </>
                                         ))
                                     }
+
                                 </div>
 
                             </div>
@@ -40,12 +44,11 @@ const AllCater = () => {
                 }
             </div>
 
-
-                <div className="naviBack">
-                    <button onClick={() => {nav('/Home'); window.scrollTo(0,0)}}>
-                        HOME <ion-icon name="home-outline"></ion-icon>
-                    </button>
-                </div>
+            <div className="naviBack">
+                <button onClick={() => { nav('/Home'); window.scrollTo(0, 0) }}>
+                    HOME <ion-icon name="home-outline"></ion-icon>
+                </button>
+            </div>
 
             <Footer />
         </div>
