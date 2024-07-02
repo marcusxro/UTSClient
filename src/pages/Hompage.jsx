@@ -10,17 +10,22 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 import { Navigation, Pagination, Scrollbar, A11y, EffectFade, } from 'swiper/modules';
-import firstSlide from '../images/IMG_6582.png'
+import firstSlide from '../images/Homepage.png'
 import figureThee from '../images/IMG_6590.png'
 import figureTwo from '../images/IMG_6602.png'
 import figureFour from '../images/IMG_6595.png'
 import figueFive from '../images/IMG_6627.png'
 import figureSlider from '../images/IMG_6585.png'
+import advisoryImg from '../images/frontImg.jpg'
+
+import WhoWeAre from '../images/MTXX_MR20240430_141246247.jpg'
 import Footer from '../comp/Footer';
 import { useNavigate } from 'react-router-dom';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 const Hompage = () => {
@@ -29,33 +34,6 @@ const Hompage = () => {
 
   const nav = useNavigate('')
 
-
-  const [imgList] = useState([
-    { FirstIMG: firstSlide },
-    { SecIMG: figureTwo },
-    { ThirdIMG: figureThee },
-    { FourthIMG: figureFour },
-    { FifthIMG: figueFive },
-    { FigureSlider: figureSlider },
-  ]);
-
-  const [loadedImages, setLoadedImages] = useState(0);
-  const [loading, setLoading] = useState(true);
-
-  const handleImageLoad = () => {
-    setLoadedImages((prev) => prev + 1);
-    setLoading(false);
-  };
-
-  const handleImageError = () => {
-    setLoadedImages((prev) => prev + 1); 
-  };
-
-  useEffect(() => {
-    if (loadedImages === imgList.length) {
-      setLoading(false);
-    }
-  }, [loadedImages, imgList.length, loading]);
 
 
 
@@ -104,10 +82,7 @@ const Hompage = () => {
                 <SwiperSlide>
 
                   <img
-                    src={imgList[0].FirstIMG}
-                    alt={imgList.title}
-                    onLoad={handleImageLoad}
-                    onError={handleImageError}
+                    src={firstSlide}
                   />
                 
                   <div className="absoCon">
@@ -140,7 +115,7 @@ const Hompage = () => {
             <div className="imageGallery">
               <div className="imageItem">
                 <div className="imgCon">
-                  <img src={figureTwo} alt="" />
+                  <img src={advisoryImg} alt="" />
                 </div>
                 <div className="desc">
                   <div className="title">
@@ -217,7 +192,7 @@ const Hompage = () => {
             </div>
             <div className="lowerSection">
               <div className="imgCon">
-                <img src={figureSlider} alt="" />
+                <img src={WhoWeAre} alt="" />
               </div>
               <div className="desc">
                 <div className="title">

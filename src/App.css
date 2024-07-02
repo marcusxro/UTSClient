@@ -368,7 +368,7 @@ header .menuEl button .DropText span {
   width: 100%;
   height: 100%;
 
-  background: rgba(63, 56, 56, 0.5);
+  background: rgba(61, 50, 50, 0.5);
 }
 
 .Homepage .HomepageContent .swiper .swiper-slide .absoCon {
@@ -498,10 +498,9 @@ header .menuEl button .DropText span {
 
 .imageGallery .imageItem .imgCon {
   width: 100%;
-  height: 100%;
+  height: 400px;
   max-width: 50%;
   background-position: center;
-  max-height: 50%;
   overflow: hidden;
 }
 
@@ -619,7 +618,11 @@ header .menuEl button .DropText span {
   align-items: center;
   /* Center vertically */
   width: 100%;
-  height: 40vh;
+  height: 50vh;
+
+  img {
+    object-position: top center;
+  }
 }
 
 @media only screen and (max-width: 1240px) {
@@ -1247,7 +1250,7 @@ html {
     padding-bottom: 10px;
 
 
-    select {  
+    select {
       padding: 10px;
       border-radius: 10px;
       outline: none;
@@ -1265,6 +1268,7 @@ html {
       margin-bottom: 15px;
 
     }
+
     h3 {
       width: 100%;
       color: #3f3e3e;
