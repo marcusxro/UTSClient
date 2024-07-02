@@ -95,7 +95,7 @@ const Hompage = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <img src={figureSlider} alt="" />
+                  <img src={firstSlide} alt="" />
                 </SwiperSlide>
                 <SwiperSlide> <img src={firstSlide} alt="" /></SwiperSlide>
                 <SwiperSlide> <img src={firstSlide} alt="" /></SwiperSlide>
