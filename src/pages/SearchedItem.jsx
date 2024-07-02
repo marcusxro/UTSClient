@@ -3,13 +3,14 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Header from '../comp/Header'
 import { dataSearch } from '../CampaignResources/SearchedObject'
 import Footer from '../comp/Footer'
-import { innerContent } from '../comp/Category'
+import { innerContent, CategoryOBJ} from '../comp/Category'
 
 const SearchedItem = () => {
     const { id } = useParams()
 
     const nav = useNavigate()
     const [query, setQuery] = useState('')
+
     const submitQuery = (e) => {
         e.preventDefault()
         if (!query) {
@@ -40,7 +41,19 @@ const SearchedItem = () => {
         setInnerContent(fitleredSubContent)
     }, [id, query,]);
 
+    const [conFilter, setConFilter] = useState('')
+    const [SubFilter, setSubFilter] = useState('')
 
+
+
+    useEffect(() => {
+  
+        if (conFilter || SubFilter) {
+            const filtered = dataSearch.filter((itm) => itm.title === conFilter)
+            console.log(filtered)
+        }
+
+    }, [conFilter, SubFilter, dataSearch])
 
     return (
         <div className='SearchedItem closer' >
@@ -66,19 +79,39 @@ const SearchedItem = () => {
                             Sub-Content <span>({innerContents.length})</span>
                         </div>
                     </div>
-                    {filteredObject.length != 0 ? (
-                        <div className="resultText">
-                            Results for "{id}"
-                        </div>
-                    ) : (
-                        <div className="resultText">
-                            no results found for "{id}"
-                        </div>
-                    )}
+                    {
+                        tabination === 'content' ?
+                            <>
+                                {filteredObject.length != 0 ? (
+                                    <div className="resultText">
+                                        Results for "{id}"
+                                    </div>
+                                ) : (
+                                    <div className="resultText">
+                                        no results found for "{id}"
+                                    </div>
+                                )}
+                            </>
+                            :
+                            <>
+                                {innerContent.length != 0 ? (
+                                    <div className="resultText">
+                                        Results for "{id}"
+                                    </div>
+                                ) : (
+                                    <div className="resultText">
+                                        no results found for "{id}"
+                                    </div>
+                                )}
+                            </>
+                    }
                     {
                         tabination === 'content' ?
                             <div className="filter">
-                                <select>
+                                <select
+                                    onChange={(e) => { setConFilter(e.target.value) }}
+                                    value={conFilter}
+                                >
                                     <option>Filter By:</option>
                                     <option value="Advisories">Advisories</option>
                                     <option value="Campaign Guidelines">Campaign Guidelines</option>
@@ -87,11 +120,15 @@ const SearchedItem = () => {
                                     <option value="Team Updates">Team Updates</option>
                                     <option value="Sales Support Corner">Sales Support Corner</option>
                                     <option value="Advisories">Training</option>
+                                    <option value="">none</option>
                                 </select>
-                            </div> 
+                            </div>
                             :
                             <div className="filter">
-                                <select>
+                                <select
+                                    onChange={(e) => { setSubFilter(e.target.value) }}
+                                    value={SubFilter}
+                                >
                                     <option>Filter By:</option>
                                     <option value="Advisories">Advisories</option>
                                     <option value="Campaign Guidelines">Campaign Guidelines</option>
@@ -100,6 +137,7 @@ const SearchedItem = () => {
                                     <option value="Team Updates">Team Updates</option>
                                     <option value="Sales Support Corner">Sales Support Corner</option>
                                     <option value="Advisories">Training</option>
+                                    <option value="">none</option>
                                 </select>
                             </div>
                     }
