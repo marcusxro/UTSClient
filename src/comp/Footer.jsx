@@ -13,7 +13,7 @@ const Footer = () => {
           </div>
           <div className="name">Rachel Erlyn Magsakay</div>
           <div className="number">
-            +63 917-826-0367
+          rermagsakay@bpi.com.ph
           </div>
         </div>
         <div className="contacts">
@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
           <div className="name">Cleiza Marie Ordonio</div>
           <div className="number">
-            +63 917-598-2534
+          cmfordonio@bpi.com.ph
           </div>
         </div>
         <div className="contacts">
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
           <div className="name">Paul Mendoza</div>
           <div className="number">
-            +63 998-857-0047
+          pdmendoza@bpi.com.ph
           </div>
         </div>
         <div className="goUp" onClick={() => { window.scrollTo(0, 0) }}>

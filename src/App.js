@@ -22,6 +22,7 @@ import React, { useEffect, useState } from 'react';
 import ProtectedRoute from './ProtectedRoute';
 import { onAuthStateChanged } from 'firebase/auth';
 import { Auth } from './Authentication';
+import NotFound from './pages/NotFound';
 
 export const Context = React.createContext()
 
@@ -42,7 +43,7 @@ function App() {
         <div className="App">
           <Routes>
             <Route path='/' element={activeUser ? <></> : <SignIn />} />
-            <Route path='/Home' element={<ProtectedRoute element={activeUser ? <Hompage /> : <></>}  />} />
+            <Route path='/Home' element={<ProtectedRoute element={activeUser ? <Hompage /> : <></>} />} />
             <Route path='/all-categories' element={<ProtectedRoute element={activeUser ? <AllCater /> : <></>} />} />
             <Route path='/query/:id' element={<ProtectedRoute element={activeUser ? <SearchedItem /> : <></>} />} />
             <Route path='/category/:item' element={<ProtectedRoute element={activeUser ? <CaterPage /> : <></>} />} />
@@ -59,6 +60,9 @@ function App() {
             <Route path='/SIP-loan/documentation' element={<ProtectedRoute element={activeUser ? <SIPDocu /> : <></>} />} />
             <Route path='/SIP-loan/exception-handling' element={<ProtectedRoute element={activeUser ? <SIPException /> : <></>} />} />
             <Route path='/under-development' element={<ProtectedRoute element={activeUser ? <UnderDev /> : <></>} />} />
+            <Route path='/*' element={<NotFound />} />
+
+
           </Routes>
         </div>
       </Router>
