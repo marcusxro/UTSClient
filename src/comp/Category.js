@@ -123,7 +123,7 @@ export const innerContent = [
     {
         Category: 'Campaign Guidelines',
         SemiCat: 'Credit Cards',
-        title: "Filtering Of Leads",
+        title: "Filtering of Leads", //done
         content: [
             { title: "Check name and birth date of client. Exclude the following", link: "/campaign/filtering-of-leads" },
             { title: "Check Cardlink (PCNL, PCIC, PCCP and PCUS). Exclude the following", link: "/campaign/filtering-of-leads" },
@@ -262,7 +262,7 @@ export const innerContent = [
     {
         Category: 'Campaign Guidelines',
         SemiCat: 'Personal Loans',
-        title: 'Call Flow and Spiels',
+        title: 'Call Flow And Spiels',
         content: [
             { title: "Opening Spiel", link: "/personal-loan/call-flow-and-spiels" },
             { title: "Purpose of Call", link: "/personal-loan/call-flow-and-spiels" },

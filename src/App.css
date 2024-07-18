@@ -2156,4 +2156,35 @@ Header .progress {
   padding: 10px 20px;
   font-size: 14px;
   font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+
+.filterRow{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+
+  
+
+  select {
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  
+.filterRow{
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-end;
+  select {
+    width: 100%;
+  }
+}
 }
