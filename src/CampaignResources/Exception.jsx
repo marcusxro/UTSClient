@@ -1,10 +1,44 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Header from '../comp/Header'
 import Footer from '../comp/Footer'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { innerContent } from '../comp/Category'
 
 const Exception = () => {
+
     const nav = useNavigate()
+
+    const contentTitle = innerContent[3]?.content
+    const location = useLocation();
+    const { state } = location;
+    const headerTitle = state?.headerTitle; // The state directly contains the headerTitle
+
+    // Create refs for each title
+    const titleRefs = useRef([]);
+
+    // Initialize the refs array
+    if (titleRefs.current.length !== contentTitle.length) {
+        titleRefs.current = Array(contentTitle.length).fill().map((_, i) => titleRefs.current[i] || React.createRef());
+    }
+
+    useEffect(() => {
+        if (headerTitle) {
+            // Find the matching title and scroll to it
+            const matchingTitleIndex = contentTitle.findIndex(item => item.title === headerTitle);
+            if (matchingTitleIndex !== -1) {
+                const element = titleRefs.current[matchingTitleIndex].current;
+                const topOffset = element.getBoundingClientRect().top;
+                const offset = window.pageYOffset + topOffset - 100; // Adjust 100 as needed
+
+                window.scrollTo({
+                    top: offset,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, [headerTitle, contentTitle, titleRefs]);
+
+
     return (
         <div className='CampaignPage closer'>
             <Header />
@@ -14,7 +48,8 @@ const Exception = () => {
             <div className='titleForPage'>EXCEPTION HANDLING</div>
                 <div className="margLeft">
                 <article>
-                    <h2>Mother’s Maiden Name Discrepancy</h2>
+                    <h2 className={`liTitle ${contentTitle[0].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[0]}> {contentTitle[0].title}</h2>
                     <ol>
                         <li>
                             <section>
@@ -65,7 +100,8 @@ const Exception = () => {
                         </li>
                         <li>
                             <section>
-                                <h2>Name Discrepancy</h2>
+                                <h2 className={`liTitle ${contentTitle[1].title === headerTitle ? 'searched' : ''}`}
+                                ref={titleRefs.current[1]}> {contentTitle[1].title}</h2>
                                 <table border={1}>
                                     <thead>
                                         <tr>
@@ -120,9 +156,11 @@ const Exception = () => {
                 </article>
 
                 <section>
-                    <h2>RM Number Discrepancy</h2>
+                    <h2 className={`liTitle ${contentTitle[2].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[2]}> {contentTitle[2].title}</h2>
                     <article>
-                        <h3>Scenario 1:</h3>
+                        <h3 className={`liTitle ${contentTitle[3].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[3]}> {contentTitle[3].title}</h3>
                         <p>RM number in database is under Maiden Name but client is already married and already has an RM number under married name.</p>
                         <h4>Illustration:</h4>
                         <ul>
@@ -138,7 +176,8 @@ const Exception = () => {
                         </ul>
                     </article>
                     <article>
-                        <h3>Scenario 2:</h3>
+                        <h3 className={`liTitle ${contentTitle[4].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[4]}> {contentTitle[4].title}</h3>
                         <p>RM number in database is not found in Sugar/Salesforce but client has an RM Record under correct name.</p>
                         <h4>Illustration:</h4>
                         <ul>
@@ -158,7 +197,8 @@ const Exception = () => {
                 </section>
 
                 <section>
-                    <h2>Other RM Discrepancies</h2>
+                    <h2 className={`liTitle ${contentTitle[5].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[5]}> {contentTitle[5].title}</h2>
                     <table border={1}>
                         <thead>
                             <tr>
@@ -187,19 +227,23 @@ const Exception = () => {
                     </table>
                 </section>
                 <section>
-                    <h2>Other Discrepancies</h2>
+                    <h2 className={`liTitle ${contentTitle[6].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[6]}> {contentTitle[6].title}</h2>
                     <p>For other discrepancies not indicated/specified, please ask for approval.</p>
                 </section>
 
                 <section>
-                    <h2>TIN/SSS Number</h2>
+                    <h2 className={`liTitle ${contentTitle[7].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[7]}> {contentTitle[7].title}</h2>
                     <article>
-                        <h3>For TIN:</h3>
+                        <h3 className={`liTitle ${contentTitle[8].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[8]}> {contentTitle[8].title}</h3>
                         <ul>
                             <li>If employed, TIN or SSS number is required.</li>
                             <li>If Passive income earner/Self-employed/OFW, and client does not have TIN or SSS number, or can no longer recall/retrieve, ok to proceed with the application.</li>
                         </ul>
-                        <h3>For SSS Number:</h3>
+                        <h3 className={`liTitle ${contentTitle[9].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[9]}> {contentTitle[9].title}</h3>
                         <ul>
                             <li>UMID can be replace SSS number.</li>
                             <li>If client has no TIN number, indicate "0".</li>
@@ -215,9 +259,11 @@ const Exception = () => {
                 </section>
 
                 <section>
-                    <h2>Zip Code</h2>
+                    <h2 className={`liTitle ${contentTitle[10].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[10]}> {contentTitle[10].title}</h2>
                     <article>
-                        <h3>In case ZIP code field drop down in regression is incomplete/not found:</h3>
+                        <h3 className={`liTitle ${contentTitle[11].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[11]}> {contentTitle[11].title}:</h3>
                         <ul>
                             <li>Use the zip code within the same City/Town/Province (Nearest Town/City Province).</li>
                             <li>Use CPO (TSA may use the ZIP Code Database / Knowledge Database as reference).</li>
@@ -232,7 +278,8 @@ const Exception = () => {
                 </section>
 
                 <section>
-                    <h2>E-mail Address</h2>
+                    <h2 className={`liTitle ${contentTitle[12].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[12]}> {contentTitle[12].title}</h2>
                     <p>Maximum of 30 alphanumeric characters.</p>
                     <p>Validation value is &lt;value1&gt;@&lt;value2&gt;.com.</p>
                     <p>Only underscore (_) and period are allowed in the value 1 field.</p>
@@ -242,12 +289,14 @@ const Exception = () => {
                 </section>
 
                 <section>
-                    <h2>Employment Information</h2>
+                    <h2 className={`liTitle ${contentTitle[13].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[13]}> {contentTitle[13].title}</h2>
                     <p>Years with Present Employer/Business: (Indicate '0' for tenure with less than 1 year)</p>
                 </section>
 
                 <section>
-                    <h2>Business Address</h2>
+                    <h2 className={`liTitle ${contentTitle[14].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[14]}> {contentTitle[14].title}</h2>
                     <p>For clients who are OFW (except seafarers) and home-based/freelance:</p>
                     <ul>
                         <li>Company name should not be indicated in the office address field. Office address should be exactly the same as that of the residence address.</li>
@@ -256,7 +305,8 @@ const Exception = () => {
                 </section>
 
                 <section>
-                    <h2>Company Name</h2>
+                    <h2 className={`liTitle ${contentTitle[15].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[15]}> {contentTitle[15].title}</h2>
                     <p>If client is employed under an agency, but is linked to a Primary/Deployed Company:</p>
                     <ul>
                         <li>Indicate Agency name only in the Company Name field (e.g. Yondu Inc.).</li>
@@ -265,7 +315,8 @@ const Exception = () => {
                 </section>
 
                 <section>
-                    <h2>Billing Address</h2>
+                    <h2 className={`liTitle ${contentTitle[16].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[16]}> {contentTitle[16].title}</h2>
                     <p>OCT (Out of Courier Territory)</p>
                     <ul>
                         <li>If OCT: Indicate name of c/o person in the billing address. Inform client that he/she may request COA once card is received for the delivery of SOA. If no alternative address, should not push through with the application.</li>
@@ -276,30 +327,35 @@ const Exception = () => {
                     </ul>
                     <p>Guidelines on address format:</p>
 
-                    <h2>Address Formats</h2>
+                    <h2 className={`liTitle ${contentTitle[17].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[17]}> {contentTitle[17].title}</h2>
                 <ol>
                     <li>
                     <section>
                         <article>
-                            <h3>FORMAT 1 (residential house):</h3>
+                            <h3 className={`liTitle ${contentTitle[18].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[18]}> {contentTitle[18].title}:</h3>
                             <ul>
                                 <li>Address Line 1 (30 characters max): house no., street/road/avenue, subd/village/compound</li>
                                 <li>Address Line 2 (30 characters max): village/town/district/barangay</li>
                                 <li>Address Line 3 (28 characters max): ZIP code, city name</li>
                             </ul>
-                            <h3>FORMAT 2 (apartment/condo):</h3>
+                            <h3 className={`liTitle ${contentTitle[19].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[19]}> {contentTitle[19].title}:</h3>
                             <ul>
                                 <li>Address Line 1 (30 characters max): Apartment Number, Floor Number, Name of Building, Street Number and Street Name</li>
                                 <li>Address Line 2 (30 characters max): village/town/district/barangay</li>
                                 <li>Address Line 3 (28 characters max): ZIP code, city name</li>
                             </ul>
-                            <h3>FORMAT 3 (company):</h3>
+                            <h3 className={`liTitle ${contentTitle[20].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[20]}> {contentTitle[20].title}:</h3>
                             <ul>
                                 <li>Address Line 1 (30 characters max): Company Name, Floor Number, Name of Building, Street Number and Street Name</li>
                                 <li>Address Line 2 (30 characters max): village/town/district/barangay</li>
                                 <li>Address Line 3 (28 characters max): ZIP code, city name</li>
                             </ul>
-                            <h3>FORMAT 4 (provincial): Indicate landmark if it can fit regression characters</h3>
+                            <h3 className={`liTitle ${contentTitle[21].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[21]}> {contentTitle[21].title}</h3>
                             <ul>
                                 <li>Address Line 1 (30 characters max): Landmark, zone no./compound</li>
                                 <li>Address Line 2 (30 characters max): village/town/district/barangay</li>

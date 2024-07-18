@@ -2140,3 +2140,20 @@ Header .progress {
     }
   }
 }
+
+
+.searched {
+  background-color: #88494c;
+  padding: 5px;
+  color: white;
+  border-radius: 10px;
+}
+
+.searchedTitle a {
+  background-color: #a8181f;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: normal;
+}

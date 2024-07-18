@@ -122,60 +122,301 @@ export const CategoryOBJ = [
 export const innerContent = [
     {
         Category: 'Campaign Guidelines',
+        SemiCat: 'Credit Cards',
         title: "Filtering Of Leads",
         content: [
-            { title: "Check name and birth date of client. Exclude the following", link: "/under-development" },
-            { title: "Check Cardlink (PCNL, PCIC, PCCP and PCUS). Exclude the following", link: "/under-development" },
-            { title: "Check RM record in Salesforce.", link: "/under-development" },
-            { title: "Check if client is a Unibanker (N/Q - Unibanker and all other BPI subsidiaries such BPI MS/BPLAC/BFB/BPI Direct Banko)", link: "/under-development" },
-            { title: "Exclude clients with invalid number or no contact number", link: "/under-development" },
-            { title: "Check if client has existing application in CCFES", link: "/under-development" },
-            { title: "Check if with application from previous campaign (Not Qualified)", link: "/under-development" },
-            { title: "Filtering of Leads: SMS - Credit Card Campaign", link: "/under-development" },
-            { title: "Sample SMS", link: "/under-development" },
-            { title: "Reminders", link: "/under-development" },
+            { title: "Check name and birth date of client. Exclude the following", link: "/campaign/filtering-of-leads" },
+            { title: "Check Cardlink (PCNL, PCIC, PCCP and PCUS). Exclude the following", link: "/campaign/filtering-of-leads" },
+            { title: "Check RM record in Salesforce.", link: "/campaign/filtering-of-leads" },
+            { title: "Check if client is a Unibanker (N/Q - Unibanker and all other BPI subsidiaries such BPI MS/BPLAC/BFB/BPI Direct Banko)", link: "/campaign/filtering-of-leads" },
+            { title: "Exclude clients with invalid number or no contact number", link: "/campaign/filtering-of-leads" },
+            { title: "Check if client has existing application in CCFES", link: "/campaign/filtering-of-leads" },
+            { title: "Check if with application from previous campaign (Not Qualified)", link: "/campaign/filtering-of-leads" },
+            { title: "Filtering of Leads: SMS - Credit Card Campaign", link: "/campaign/filtering-of-leads" },
+            { title: "Sample SMS", link: "/campaign/filtering-of-leads" },
+            { title: "Reminders", link: "/campaign/filtering-of-leads" },
         ]
     },
     {
         Category: 'Campaign Guidelines',
+        SemiCat: 'Credit Cards',
         title: "Call Flow And Spiels",
         content: [
-            { title: "OPENING SPIEL", link: "/under-development" },
-            { title: "OUTBOUND", link: "/under-development" },
-            { title: "INBOUND", link: "/under-development" },
-            { title: "PURPOSE OF CALL", link: "/under-development" },
-            { title: "Data Privacy Spiel", link: "/under-development" },
-            { title: "SOURCE", link: "/under-development" },
-            { title: "WARM CALLS", link: "/under-development" },
-            { title: "Client Initiated Request [e.g. SMS]", link: "/under-development" },
-            { title: "Branch Positive Leads", link: "/under-development" },
-            { title: "INBOUND CALLS", link: "/under-development" },
-            { title: "COLD CALLS", link: "/under-development" },
-            { title: "ITA for Loans", link: "/under-development" },
-            { title: "PQ CAMPAIGN", link: "/under-development" },
-            { title: "PROBING/SEGUE SPIELS", link: "/under-development" },
-            { title: "OPT-IN/OPT-OUT", link: "/under-development" },
-            { title: "CONFIRMATION OF PENDING APPLICATION", link: "/under-development" },
-            { title: "Product Presentation", link: "/under-development" },
-            { title: "Positive Identification (PID)", link: "/under-development" },
-            { title: "BPI Credit Card Application Filing", link: "/under-development" },
-            { title: "Cross-Selling of the BPI E-Credit Card", link: "/under-development" },
-            { title: "Reminders to Client Spiels", link: "/under-development" },
-            { title: "E-Statement Spiel", link: "/under-development" },
-            { title: "Delivery Instruction Spiel", link: "/under-development" },
-            { title: "Activation Spiel", link: "/under-development" },
-            { title: "Note", link: "/under-development" },
-            { title: "BPI Credit Card Application Terms and Conditions, and BPI’s Privacy Policy", link: "/under-development" },
-            { title: "Cross-Selling of Supplementary Card to Co-Depositor", link: "/under-development" },
-            { title: "Guidelines", link: "/under-development" },
-            { title: "Spiels", link: "/under-development" },
-            { title: "ECH Cross Selling Spiel", link: "/under-development" },
-            { title: "Recap Spiel", link: "/under-development" },
-            { title: "Reminder after recap", link: "/under-development" },
-            { title: "With incomplete ECH mandatory field/s", link: "/under-development" },
-            { title: "Closing Spiel", link: "/under-development" },
+            { title: "OPENING SPIEL", link: "/campaign/call-flow-and-spiels" },
+            { title: "OUTBOUND", link: "/campaign/call-flow-and-spiels" },
+            { title: "INBOUND", link: "/campaign/call-flow-and-spiels" },
+           
+            { title: "PURPOSE OF CALL", link: "/campaign/call-flow-and-spiels" },
+            { title: "Data Privacy Spiel", link: "/campaign/call-flow-and-spiels" },            { title: "WARM CALLS", link: "/campaign/call-flow-and-spiels" },
+            { title: "Client Initiated Request via Coffee Break", link: "/campaign/call-flow-and-spiels" },
+
+          
+            { title: "Client Initiated Request [e.g. SMS]", link: "/campaign/call-flow-and-spiels" },
+            { title: "Branch Positive Leads", link: "/campaign/call-flow-and-spiels" },
+            { title: "INBOUND CALLS", link: "/campaign/call-flow-and-spiels" },
+           
+            { title: "COLD CALLS", link: "/campaign/call-flow-and-spiels" },
+            { title: "ITA for Loans", link: "/campaign/call-flow-and-spiels" },
+            { title: "PQ CAMPAIGN", link: "/campaign/call-flow-and-spiels" },
+            { title: "PROBING/SEGUE SPIELS", link: "/campaign/call-flow-and-spiels" },
+            { title: "OPT-IN/OPT-OUT", link: "/campaign/call-flow-and-spiels" },
+            { title: "CONFIRMATION OF PENDING APPLICATION", link: "/campaign/call-flow-and-spiels" },
+            { title: "Product Presentation", link: "/campaign/call-flow-and-spiels" },
+            { title: "Positive Identification (PID)", link: "/campaign/call-flow-and-spiels" },
+            { title: "BPI Credit Card Application Filing", link: "/campaign/call-flow-and-spiels" },
+            { title: "Cross-Selling of the BPI E-Credit Card", link: "/campaign/call-flow-and-spiels" },
+            { title: "Reminders to Client Spiels", link: "/campaign/call-flow-and-spiels" },
+            { title: "E-Statement Spiel", link: "/campaign/call-flow-and-spiels" },
+            { title: "Delivery Instruction Spiel", link: "/campaign/call-flow-and-spiels" },
+            { title: "Account Monitoring Spiel", link: "/campaign/call-flow-and-spiels" },
+            { title: "Activation Spiel", link: "/campaign/call-flow-and-spiels" },
+            { title: "Note", link: "/campaign/call-flow-and-spiels" },
+            { title: "BPI Credit Card Application Terms and Conditions, and BPI’s Privacy Policy", link: "/campaign/call-flow-and-spiels" },
+            { title: "Cross-Selling of Supplementary Card to Co-Depositor", link: "/campaign/call-flow-and-spiels" },
+            { title: "Guidelines", link: "/campaign/call-flow-and-spiels" },
+            { title: "Spiels", link: "/campaign/call-flow-and-spiels" },
+            { title: "ECH Cross Selling Spiel", link: "/campaign/call-flow-and-spiels" },
+            { title: "Recap Spiel", link: "/campaign/call-flow-and-spiels" },
+            { title: "Reminder after recap", link: "/campaign/call-flow-and-spiels" },
+            { title: "With incomplete ECH mandatory field/s", link: "/campaign/call-flow-and-spiels" },
+            { title: "Closing Spiel", link: "/campaign/call-flow-and-spiels" },
+            { title: "Outbound", link: "/campaign/call-flow-and-spiels" },
+            { title: "Inbound", link: "/campaign/call-flow-and-spiels" },
+        ]
+    },
+    {
+        Category: 'Campaign Guidelines',
+        SemiCat: 'Credit Cards',
+        title: "Documentation",
+        content: [
+            { title: "Create Callback Cases for successful and unsuccessful call outs.", link: "/campaign/documentation" },
+            { title: "Create Application Cases for Interested Calls.", link: "/campaign/documentation" },
+            { title: "Indicate complete call out details in Salesforce Comments.", link: "/campaign/documentation" },
+            { title: "CALLBACK CASES", link: "/campaign/documentation" },
+            { title: "CREDIT CARD APPLICATION", link: "/campaign/documentation" },
+            { title: "Callback Case", link: "/campaign/documentation" },
+            { title: "Opt-in/Opt-out", link: "/campaign/documentation" },
+            { title: "Contact Info Update", link: "/campaign/documentation" },
+            { title: "Credit Card Application", link: "/campaign/documentation" },
+            { title: "Salesforce Hierarchy", link: "/campaign/documentation" },
+            { title: "Subject Field", link: "/campaign/documentation" },
+            { title: "Case Comments", link: "/campaign/documentation" },
+            { title: "OCIES", link: "/campaign/documentation" },
+
+            { title: "Screenshots", link: "/campaign/documentation" },
+            { title: "Attachments", link: "/campaign/documentation" },
+            { title: "Verification", link: "/campaign/documentation" },
+        ]
+    },
+    {
+        Category: 'Campaign Guidelines',
+        SemiCat: 'Credit Cards',
+        title: "Exception of Handling",
+        content: [
+            { title: "Mother’s Maiden Name Discrepancy", link: "/campaign/exception-handling" },
+            { title: "Name Discrepancy", link: "/campaign/exception-handling" },
+            { title: "RM Number Discrepancy", link: "/campaign/exception-handling" },
+            { title: "Scenario 1", link: "/campaign/exception-handling" },
+            { title: "Scenario 2", link: "/campaign/exception-handling" },
+            { title: "Other RM Discrepancies", link: "/campaign/exception-handling" },
+            { title: "Other Discrepancies", link: "/campaign/exception-handling" },
+            { title: "TIN/SSS Number", link: "/campaign/exception-handling" },
+            { title: "For TIN", link: "/campaign/exception-handling" },
+            { title: "For SSS Number", link: "/campaign/exception-handling" },
+            { title: "Zip Code", link: "/campaign/exception-handling" },
+
+            { title: "In case ZIP code field drop down in regression is incomplete/not found", link: "/campaign/exception-handling" },
+            { title: "E-mail Address", link: "/campaign/exception-handling" },
+          
+            { title: "Employment Information", link: "/campaign/exception-handling" },
+            { title: "Business Address", link: "/campaign/exception-handling" },
+
+            { title: "Company Name", link: "/campaign/exception-handling" },
+            { title: "Billing Address", link: "/campaign/exception-handling" },
+            { title: "Address Formats", link: "/campaign/exception-handling" },
+      
+
+
+            { title: "FORMAT 1 (residential house)", link: "/campaign/exception-handling" },
+            { title: "FORMAT 2 (apartment/condo)", link: "/campaign/exception-handling" },
+
+            { title: "FORMAT 3 (company)", link: "/campaign/exception-handling" },
+            { title: "FORMAT 4 (provincial): Indicate landmark if it can fit regression characters", link: "/campaign/exception-handling" },
+
+      
+        ]
+    },
+
+    //personal loans
+    {
+        Category: 'Campaign Guidelines',
+        SemiCat: 'Personal Loans',
+        title: "Filtering of Leads",
+        content: [
+            { title: "ALFES Status", link: "/personal-loan/filtering-of-leads" },
+            { title: "Note", link: "/personal-loan/filtering-of-leads" },
+        ]
+    },
+
+
+    {
+        Category: 'Campaign Guidelines',
+        SemiCat: 'Personal Loans',
+        title: 'Call Flow and Spiels',
+        content: [
+            { title: "Opening Spiel", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Purpose of Call", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Call Recording", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Hook", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Source: Cold Calls", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Confirmation of Pending Application", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Positive Identification (PID)", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "PID PROCESS:", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "PID DETAILS:", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "PID DISCREPANCY HANDLING", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Email Template:", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "FEES & CHARGES", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Application Fulfillment", link: "/personal-loan/call-flow-and-spiels" },
+
+
+            { title: "INSTRUCTIONS", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "(Mr/Ms. CUSTOMER NAME), I would just like to confirm several details from you.", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "SCHEDULE FOR SIGNING", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "PL Holiday Rate Break Promo – Refer to Annex A.", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "DocuSign", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Conditions:", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "If DocuSign Conditions are NOT met:", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Application Recap", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "With Settlement Account (SETA) Spiel:", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "No Settlement Account (SETA) Spiel:", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Reminders to Client:", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Terms and Conditions", link: "/personal-loan/call-flow-and-spiels" },
+            { title: "Branch Signing:", link: "/personal-loan/call-flow-and-spiels" },
+
+            { title: "Closing Spiel", link: "/personal-loan/call-flow-and-spiels" },
+        ]
+    },
+
+    {
+        Category: 'Campaign Guidelines',
+        SemiCat: 'Personal Loans',
+        title: "Other Guidelines for DocuSign",
+        content: [
+            { title: "Previously Approved Applications that remains unsigned/unbooked", link: "/under-development" },
+            { title: "For clients who are currently abroad", link: "/under-development" },
+        ]
+    },
+
+
+    {
+        Category: 'Campaign Guidelines',
+        SemiCat: 'Personal Loans',
+        title: "Documentation",
+        content: [
+            { title: "Steps to Create Cases – Callback or Application", link: "/under-development" },
+            { title: "Opt in/Opt out (for leads from Cold Calls)", link: "/under-development" },
+
+            { title: "Contact Info Cases (for leads from Cold Calls)", link: "/under-development" },
+            { title: "PL Callback Case", link: "/under-development" },
+            { title: "PL Application Case", link: "/under-development" },
+        ]
+    },
+
+    {
+        Category: 'Campaign Guidelines',
+        SemiCat: 'Personal Loans',
+        title: "Exception of Handling",
+        content: [
+            { title: "Handling of Application with NO Active Deposit Account", link: "/under-development" },
+            { title: "Handling of Personal Loan Call Back Requests of Preferred Clients", link: "/under-development" },
+            { title: "Inbound handling: Confirmation of Pending/existing application", link: "/under-development" },
+            { title: "Handling of Industries that are not Qualified for Personal Loans", link: "/under-development" },
+            { title: "NAME DISCREPANCY", link: "/under-development" },
+            { title: "RM NUMBER DISCREPANCY", link: "/under-development" },
+            { title: "MARITAL STATUS", link: "/under-development" },
+            { title: "TIN/SSS NUMBER", link: "/under-development" },
+            { title: "BIRTHDATE DISCREPANCY", link: "/under-development" },
+            { title: "MOTHER'S MAIDEN NAME DISCREPANCY", link: "/under-development" },
+            { title: "Zip Code", link: "/under-development" },
+            { title: "Business Address", link: "/under-development" },
+            { title: "EMPLOYMENT INFORMATION", link: "/under-development" },
+            { title: "COMPANY NAME", link: "/under-development" },
+            { title: "Other Discrepancies", link: "/under-development" },
+        ]
+    },
+
+    //sip loans
+
+
+    {
+        Category: 'Campaign Guidelines',
+        SemiCat: 'SIP Loans',
+        title: "Filtering of Leads",
+        content: [
+            { title: "Outbound Sales", link: "/under-development" },
+            { title: "Outbound Sales Campaign Administrator/Outbound Sales In-Charge assigns the leads for call-out of Outbound Sales Associates (OSA).", link: "/under-development" },
+            { title: "Customer Promo Code Checker", link: "/under-development" },
+        ]
+    },
+
+
+    {
+        Category: 'Campaign Guidelines',
+        SemiCat: 'SIP Loans',
+        title: "Documentation",
+        content: [
+            { title: "Call Back Request", link: "/under-development" },
+            { title: "SIP Loan Application", link: "/under-development" },
+            { title: "Service Request Hierarchy:", link: "/under-development" },
+            { title: "Subject Field:", link: "/under-development" },
+            { title: "Case Comments:", link: "/under-development" },
             { title: "Outbound", link: "/under-development" },
-            { title: "Inbound", link: "/under-development" },
+            { title: "PID", link: "/under-development" },
+            { title: "OCIES", link: "/under-development" },
+            { title: "Screenshots", link: "/under-development" },
+            { title: "Attachments", link: "/under-development" },
+            { title: "Balance Transfer", link: "/under-development" },
+            { title: "SIP for School", link: "/under-development" },
+            { title: "SIP for Hospital", link: "/under-development" },
+            { title: "Non-Application Case for Inbound Calls:", link: "/under-development" },
+            { title: "SIP for School", link: "/under-development" },
+            { title: "SIP for Hospital", link: "/under-development" },
+
+        ]
+    },
+
+    
+    {
+        Category: 'Campaign Guidelines',
+        SemiCat: 'SIP Loans',
+        title: "Exception of Handling",
+        content: [
+            { title: "SPECIAL HANDLING", link: "/under-development" },
+            { title: "SIP Loan Application – AMF Reversal Requests", link: "/under-development" },
+            { title: "AMF Reversal Parameters:", link: "/under-development" },
+            { title: "AMF Reversal Process:", link: "/under-development" },
+            { title: "List of Offer Codes:", link: "/under-development" },
+            { title: "DTAS:", link: "/under-development" },
+            { title: "SIP Loan Application Rejected Due to Insufficient Limit/Over Credit Limit", link: "/under-development" },
+            { title: "SIP Loan Application Updates/Verification", link: "/under-development" },
+            { title: "Resigned Unibanker – DOSRI Tagging Not Yet Lifted", link: "/under-development" },
+            { title: "Do Not Call for Sales Requests", link: "/under-development" },
+            { title: "PCH/ECH Balance Conversion", link: "/under-development" },
+            { title: "Usage of Available Limit Instead of Madness Limit", link: "/under-development" },
+            { title: "Card Restriction", link: "/under-development" },
+
+
+            { title: "SIP Loan Applications with Insufficient Limits:", link: "/under-development" },
+            { title: "OK to process under MADNESS LIMIT:", link: "/under-development" },
+            { title: "OK to process under REGULAR LIMIT (up to Total Credit Limit only):", link: "/under-development" },
+            { title: "For Balance Conversion over Credit Line/Limit, approval is needed.", link: "/under-development" },
+            { title: "Notes:", link: "/under-development" },
+            { title: "Posting of Transactions in Cardlink", link: "/under-development" },
+
+            { title: "Pre-termination Fee Computation", link: "/under-development" },
+            { title: "Effective Interest Rate Template", link: "/under-development" },
+            { title: "Posting of Transactions in Cardlink", link: "/under-development" },
+
         ]
     },
 ]

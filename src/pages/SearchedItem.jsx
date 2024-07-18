@@ -4,6 +4,7 @@ import Header from '../comp/Header'
 import { dataSearch } from '../CampaignResources/SearchedObject'
 import Footer from '../comp/Footer'
 import { innerContent, CategoryOBJ } from '../comp/Category'
+import { Link } from 'react-router-dom'
 
 const SearchedItem = () => {
     const { id } = useParams()
@@ -33,6 +34,7 @@ const SearchedItem = () => {
                 ...item,
                 outerTitle: itms.title,
                 Category: itms.Category,
+                SemiCat: itms.SemiCat
             })));
         }, []);
         const fitleredSubContent = foundMatchForInnerCon.filter(item => item.title.toLowerCase().includes(id.toLowerCase()));
@@ -203,7 +205,7 @@ const SearchedItem = () => {
                                     ) : (
                                         <>
                                             {SubCon.length === 0 && `no results for ${SubFilter}`}
-                                            {SubCon.map((itm, index) => (
+                                            {innerContents.map((itm, index) => (
                                                 <div
                                                     key={index} className="searchedTitle innertConSearched">
                                                     <div className="Title">
@@ -211,11 +213,19 @@ const SearchedItem = () => {
                                                             {itm.title}
                                                         </h3>
                                                         <div className="line"></div>
-                                                        <span>{itm.Category} | ({itm.outerTitle})</span>
+                                                        <span>{itm.Category} | ({itm.SemiCat})</span>
                                                     </div>
-                                                    <button onClick={() => { nav(itm.link); window.scrollTo(0, 0) }}>
+                                                    <Link
+                                                     to= {`${itm.link}`}
+                                                    state={{headerTitle: itm.title}}
+
+                                                    >
+
                                                         NAVIGATE  <ion-icon name="arrow-forward-outline"></ion-icon>
-                                                    </button>
+                                                    </Link>
+                                                    {/* <button onClick={() => { nav(itm.link); window.scrollTo(0, 0) }}>
+                                                        NAVIGATE  <ion-icon name="arrow-forward-outline"></ion-icon>
+                                                    </button> */}
                                                 </div>
                                             ))}
                                         </>

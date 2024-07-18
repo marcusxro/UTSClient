@@ -116,8 +116,7 @@ const SIPDocu = () => {
                         <li>&lt;Amount&gt;_Salesforce</li>
                     </ul>
 
-                    <h2>3. Case Comments:</h2>3.
-
+                    <h2>3. Case Comments:</h2>
                     <h3>a. Outbound</h3>
                     <p>Indicate the following:</p>
                     <ul>
@@ -192,7 +191,7 @@ const SIPDocu = () => {
 
                     <h2>C. Non-Application Case for Inbound Calls:</h2>
                     <h3>1.Service Request Hierarchy:</h3>
-                    <table>
+                    <table border={1}>
                         <tr>
                             <th>FIELD</th>
                             <th>INFO</th>

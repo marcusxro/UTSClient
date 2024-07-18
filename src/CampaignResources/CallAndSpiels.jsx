@@ -1,10 +1,44 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Header from '../comp/Header'
 import Footer from '../comp/Footer'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { innerContent } from '../comp/Category'
 
 const CallAndSpiels = () => {
+ 
     const nav = useNavigate('')
+
+    const contentTitle = innerContent[1]?.content
+    const location = useLocation();
+    const { state } = location;
+    const headerTitle = state?.headerTitle; // The state directly contains the headerTitle
+
+    // Create refs for each title
+    const titleRefs = useRef([]);
+
+    // Initialize the refs array
+    if (titleRefs.current.length !== contentTitle.length) {
+        titleRefs.current = Array(contentTitle.length).fill().map((_, i) => titleRefs.current[i] || React.createRef());
+    }
+
+    useEffect(() => {
+        if (headerTitle) {
+            // Find the matching title and scroll to it
+            const matchingTitleIndex = contentTitle.findIndex(item => item.title === headerTitle);
+            if (matchingTitleIndex !== -1) {
+                const element = titleRefs.current[matchingTitleIndex].current;
+                const topOffset = element.getBoundingClientRect().top;
+                const offset = window.pageYOffset + topOffset - 100; // Adjust 100 as needed
+    
+                window.scrollTo({
+                    top: offset,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, [headerTitle, contentTitle, titleRefs]);
+    
+
     return (
         <div className='CampaignPage closer'>
             <Header />
@@ -13,17 +47,17 @@ const CallAndSpiels = () => {
             <div className="Homepage">
             <div className='titleForPage'>CALL FLOW AND SPIELS</div>
                 <div className="margLeft">
-                <h2>1. OPENING SPIEL</h2>
-                <h3>OUTBOUND:</h3>
+                <h2 className={`liTitle ${contentTitle[0].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[0]}> 1. {contentTitle[0].title}</h2>
+                <h3 className={`liTitle ${contentTitle[1].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[1]}>{contentTitle[1].title}:</h3>
                 <p>"Good Morning/Afternoon/Evening! This is (Insert Name) from Bank of the Philippine Islands. May I speak with (name of client)?" - should be verbatim</p>
                 <ul>
                     <li>If client is not available, ask for other contact information and best time to call back.</li>
                     <li>If wrong number, verify the dialed number.</li>
                 </ul>
-                <h3>INBOUND:</h3>
+                <h3 className={`liTitle ${contentTitle[2].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[2]}>{contentTitle[2].title}</h3>
                 <p>"BPI Credit Card Sales. My name is [Insert Name]. How can I help you?" - should be verbatim</p>
 
-                <h2>2. PURPOSE OF CALL</h2>
+                <h2 className={`liTitle ${contentTitle[3].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[3]}>2. {contentTitle[3].title}</h2>
                 <h3>Data Privacy Spiel</h3>
                 <p>Mandatory spiel:</p>
                 <blockquote>
@@ -39,12 +73,12 @@ const CallAndSpiels = () => {
                 </blockquote>
                 <h3>SOURCE</h3>
                 <h4>WARM CALLS</h4>
-                <p>Client Initiated Request via Coffee Break</p>
+                <h4 className={`liTitle ${contentTitle[6].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[6]}>{contentTitle[6].title}</h4>
                 <p>“I am calling you regarding your interest to avail the BPI Credit Card. This is a service call out from BPI and I am using the BPI outbound number 027795-2500 or 028459-2200 which you can check through <a href="www.bpi.com.ph/creditcards">www.bpi.com.ph/creditcards</a>. For us to assist you better on your inquiry /application, we need to verify some information. May I have your complete name please?"</p>
                 <p>If the client asks on the source of call out: TSA to probe/ask client if he/she received an email/SMS invitation to apply for a BPI Credit Card and that this call is in line with email/SMS invitation to apply for a BPI Credit Card</p>
                 <p>You may include probing to client if he/she was already assisted for a credit card application.</p>
                 <p>TSA: “May I confirm Ms./Mr.______ if you have been assisted for a credit card application?”</p>
-                <h4>Client Initiated Request [e.g. SMS]</h4>
+                <h4 className={`liTitle ${contentTitle[7].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[7]}>{contentTitle[7].title}</h4>
                 <p>“We received your text/request expressing your intent to avail of a BPI Credit Card. This is a service call out from BPI and I am using the BPI outbound number 027795-2500 or 028459-2200 which you can check through <a href="www.bpi.com.ph/creditcards">www.bpi.com.ph/creditcards</a>. For us to assist you better on your inquiry /application, I need to verify some information. May I have your complete name please?"</p>
                 <p>If No Name/Promo code is indicated in the SMS:</p>
                 <blockquote>
@@ -52,10 +86,10 @@ const CallAndSpiels = () => {
                     <p>(TSA may also confirm the updated email address in the RM record if applicable).</p>
                     <p>&lt;Proceed to product presentation.&gt;</p>
                 </blockquote>
-                <h4>Branch Positive Leads</h4>
+                <h4 className={`liTitle ${contentTitle[8].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[8]}>{contentTitle[8].title}</h4>
                 <p>“This callout is in reference to the previous callout and invitation of the branch, BPI (branch name). If you wish to proceed with the application, we may facilitate the application filing over the phone.”</p>
 
-                <h3>INBOUND CALLS</h3>
+                <h3 className={`liTitle ${contentTitle[9].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[9]}>{contentTitle[9].title}</h3>
                 <p>"For us to assist you better on your inquiry /application, may I have your complete name the promo code that you received in applying for Credit Card so we can verify?"</p>
                 <p>"Sir/Ma’am I am pleased to inform you that you are one of the selected clients who qualified to apply for a BPI Card with no documents required."</p>
                 <p>&lt;Proceed to product presentation.&gt;</p>
@@ -63,14 +97,14 @@ const CallAndSpiels = () => {
                 <p>“Thank you for your interest in applying for BPI Credit Cards Ma’am/Sir, we will endorse you for a call-out for your credit card application or you may visit the branch or apply through BPI online. Thank you for choosing BPI. Thank you for calling.”</p>
                 <p>*For Coffee Break leads, kindly refer to special handling section.</p>
 
-                <h3>COLD CALLS</h3>
-                <h4>ITA for Loans</h4>
+                <h3 className={`liTitle ${contentTitle[10].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[10]}>{contentTitle[10].title}</h3>
+                <h4 className={`liTitle ${contentTitle[11].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[11]}>{contentTitle[11].title}</h4>
                 <p>“This is a service call out from BPI and I am using the BPI outbound number 027795-2500 or 028459-2200 which you can check through <a href="www.bpi.com.ph/creditcards">www.bpi.com.ph/creditcards</a>.</p>
                 <p>I am calling regarding your booked (type of loan) with us. As a valued client, we would like to take this opportunity Sir/Ma’am, to introduce to you, solutions that would meet your current or future financial needs, such as cash availability for emergencies or large amount expenses.”</p>
                 <p>Ma’am/Sir, we are inviting you to apply for a BPI Petron MC (for auto loan) or BPI Blue MC (for housing loan) as a bundled product to your (type of loan).</p>
                 <p>If Client did not interrupt, proceed to the product presentation.</p>
 
-                <h4>PQ CAMPAIGN</h4>
+                <h4 className={`liTitle ${contentTitle[12].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[12]}>{contentTitle[12].title}</h4>
                 <p>“This is a service call out from BPI and I am using the BPI outbound number 027795-2500 or 028459-2200 which you can check through <a href="www.bpi.com.ph/creditcards">www.bpi.com.ph/creditcards</a>. We would like to confirm if your contact information/details with our bank is still updated.”</p>
                 <p>TSA to confirm phone number (confirm the contacted number only).</p>
                 <p>On contact information:</p>
@@ -101,10 +135,10 @@ const CallAndSpiels = () => {
                     <p>“Ms./Mr.________, you can access the List of Telesales Providers with this link: <a href="www.bpi.com.ph/creditcards/list-of-telesales-providers">www.bpi.com.ph/creditcards/list-of-telesales-providers</a>.”</p>
                 </blockquote>
 
-                <h2>3. PROBING/SEGUE SPIELS</h2>
+                <h2 className={`liTitle ${contentTitle[13].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[13]}>3. {contentTitle[13].title}</h2>
                 <p>“Thank you for the confirmation Mr./Ms._________. Being a valued client, I would also like to take this opportunity to invite you to apply for our BPI Credit Card (e.g. Blue MC, Amore Cashback, etc.).”</p>
 
-                <h2>4. OPT-IN/OPT-OUT</h2>
+                <h2 className={`liTitle ${contentTitle[14].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[14]}>4. {contentTitle[14].title}</h2>
                 <p>If client did not interrupt, proceed to the product presentation.</p>
                 <p>If client says NO, proceed with the "Early Interrupt" or negative response spiel/s:</p>
                 <blockquote>
@@ -125,7 +159,7 @@ const CallAndSpiels = () => {
                     <li>If client wishes to opt out from receiving SMS or emails, there is a different process for it such as clicking the Unsubscribe button (for email).</li>
                 </ul>
 
-                <h2>5. CONFIRMATION OF PENDING APPLICATION</h2>
+                <h2 className={`liTitle ${contentTitle[15].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[15]}>5. {contentTitle[15].title}</h2>
                 <p>TSA must confirm with client if the client has no pending credit card application.</p>
                 <p>"Sir/Ma’am, may I confirm if you have a pending application from other channels?"</p>
                 <p>TSA can probe further if client was assisted by another sales associate, if client signed an application form in the branch, or fulfilled his application through our online channel.</p>
@@ -135,7 +169,7 @@ const CallAndSpiels = () => {
                     <li>NO - OK to proceed.</li>
                 </ul>
                 <p>See ANNEX P for the updated rules of engagement on leads handling, exclusion, and retagging as of April 5, 2022.</p>
-                <h2>6. Product Presentation</h2>
+                <h2 className={`liTitle ${contentTitle[16].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[16]}>6. {contentTitle[16].title}</h2>
                 <p>Discuss features of card type offered (at least 2 product features).</p>
                 <p>TSA should advise free for the first year AMF.</p>
                 <p>“The annual membership fee is waived for the first year.” (Revise if there is an ongoing lifetime waiver promo.)</p>
@@ -222,7 +256,7 @@ const CallAndSpiels = () => {
                     "Just in case you change your mind Mr. /Ms. __, you may either send an email to bpioutboundsales@bpi.com.ph with your full name and contact info so we can call you back. Thank you for your time."
                 </blockquote>
 
-                <h2>7. Positive Identification (PID)</h2>
+                <h2 className={`liTitle ${contentTitle[17].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[17]}>7. {contentTitle[17].title}</h2>
                 <p>“For us to facilitate your BPI Credit Card application, please be advised that this call is being recorded for Quality Assurance purposes and that we will be asking for personal information. Is it okay to proceed?" (Client must agree.)</p>
                 <p>If client agreed, TSA should conduct 2 PID first, wherein client will provide the information, before confirming the other details.</p>
                 <p>Required PID: complete name and 2 static information. TSA may ask any available static information stated below.</p>
@@ -241,7 +275,7 @@ const CallAndSpiels = () => {
                     <li>If the address provided does not include the zip code, it is acceptable.</li>
                 </ul>
 
-                <h2>8. BPI Credit Card Application Filing</h2>
+                <h2 className={`liTitle ${contentTitle[18].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[18]}>8.{contentTitle[18].title}</h2>
                 <p>TSA to get client's personal information needed in the application form, and advise them of their reference number (client's application service request number).</p>
                 <p>NOTE: Always exercise proper probing.</p>
                 <p>See ANNEX D for the Credit Card PQ Template Fields.</p>
@@ -280,22 +314,22 @@ const CallAndSpiels = () => {
                     </ul>
                 </ul>
 
-                <h2>9. Cross-Selling of the BPI E-Credit Card</h2>
+                <h2 className={`liTitle ${contentTitle[19].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[19]}>9. {contentTitle[19].title}</h2>
                 <p>“Thank you for giving me a chance to assist you on your _______ application. Would you be also interested in availing yourself of an E-Credit Card?”.</p>
                 <p>"E-credit protects your credit line by assigning a lower credit limit and a different credit card number. When you shop online such as Lazada, Zalora or when you buy airline tickets in PAL and Cebu Pacific, you can use E-Credit for your transactions in a secure way. Would you like to take advantage of the BPI E-credit card?" [client must confirm]</p>
-                <h2>10. Reminders to Client Spiels</h2>
-                <h3>a. E-Statement Spiel</h3>
+                <h2 className={`liTitle ${contentTitle[20].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[20]}>10. {contentTitle[20].title}</h2>
+                <h3 className={`liTitle ${contentTitle[21].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[21]}>a. {contentTitle[21].title}</h3>
                 <p>“Once your credit card application has been approved, you will be automatically enrolled to BPI e-Statement facility. You will receive your BPI Credit Card e-Statement in your registered email, accompanied with an e-Statement SMS starting on your next statement date.”</p>
-                <h3>b. Delivery Instruction Spiel</h3>
+                <h3 className={`liTitle ${contentTitle[22].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[22]}>b. {contentTitle[22].title}</h3>
                 <p>"Once processed and upon approval of this BPI Credit Card Application, your BPI (Card Type) will be delivered personally to you at your requested address within 15-20 working days. In case you are not around to receive the card, our courier shall leave an authorization form. This form can also be downloaded in <a href="https://www.bpi.com.ph/creditcards/authorize-a-representative">bpi.com.ph</a>. Kindly fill out the form and leave a copy with your authorized representative together with your ID. This will ensure successful re-delivery of your card.”</p>
-                <h3>c. Account Monitoring Spiel</h3>
+                <h3 className={`liTitle ${contentTitle[23].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[23]}>c. {contentTitle[23].title}</h3>
                 <p>Advise the client how to monitor the card transactions.</p>
                 <p>“Once approved and successfully delivered, you may enroll your BPI Credit Card in our online banking for hassle-free monitoring. To pay for your monthly credit card dues, you can enroll for bills payment thru online banking, mobile banking, or enroll for automatic debit arrangement thru your nearest branch.”</p>
-                <h3>d. Activation Spiel</h3>
+                <h3 className={`liTitle ${contentTitle[24].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[24]}>d. {contentTitle[24].title}</h3>
                 <p>"Also, activate your BPI Credit Card upon receipt to fully enjoy its features and benefits. Visit <a href="bit.ly/activatebpicard">bit.ly/activatebpicard</a> to learn how."</p>
                 <p>Card will be delivered inactive. Activation may be done via SMS, Hotline or Branch. Inactive card upon delivery is a security measure.</p>
                 <p>See ANNEX G for the official announcement.</p>
-                <p><strong>Note:</strong></p>
+                <p className={`liTitle ${contentTitle[25].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[25]}><strong>{contentTitle[25].title}:</strong></p>
                 <ul>
                     <li>Activation will be per card type.</li>
                     <li>The Virtual e-credit (No Card) does not need to be activated.</li>
@@ -310,7 +344,7 @@ const CallAndSpiels = () => {
                     </li>
                 </ul>
 
-                <h2>11. BPI Credit Card Application Terms and Conditions, and BPI’s Privacy Policy</h2>
+                <h2 className={`liTitle ${contentTitle[26].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[26]}>11. {contentTitle[26].title}</h2>
                 <p>“Ma’am/Sir, before we process your credit card application, please note that by saying YES to proceeding with your credit card application, you have agreed to be bound by the governing terms and conditions of the issuance of the BPI Credit card and BPI’s Privacy Policy. To know more, you may visit <a href="www.bpi.com.ph">www.bpi.com.ph</a>. You will also be provided with a copy of the Terms and Conditions upon delivery of the credit card which you can read before actually using the Credit Card.”</p>
                 <p>""Shall we now proceed with your credit card application processing & evaluation? Kindly confirm by saying yes/I agree.</p>
                 <p>(Client should say ‘Yes’)</p>
@@ -319,31 +353,31 @@ const CallAndSpiels = () => {
                 <p>Terms and Conditions Governing the Issuance and Use of BPI Credit Cards: <a href="https://www.bpi.com.ph/cards/credit/bpi-termsandconditions">https://www.bpi.com.ph/cards/credit/bpi-termsandconditions</a></p>
                 <p>BPI’s Privacy Policy: <a href="www.bpi.com.ph/privacy">www.bpi.com.ph/privacy</a></p>
 
-                <h2>12. Cross-Selling of Supplementary Card to Co-Depositor</h2>
-                <h3>Guidelines:</h3>
+                <h2 className={`liTitle ${contentTitle[27].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[27]}>12. {contentTitle[27].title}</h2>
+                <h3 className={`liTitle ${contentTitle[28].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[28]}>{contentTitle[28].title}:</h3>
                 <p>If the primary cardholder has a co-depositor, TSA should cross sell supplementary card after the client has agreed to apply for a BPI credit card.</p>
                 <p>To ensure high supplementary take-up, highlight BAU offer: 1st supplementary card holder - lifetime waived AMF, 2nd-6th supplementary cardholder-50% off on AMF.</p>
                 <p>Application will be facilitated via recorded phone call. No other requirements needed.</p>
-                <h3>Spiels:</h3>
-                <h4>ECH Cross Selling Spiel:</h4>
+                <h3 className={`liTitle ${contentTitle[29].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[29]}>{contentTitle[29].title}:</h3>
+                <h4 className={`liTitle ${contentTitle[30].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[30]}>{contentTitle[30].title}:</h4>
                 <p>“By the way Ma’am/Sir, you may also want to assign your co-depositor <strong>STATE THE FIRST NAME OF THE CO-DEPOSITOR ONLY</strong> as your supplementary. The annual membership fee for your 1st supplementary is WAIVED for life. Do you want to proceed?</p>
                 <p>IF YES: For us to proceed, can you please state the FULL NAME of your co-depositor please and how are you related to <strong>STATE THE FIRST NAME OF THE CO-DEPOSITOR ONLY</strong>?</p>
                 <p>IF NO: Proceed to the closing spiel.</p>
-                <h4>Recap Spiel:</h4>
+                <h4 className={`liTitle ${contentTitle[31].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[31]}>{contentTitle[31].title}:</h4>
                 <p>"""Thank you for that mam/sir. Just to confirm, you have agreed to assign <strong>STATE FULL NAME OF THE CO-DEPOSITOR</strong> as your supplementary for your BPI <strong>STATE CREDIT CARD OFFERED TO THE PRINICIPAL CH</strong> MasterCard/Visa.""</p>
                 <p>[Client should confirm] - Yes, Oo, Opo, I agree, let’s proceed"</p>
-                <h4>Reminder after recap:</h4>
+                <h4 className={`liTitle ${contentTitle[32].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[32]}>{contentTitle[32].title}:</h4>
                 <p>“Just want to remind you mam/sir that as a Principal Cardholder, it is your responsibility to monitor and settle all purchases/transactions including interests made/incurred by your supplementary."</p>
-                <h4>With incomplete ECH mandatory field/s:</h4>
+                <h4 className={`liTitle ${contentTitle[33].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[33]}>{contentTitle[33].title}:</h4>
                 <p>"Since the information of your co depositor is not updated, we recommend to advise your co-depositor to go to the branch to update the records. For now, we will not be able to process the application."</p>
                 <p><strong>Note:</strong> If Principal cardholder wishes to assign a supplementary other than his/her co-depositor, politely decline and deliver the spiel below:</p>
                 <p>"Ma'am/Sir, apologies but we cannot process any supplementary request other than your co-depositor <strong>STATE NAME</strong>. Should you wish to apply for a different supplementary, you may visit any BPI branch.”</p>
                 <p>See ANNEX H for the handling of supplementary card applications.</p>
 
-                <h2>13. Closing Spiel</h2>
-                <h3>Outbound:</h3>
+                <h2 className={`liTitle ${contentTitle[34].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[34]}>13. {contentTitle[34].title}</h2>
+                <h3 className={`liTitle ${contentTitle[35].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[35]}>{contentTitle[35].title}:</h3>
                 <p>“Thank you for your time."</p>
-                <h3>Inbound:</h3>
+                <h3 className={`liTitle ${contentTitle[36].title === headerTitle ? 'searched' : ''}`} ref={titleRefs.current[36]}>{contentTitle[36].title}:</h3>
                 <p>"Thank you for choosing BPI. Thank you for calling."</p>
                 </div>
             </div>

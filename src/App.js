@@ -61,8 +61,6 @@ function App() {
             <Route path='/SIP-loan/exception-handling' element={<ProtectedRoute element={activeUser ? <SIPException /> : <></>} />} />
             <Route path='/under-development' element={<ProtectedRoute element={activeUser ? <UnderDev /> : <></>} />} />
             <Route path='/*' element={<NotFound />} />
-
-
           </Routes>
         </div>
       </Router>
