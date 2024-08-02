@@ -43,23 +43,40 @@ function App() {
         <div className="App">
           <Routes>
             <Route path='/' element={activeUser ? <></> : <SignIn />} />
-            <Route path='/Home' element={<ProtectedRoute element={activeUser ? <Hompage /> : <></>} />} />
-            <Route path='/all-categories' element={<ProtectedRoute element={activeUser ? <AllCater /> : <></>} />} />
-            <Route path='/query/:id' element={<ProtectedRoute element={activeUser ? <SearchedItem /> : <></>} />} />
-            <Route path='/category/:item' element={<ProtectedRoute element={activeUser ? <CaterPage /> : <></>} />} />
-            <Route path='/campaign/filtering-of-leads' element={<ProtectedRoute element={activeUser ? <Campaign /> : <></>} />} />
-            <Route path='/campaign/call-flow-and-spiels' element={<ProtectedRoute element={activeUser ? <CallAndSpiels /> : <></>} />} />
-            <Route path='/campaign/documentation' element={<ProtectedRoute element={activeUser ? <Documentation /> : <></>} />} />
-            <Route path='/campaign/exception-handling' element={<ProtectedRoute element={activeUser ? <Exception /> : <></>} />} />
-            <Route path='/personal-loan/filtering-of-leads' element={<ProtectedRoute element={activeUser ? <Ploan /> : <></>} />} />
-            <Route path='/personal-loan/call-flow-and-spiels' element={<ProtectedRoute element={activeUser ? <PloanCall /> : <></>} />} />
-            <Route path='/personal-loan/other-guidlines-for-docusign' element={<ProtectedRoute element={activeUser ? <PloanOther /> : <></>} />} />
-            <Route path='/personal-loan/documentation' element={<ProtectedRoute element={activeUser ? <PloanDocu /> : <></>} />} />
-            <Route path='/personal-loan/exception-handling' element={<ProtectedRoute element={activeUser ? <PloanException /> : <></>} />} />
-            <Route path='/SIP-loan/filtering-of-leads' element={<ProtectedRoute element={activeUser ? <FilteringOfLeads /> : <></>} />} />
-            <Route path='/SIP-loan/documentation' element={<ProtectedRoute element={activeUser ? <SIPDocu /> : <></>} />} />
-            <Route path='/SIP-loan/exception-handling' element={<ProtectedRoute element={activeUser ? <SIPException /> : <></>} />} />
-            <Route path='/under-development' element={<ProtectedRoute element={activeUser ? <UnderDev /> : <></>} />} />
+            <Route path='/Home'
+              element={<ProtectedRoute element={activeUser ? <Hompage /> : <></>} />} />
+            <Route path='/all-categories'
+              element={<ProtectedRoute element={activeUser ? <AllCater /> : <></>} />} />
+            <Route path='/query/:id'
+              element={<ProtectedRoute element={activeUser ? <SearchedItem /> : <></>} />} />
+            <Route path='/category/:item'
+              element={<ProtectedRoute element={activeUser ? <CaterPage /> : <></>} />} />
+            <Route path='/campaign/filtering-of-leads'
+              element={<ProtectedRoute element={activeUser ? <Campaign /> : <></>} />} />
+            <Route path='/campaign/call-flow-and-spiels'
+              element={<ProtectedRoute element={activeUser ? <CallAndSpiels /> : <></>} />} />
+            <Route path='/campaign/documentation'
+              element={<ProtectedRoute element={activeUser ? <Documentation /> : <></>} />} />
+            <Route path='/campaign/exception-handling'
+              element={<ProtectedRoute element={activeUser ? <Exception /> : <></>} />} />
+            <Route path='/personal-loan/filtering-of-leads'
+              element={<ProtectedRoute element={activeUser ? <Ploan /> : <></>} />} />
+            <Route path='/personal-loan/call-flow-and-spiels'
+              element={<ProtectedRoute element={activeUser ? <PloanCall /> : <></>} />} />
+            <Route path='/personal-loan/other-guidlines-for-docusign'
+              element={<ProtectedRoute element={activeUser ? <PloanOther /> : <></>} />} />
+            <Route path='/personal-loan/documentation'
+              element={<ProtectedRoute element={activeUser ? <PloanDocu /> : <></>} />} />
+            <Route path='/personal-loan/exception-handling'
+              element={<ProtectedRoute element={activeUser ? <PloanException /> : <></>} />} />
+            <Route path='/SIP-loan/filtering-of-leads'
+              element={<ProtectedRoute element={activeUser ? <FilteringOfLeads /> : <></>} />} />
+            <Route path='/SIP-loan/documentation'
+              element={<ProtectedRoute element={activeUser ? <SIPDocu /> : <></>} />} />
+            <Route path='/SIP-loan/exception-handling'
+              element={<ProtectedRoute element={activeUser ? <SIPException /> : <></>} />} />
+            <Route path='/under-development'
+              element={<ProtectedRoute element={activeUser ? <UnderDev /> : <></>} />} />
             <Route path='/*' element={<NotFound />} />
           </Routes>
         </div>

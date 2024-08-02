@@ -25,19 +25,18 @@ const SearchedItem = () => {
     const [filteredObject, SetFiltered] = useState([])
     const [innerContents, setInnerContent] = useState([])
     const [tabination, setTabination] = useState('content')
-
-
-
     const findSubCon = () => {
-        const foundMatchForInnerCon = Array.isArray(innerContent) && innerContent.reduce((acc, itms) => {
-            return acc.concat(itms.content.map(item => ({
-                ...item,
-                outerTitle: itms.title,
-                Category: itms.Category,
-                SemiCat: itms.SemiCat,
-            })));
-        }, []);
-        const fitleredSubContent = foundMatchForInnerCon.filter(item => item.title.toLowerCase().includes(id.toLowerCase()));
+        const foundMatchForInnerCon =
+            Array.isArray(innerContent) && innerContent.reduce((acc, itms) => {
+                return acc.concat(itms.content.map(item => ({
+                    ...item,
+                    outerTitle: itms.title,
+                    Category: itms.Category,
+                    SemiCat: itms.SemiCat,
+                })));
+            }, []);
+        const fitleredSubContent =
+            foundMatchForInnerCon.filter(item => item.title.toLowerCase().includes(id.toLowerCase()));
         setInnerContent(fitleredSubContent)
         return foundMatchForInnerCon
     }
@@ -51,8 +50,6 @@ const SearchedItem = () => {
 
     const [conFilter, setConFilter] = useState('')
     const [SubFilter, setSubFilter] = useState('')
-
-
     const [fitleredCon, SetFilteredCon] = useState([])
     const [SubCon, SetSubCon] = useState([])
 
@@ -65,24 +62,16 @@ const SearchedItem = () => {
         }
     }, [conFilter, id]);
 
-
-
     const [CampaignTab, setCampaignTab] = useState("")
     const [searchedTab, setSearchedTab] = useState("")
 
-    const [campaignSubCat, setCampainSubCat] = useState("")
-
     useEffect(() => {
         const lowerCaseId = id.toLowerCase();
-
         if (SubFilter) {
-
             const filtered = innerContents.filter(item =>
                 item.title.toLowerCase().includes(lowerCaseId.toLowerCase()) && item.Category === SubFilter
             );
-
             SetSubCon(filtered);
-
 
             if (CampaignTab) {
 
@@ -91,7 +80,6 @@ const SearchedItem = () => {
                     && item.Category === SubFilter
                     && item.SemiCat === CampaignTab
                 );
-
                 SetSubCon(filtered);
 
                 if (searchedTab && CampaignTab) {
@@ -101,7 +89,6 @@ const SearchedItem = () => {
                         && item.SemiCat === CampaignTab
                         && item.outerTitle === searchedTab
                     );
-
                     SetSubCon(filtered);
                 }
             }
@@ -110,6 +97,8 @@ const SearchedItem = () => {
             SetSubCon(findSubCon());
         }
     }, [SubFilter, id, CampaignTab, searchedTab, SubCon]);
+
+
 
     return (
         <div className='SearchedItem closer' >
