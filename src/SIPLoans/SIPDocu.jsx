@@ -94,10 +94,8 @@ const SIPDocu = () => {
                     </table>
 
                     <h2>2. Subject Field:</h2>
-                    <p>OSA should indicate the Amount and Source of the application in the Subject Field.</p>
-
+                    <p>TSA should indicate the Amount and Source of the application in the Subject Field.</p>
                     <p>Format: Amount_Source</p>
-
                     <p>For example:</p>
                     <ul>
                         <li>&lt;Amount&gt;_PB / PB Manual Processing</li>
@@ -173,19 +171,12 @@ const SIPDocu = () => {
                     <ul>
                         <h2>Balance Transfer</h2>
                         <ol>
-                            <li>Latest billing statement of his other credit card or electronic statement of account (with no late charges)</li>
-                            <li>Proof of payment if due date has lapsed or past due already</li>
+                            <li>- Official Receipts of Medical-related expenses issued within 3 months from application</li>
+                            <li>- Hospital / Clinic Assessment/s issued within 3 months from application</li>
+                            <li>- SOA of other credit card/s if charged using a non-BPI/BFB credit card within 3 months from application
+                            </li>
                         </ol>
-                        <h2>SIP for School</h2>
-                        <ol>
-                            <li>Assessment Form/Official Receipt issued within 3 months from application</li>
-                        </ol>
-                        <h2>SIP for Hospital</h2>
-                        <ol>
-                            <li>Official Receipts of Medical-related expenses issued within 3 months from application</li>
-                            <li>Hospital / Clinic Assessment/s issued within 3 months from application</li>
-                            <li>SOA of other credit card/s if charged using a non-BPI/BFB credit card within 3 months from application</li>
-                        </ol>
+
                     </ul>
 
 
@@ -254,16 +245,16 @@ const SIPDocu = () => {
 
 
             <div className="navigation">
-                <div className="prev" onClick={() => { nav('/SIP-loan/filtering-of-leads'); window.scrollTo(0, 0) }}>
+                <div className="prev" onClick={() => { nav('/SIP-loan/call-flow-and-spiels'); window.scrollTo(0, 0) }}>
                     <ion-icon name="arrow-back-outline"></ion-icon> Prev
                 </div>
 
                 <div className="pageNum">
-                    Page (2)
+                    Page (3)
                 </div>
 
                 <div className="next" onClick={() => { nav('/SIP-loan/exception-handling'); window.scrollTo(0, 0) }}>
-                    next
+                    next  <ion-icon name="arrow-forward-outline"></ion-icon>
                 </div>
             </div>
 

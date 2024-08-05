@@ -1,8 +1,16 @@
 import FilteringOfLeads from "../SIPLoans/FilteringOfLeads";
+import catergoyImg from '../images/frontImg.jpg'
+import CampaignGuidelinesImg from '../images/IMG_6590.png'
+import OurCustomerImg from '../images/IMG_6595.png'
+import PerformanceImg from '../images/IMG_6627.png'
+import TeamImages from '../images/20240708_151210.jpg'
+import salesSupportCenter from '../images/CategoryImages/20240708_152342.jpg'
+import TrainingImg from '../images/CategoryImages/IMG_1361.jpg'
 
 export const CategoryOBJ = [
     {
         title: "Advisories",
+        imgSrc: catergoyImg,
         desc: "Stay informed with our advisory updates, providing essential information and guidance on our current developments",
         HaveContent: false,
         subCater: [
@@ -19,6 +27,7 @@ export const CategoryOBJ = [
     },
     {
         title: "Campaign Guidelines",
+         imgSrc: CampaignGuidelinesImg,
         desc: "Navigate your campaign with confidence using our comprehensive guidelines, offering strategic insights and practical advice.",
         HaveContent: true,
         subCater: [
@@ -45,8 +54,10 @@ export const CategoryOBJ = [
                 title: "SIP Loans",
                 content: [
                     { title: "Filtering of Leads", link: "/SIP-loan/filtering-of-leads" },
+                    { title: "Call Flow and Spiels", link: "/SIP-loan/call-flow-and-spiels" },
                     { title: "Documentation", link: "/SIP-loan/documentation" },
                     { title: "Exception of Handling", link: "/SIP-loan/exception-handling" },
+                    { title: "Processing of Applications", link: "/SIP-loan/prcessing-of-applications" },
                 ]
             }
         ]
@@ -55,6 +66,7 @@ export const CategoryOBJ = [
 
     {
         title: "Our Customer",
+         imgSrc: OurCustomerImg,
         desc: "Our valued customers. We prioritize your needs, ensuring a seamless experience and personalized solutions every step of the way.",
         HaveContent: false,
         subCater: [
@@ -67,7 +79,8 @@ export const CategoryOBJ = [
 
     {
         title: "Performance",
-        desc: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus nemo illum iusto architecto, labore eveniet dolore esse odio et, optio, ducimus dicta delectus dolor earum repellendus tempora nulla culpa aut.",
+         imgSrc: PerformanceImg,
+         desc: 'Stay updated with our sales performance metrics, providing key insights into our sales activities, achievements, and areas for improvement. Monitor progress and drive excellence with our detailed performance reports.',
         HaveContent: false,
         subCater: [
             { title: "Sales Reports", link: "/under-development" },
@@ -81,16 +94,19 @@ export const CategoryOBJ = [
     },
     {
         title: "Team Updates",
-        desc: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus nemo illum iusto architecto, labore eveniet dolore esse odio et, optio, ducimus dicta delectus dolor earum repellendus tempora nulla culpa aut.",
+         imgSrc: TeamImages,
+        desc: "Keep track of the latest updates within your team, including team accomplishments, and important announcements. Stay connected and informed about the people driving our sales success.",
         HaveContent: false,
         subCater: [
             { title: "Table of Organization", link: "/under-development" },
             { title: "Top Performers", link: "/under-development" },
+            { title: "Events", link: "/under-development" },
         ]
     },
     {
         title: "Sales Support Corner",
-        desc: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus nemo illum iusto architecto, labore eveniet dolore esse odio et, optio, ducimus dicta delectus dolor earum repellendus tempora nulla culpa aut.",
+         imgSrc: salesSupportCenter,
+        desc: "Discover valuable resources and support from our dedicated sales support team. Access tools, advisories tips, and assistance to enhance your sales strategies and streamline your processes for optimal performance.",
         HaveContent: false,
         subCater: [
             { title: "Announcements", link: "/under-development" },
@@ -102,6 +118,7 @@ export const CategoryOBJ = [
     },
     {
         title: "Training",
+         imgSrc: TrainingImg,
         desc: "Empower your self with our specialized training programs, designed to enhance skills and foster professional growth the UTS way.",
         HaveContent: false,
         subCater: [

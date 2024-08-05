@@ -34,8 +34,6 @@ const Header = () => {
         }))
     ];
 
-
-
     const optionForTraining = CategoryOBJ[6]?.subCater ? [
         {
             HaveContent: CategoryOBJ[6].HaveContent,
@@ -46,7 +44,6 @@ const Header = () => {
             }))
         }
     ] : [];
-
 
     const optionForCustomers = CategoryOBJ[2]?.subCater ? [
         {
@@ -60,7 +57,6 @@ const Header = () => {
     ] : [];
 
 
-
     const optionForPerfomance = CategoryOBJ[3]?.subCater ? [
         {
             HaveContent: CategoryOBJ[3].HaveContent,
@@ -71,7 +67,6 @@ const Header = () => {
             }))
         }
     ] : [];
-
 
     const optionForTeam = CategoryOBJ[4]?.subCater ? [
         {
@@ -98,7 +93,6 @@ const Header = () => {
 
 
     const [isClose, setIsClose] = useState(false)
-
     const openModal = (text) => {
         if (isSelected === text && isClose) {
             setIsClose(false);
@@ -232,87 +226,6 @@ const Header = () => {
         }
     };
 
-
-    // const renderMenus = () => {
-
-    
-    //     const getOptions = () => {
-    //         switch (isSelected) {
-    //             case 'Advisories':
-    //                 return optionsForAdvisories[0];
-    //             case 'Campaign':
-    //                 return optionsForCampaign;
-    //             case 'Training':
-    //                 return optionForTraining[0];
-    //             case 'Customers':
-    //                 return optionForCustomers[0];
-    //             case 'Performance':
-    //                 return optionForPerfomance[0];
-    //             case 'Team':
-    //                 return optionForTeam[0];
-    //             case 'Sales':
-    //                 return optionForSales[0];
-    //             default:
-    //                 return null;
-    //         }
-    //     };
-    //     const options = getOptions();
-
-    //     console.log(options);
-    
-    //     if (isSelected !== "Campaign") {
-    //         return (
-    //             <div className="menuItem advisories" onClick={handleClick}>
-    //                 {options?.content.map((item) => (
-    //                     <div 
-    //                         className={`navigator ${item.link === "/under-development" ? "" : "noCon"}`}
-    //                         key={item.title}
-    //                         onClick={() => { nav(item.link); window.scrollTo(0, 0); }}
-    //                     >
-    //                         {item.title}
-    //                     </div>
-    //                 ))}
-    //             </div>
-    //         );
-    //     } else {
-    //         return (
-    //             <div className="menuItem Campaign" onClick={handleClick}>
-    //                 {options.map((item) => (
-    //                     <div key={item.title} className="categoryContainer">
-    //                         <div 
-    //                             className="navigator"
-    //                             onClick={(event) => { handleCategoryClick(item.title, event); setIsActive(item.title); }}
-    //                         >
-    //                             <div className={`naviTitle ${item.title === isActive ? 'activated' : ''}`}>
-    //                                 {item.title}
-    //                             </div>
-    //                         </div>
-    //                         {selectedCategory === item.title && (
-    //                             <div className="subContent subCategoryPosition">
-    //                                 {item.content[0].map((subItem) => (
-    //                                     <div 
-    //                                         className="subItem" 
-    //                                         key={subItem.title} 
-    //                                         onClick={() => { nav(subItem.link); window.scrollTo(0, 0); }}
-    //                                     >
-    //                                         {subItem.title}
-    //                                     </div>
-    //                                 ))}
-    //                             </div>
-    //                         )}
-    //                     </div>
-    //                 ))}
-    //             </div>
-    //         );
-    //     }
-    // };
-    
-
-
-    // useEffect(() => {
-    //     renderMenus()
-    // }, [isSelected])
-
     
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -410,9 +323,7 @@ const Header = () => {
                                     {renderMenu()}
                                 </div>
                             )}
-
                         </button>
-
 
                         <button className='CampaignBtn' onClick={() => { openModal("Campaign") }}>
                             <div className="DropText">
@@ -422,7 +333,6 @@ const Header = () => {
                                     {renderMenu()}
                                 </div>
                             )}
-
                         </button>
 
                         <button className='TrainingBtn' onClick={() => { openModal("Training") }}>
@@ -433,7 +343,6 @@ const Header = () => {
                                     {renderMenu()}
                                 </div>
                             )}
-
                         </button>
 
                         <button className='CustomersBtn' onClick={() => { openModal("Customers") }}>
@@ -565,7 +474,11 @@ const Header = () => {
                     <div className="line"></div>
                     <form onSubmit={submitQuery} className="searchInput">
                         <input value={query} onChange={(e) => { setQuery(e.target.value) }} type="text" placeholder='What you want to find?' />
-                        <button type='submit'><ion-icon name="arrow-forward-outline"></ion-icon></button>
+                        <button type='submit'>
+                            <div className='icn'>
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </div>
+                        </button>
                     </form>
                 </div>
             ) : <></>}

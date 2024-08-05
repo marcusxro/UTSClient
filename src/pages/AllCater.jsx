@@ -4,27 +4,34 @@ import Footer from '../comp/Footer'
 import { CategoryOBJ } from '../comp/Category'
 import { useNavigate } from 'react-router-dom'
 
+
 const AllCater = () => {
     const nav = useNavigate()
     return (
         <div className='AllCater closer'>
             <Header />
 
-            <div className="headerImage">
+            <div className="headerImageCater">
                 <div className="text">
                     CATEGORIES
                 </div>
             </div>
+
             <div className="AllCaterContent Homepage">
                 {
                     CategoryOBJ.map((item) => (
                         <div className="ItemCategory">
+                            <div className='imgConCat'>
+                                <img src={item.imgSrc} alt="" />
+                            </div>
                             <div className="ItemDesc">
+                                <div>
                                 <div className="title">
                                     {item?.title}
                                 </div>
                                 <div className="desc">
                                     {item?.desc}
+                                </div>
                                 </div>
                                 <div className="SubCater">
                                     {

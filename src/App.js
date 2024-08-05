@@ -23,6 +23,8 @@ import ProtectedRoute from './ProtectedRoute';
 import { onAuthStateChanged } from 'firebase/auth';
 import { Auth } from './Authentication';
 import NotFound from './pages/NotFound';
+import SIPCallFlowAndSpiels from './SIPLoans/SIPCallFlowAndSpiels';
+import SIPProcessingOfApplications from './SIPLoans/SIPProcessingOfApplications'
 
 export const Context = React.createContext()
 
@@ -69,12 +71,20 @@ function App() {
               element={<ProtectedRoute element={activeUser ? <PloanDocu /> : <></>} />} />
             <Route path='/personal-loan/exception-handling'
               element={<ProtectedRoute element={activeUser ? <PloanException /> : <></>} />} />
+
             <Route path='/SIP-loan/filtering-of-leads'
               element={<ProtectedRoute element={activeUser ? <FilteringOfLeads /> : <></>} />} />
+
+            <Route path='/SIP-loan/call-flow-and-spiels'
+              element={<ProtectedRoute element={activeUser ? <SIPCallFlowAndSpiels /> : <></>} />} />
+
             <Route path='/SIP-loan/documentation'
               element={<ProtectedRoute element={activeUser ? <SIPDocu /> : <></>} />} />
             <Route path='/SIP-loan/exception-handling'
               element={<ProtectedRoute element={activeUser ? <SIPException /> : <></>} />} />
+            <Route path='/SIP-loan/prcessing-of-applications'
+              element={<ProtectedRoute element={activeUser ? <SIPProcessingOfApplications /> : <></>} />} />
+           
             <Route path='/under-development'
               element={<ProtectedRoute element={activeUser ? <UnderDev /> : <></>} />} />
             <Route path='/*' element={<NotFound />} />

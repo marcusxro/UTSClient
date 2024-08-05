@@ -1,15 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { Context } from '../App';
-
 import Header from '../comp/Header'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
-import { Navigation, Pagination, Scrollbar, A11y, EffectFade, } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay } from 'swiper/modules';
+import 'swiper/css/autoplay';
 import firstSlide from '../images/Homepage.png'
 import figureThee from '../images/IMG_6590.png'
 import figureTwo from '../images/IMG_6602.png'
@@ -17,29 +16,22 @@ import figureFour from '../images/IMG_6595.png'
 import figueFive from '../images/IMG_6627.png'
 import figureSlider from '../images/IMG_6585.png'
 import advisoryImg from '../images/frontImg.jpg'
-
 import WhoWeAre from '../images/MTXX_MR20240430_141246247.jpg'
 import Footer from '../comp/Footer';
 import { useNavigate } from 'react-router-dom';
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-
-
+import carouselImg1 from '../images/20240708_151907.jpg'
+import carouselImg2 from '../images/20240708_151234.jpg'
+import carouselImg3 from '../images/20240708_150909.jpg'
 
 const Hompage = () => {
 
   const [activeUser, setActiveUser] = useContext(Context)
-
   const nav = useNavigate('')
-
-
-
-
   const [query, setQuery] = useState('')
+
   const submitQuery = (e) => {
-    
     e.preventDefault()
     if (!query) {
       toast.error("Please type something!", {
@@ -53,38 +45,37 @@ const Hompage = () => {
         progress: undefined,
         closeButton: false
 
-    });
+      });
     } else {
       nav(`/query/${query}`)
       setQuery('')
       window.scrollTo(0, 0)
     }
-
   }
 
   return (
     <div className='Homepage closer'>
-                  <ToastContainer />
+      <ToastContainer />
       {
         activeUser?.uid ?
           <>
             <Header />
             <div className="HomepageContent">
               <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade,]}
-              
+                modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay]}
+                autoplay={{delay: 3000,}}
+                loop
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
+                effect='fade'
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
               >
                 <SwiperSlide>
-
                   <img
                     src={firstSlide}
                   />
-                
                   <div className="absoCon">
                     <div className="text">
                       ULC TELESALES
@@ -93,12 +84,42 @@ const Hompage = () => {
                     <button>DISCOVER</button>
                   </div>
                 </SwiperSlide>
-
                 <SwiperSlide>
-                  <img src={firstSlide} alt="" />
+                  <img
+                    src={carouselImg1}
+                  />
+                  <div className="absoCon">
+                    <div className="text">
+                      ULC TELESALES
+                    </div>
+                    <p>We're the ULC Telesales Team, part of SDCM, specializing in financial services like credit cards, personal loans, and SIP loans from BPI. We Win as One!</p>
+                    <button>DISCOVER</button>
+                  </div>
                 </SwiperSlide>
-                <SwiperSlide> <img src={firstSlide} alt="" /></SwiperSlide>
-                <SwiperSlide> <img src={firstSlide} alt="" /></SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src={carouselImg2}
+                  />
+                  <div className="absoCon">
+                    <div className="text">
+                      ULC TELESALES
+                    </div>
+                    <p>We're the ULC Telesales Team, part of SDCM, specializing in financial services like credit cards, personal loans, and SIP loans from BPI. We Win as One!</p>
+                    <button>DISCOVER</button>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src={carouselImg3}
+                  />
+                  <div className="absoCon">
+                    <div className="text">
+                      ULC TELESALES
+                    </div>
+                    <p>We're the ULC Telesales Team, part of SDCM, specializing in financial services like credit cards, personal loans, and SIP loans from BPI. We Win as One!</p>
+                    <button>DISCOVER</button>
+                  </div>
+                </SwiperSlide>
               </Swiper>
             </div>
             <div className="midContainer">
@@ -111,7 +132,6 @@ const Hompage = () => {
                 </div>
               </div>
             </div>
-
             <div className="imageGallery">
               <div className="imageItem">
                 <div className="imgCon">
@@ -125,8 +145,6 @@ const Hompage = () => {
                   <button onClick={() => { nav('/category/advisories'); window.scrollTo(0, 0) }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
                 </div>
               </div>
-
-
               <div className="imageItem">
                 <div className="desc">
                   <div className="title">
@@ -140,7 +158,6 @@ const Hompage = () => {
                   <img src={figureThee} alt="" />
                 </div>
               </div>
-
               <div className="imageItem">
                 <div className="imgCon">
                   <img src={figureFour} alt="" />
@@ -150,12 +167,10 @@ const Hompage = () => {
                     TRAINING
                   </div>
                   <p>
-
                     Empower your self with our specialized training programs, designed to enhance skills and foster professional growth the UTS way.            </p>
                   <button onClick={() => { nav('/category/training'); window.scrollTo(0, 0) }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
                 </div>
               </div>
-
               <div className="imageItem">
                 <div className="desc">
                   <div className="title">
@@ -163,7 +178,6 @@ const Hompage = () => {
                     CUSTOMER
                   </div>
                   <p>
-
                     Our valued customers. We prioritize your needs, ensuring a seamless experience and personalized solutions every step of the way.
                   </p>
                   <button onClick={() => { nav('/category/our customer'); window.scrollTo(0, 0) }}>NAVIGATE <ion-icon name="arrow-forward-outline"></ion-icon></button>
@@ -212,7 +226,11 @@ const Hompage = () => {
               </div>
               <form onSubmit={submitQuery} className="searchForm">
                 <input value={query} onChange={(e) => { setQuery(e.target.value) }} type="text" placeholder='What do you want to learn?' />
-                <button type='submit'><ion-icon name="arrow-forward-outline"></ion-icon></button>
+                <button type='submit'>
+                  <div className="icn">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </button>
               </form>
             </div>
             <Footer />
