@@ -864,6 +864,7 @@ header .menuEl button .DropText span {
 }
 
 .footer .contacts .name {
+  cursor: pointer;
   font-weight: bold;
 }
 
