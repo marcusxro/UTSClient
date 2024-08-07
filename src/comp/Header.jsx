@@ -397,7 +397,8 @@ const Header = () => {
                     <div className="Menu" onClick={() => { showMenu() }}>
                         {isShow === true ? <ion-icon name="close-outline"></ion-icon> : <ion-icon name="menu-outline"></ion-icon>}
                     </div>
-                    <LogOut />
+                    {/* <LogOut /> */}
+                    {/* retrieve back the logOut func if approved */}
                 </div>
 
                 <div className="menuEl">

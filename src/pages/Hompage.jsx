@@ -56,8 +56,7 @@ const Hompage = () => {
   return (
     <div className='Homepage closer'>
       <ToastContainer />
-      {
-        activeUser?.uid ?
+
           <>
             <Header />
             <div className="HomepageContent">
@@ -236,7 +235,7 @@ const Hompage = () => {
             <Footer />
           </> :
           <></>
-      }
+
     </div >
 
   )

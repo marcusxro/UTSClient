@@ -39,55 +39,59 @@ function App() {
     return () => unsubscribe();
   }, [activeUser]);
 
+
+
+  //removed the conditional rendering for authentication. v1 have it
+
   return (
     <Context.Provider value={[activeUser, setActiveUser]}>
       <Router>
         <div className="App">
           <Routes>
-            <Route path='/' element={activeUser ? <></> : <SignIn />} />
+            <Route path='/' element={ <SignIn />} />
             <Route path='/Home'
-              element={<ProtectedRoute element={activeUser ? <Hompage /> : <></>} />} />
+               element={ <Hompage /> }  />
             <Route path='/all-categories'
-              element={<ProtectedRoute element={activeUser ? <AllCater /> : <></>} />} />
+               element={ <AllCater /> }  />
             <Route path='/query/:id'
-              element={<ProtectedRoute element={activeUser ? <SearchedItem /> : <></>} />} />
+               element={ <SearchedItem /> }  />
             <Route path='/category/:item'
-              element={<ProtectedRoute element={activeUser ? <CaterPage /> : <></>} />} />
+               element={ <CaterPage /> }  />
             <Route path='/campaign/filtering-of-leads'
-              element={<ProtectedRoute element={activeUser ? <Campaign /> : <></>} />} />
+               element={ <Campaign /> }  />
             <Route path='/campaign/call-flow-and-spiels'
-              element={<ProtectedRoute element={activeUser ? <CallAndSpiels /> : <></>} />} />
+               element={ <CallAndSpiels /> }  />
             <Route path='/campaign/documentation'
-              element={<ProtectedRoute element={activeUser ? <Documentation /> : <></>} />} />
+               element={ <Documentation /> }  />
             <Route path='/campaign/exception-handling'
-              element={<ProtectedRoute element={activeUser ? <Exception /> : <></>} />} />
+               element={ <Exception /> }  />
             <Route path='/personal-loan/filtering-of-leads'
-              element={<ProtectedRoute element={activeUser ? <Ploan /> : <></>} />} />
+               element={ <Ploan /> }  />
             <Route path='/personal-loan/call-flow-and-spiels'
-              element={<ProtectedRoute element={activeUser ? <PloanCall /> : <></>} />} />
+               element={ <PloanCall /> }  />
             <Route path='/personal-loan/other-guidlines-for-docusign'
-              element={<ProtectedRoute element={activeUser ? <PloanOther /> : <></>} />} />
+               element={ <PloanOther /> }  />
             <Route path='/personal-loan/documentation'
-              element={<ProtectedRoute element={activeUser ? <PloanDocu /> : <></>} />} />
+               element={ <PloanDocu /> }  />
             <Route path='/personal-loan/exception-handling'
-              element={<ProtectedRoute element={activeUser ? <PloanException /> : <></>} />} />
+               element={ <PloanException /> }  />
 
             <Route path='/SIP-loan/filtering-of-leads'
-              element={<ProtectedRoute element={activeUser ? <FilteringOfLeads /> : <></>} />} />
+               element={ <FilteringOfLeads /> }  />
 
             <Route path='/SIP-loan/call-flow-and-spiels'
-              element={<ProtectedRoute element={activeUser ? <SIPCallFlowAndSpiels /> : <></>} />} />
+               element={ <SIPCallFlowAndSpiels /> }  />
 
             <Route path='/SIP-loan/documentation'
-              element={<ProtectedRoute element={activeUser ? <SIPDocu /> : <></>} />} />
+               element={ <SIPDocu /> }  />
             <Route path='/SIP-loan/exception-handling'
-              element={<ProtectedRoute element={activeUser ? <SIPException /> : <></>} />} />
+               element={ <SIPException /> }  />
             <Route path='/SIP-loan/prcessing-of-applications'
-              element={<ProtectedRoute element={activeUser ? <SIPProcessingOfApplications /> : <></>} />} />
+               element={ <SIPProcessingOfApplications /> }  />
            
             <Route path='/under-development'
-              element={<ProtectedRoute element={activeUser ? <UnderDev /> : <></>} />} />
-            <Route path='/*' element={<NotFound />} />
+               element={ <UnderDev /> }  />
+            <Route path='/*' element={<NotFound /> } />
           </Routes>
         </div>
       </Router>

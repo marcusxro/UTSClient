@@ -19,7 +19,6 @@ const SignIn = () => {
     const [seePass, setSeePass] = useState(false)
 
 
-
     const successLogin = () => {
         gsap.to([emailRef.current, passwordRef.current], {
             border: '1px solid #ccc'
@@ -88,10 +87,16 @@ const SignIn = () => {
     return (
         <div className='SignIn'>
             <ToastContainer />
-            <IsLoggedIn />
-
+            {/* <IsLoggedIn /> */}
+            {/*removed the isLoggedIn function for demo */}
             <div className="SignInContent">
-                <form
+                <div className="title">
+                    To continue, please click the button to navigate.
+                </div>
+                <button className='signInBtn' onClick={() => {nav('/Home');}}>
+                    HOME
+                </button>
+                {/* <form
                     onSubmit={signInAccount}
                     action="">
                     <div className="title">
@@ -126,7 +131,11 @@ const SignIn = () => {
                     <div className="copyright">
                         Copyright © UTS.com All rights reserved.
                     </div>
-                </form>
+                </form> */}
+                {/* retrieve the function if approve */}
+                <div className="copyright">
+                    Copyright © UTS.com All rights reserved.
+                </div>
             </div>
             <div className="Filler">
                 <img src={fillerImg} alt="" />

@@ -140,7 +140,7 @@ export const innerContent = [
     {
         Category: 'Campaign Guidelines',
         SemiCat: 'Credit Cards',
-        title: "Filtering of Leads", //done
+        title: "Filtering of Leads", //
         content: [
             { title: "Check name and birth date of client. Exclude the following", link: "/campaign/filtering-of-leads" },
             { title: "Check Cardlink (PCNL, PCIC, PCCP and PCUS). Exclude the following", link: "/campaign/filtering-of-leads" },

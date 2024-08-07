@@ -2321,3 +2321,17 @@ Header .progress {
     }
   }
 }
+
+
+.signInBtn {
+  width: 100%;
+  max-width: 350px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color .2s ease-in-out;
+}
+
+.signInBtn:hover {
+background-color: #3f3e3e;
+color: white;
+}

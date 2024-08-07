@@ -10,22 +10,29 @@ import { Auth } from './Authentication';
 
 const ProtectedRoute = ({ element }) => {
 
-    const [activeUser, setActiveUser] = useState(null);
-        const nav = useNavigate()
-    useEffect(() => {
-      const isUser = onAuthStateChanged(Auth, (user) => {
-        if(user?.uid) {
-          setActiveUser(user)
-        } else {
-            nav('/')
-        }
-      })
+  // const [activeUser, setActiveUser] = useState(null);
+
+
+
+  // const nav = useNavigate()
+  // useEffect(() => {
+  //   const isUser = onAuthStateChanged(Auth, (user) => {
+  //     if (user?.uid) {
+  //       setActiveUser(user)
+  //     } else {
+  //       nav('/')
+  //     }
+  //   })
+
+  //   return () => isUser()
+  // }, [])
+
+
+  // return element;
   
-      return () => isUser()
-    }, [])
 
 
-  return element;
+  //disable the proction route for now
 };
 
 export default ProtectedRoute;
