@@ -233,8 +233,7 @@ const Hompage = () => {
               </form>
             </div>
             <Footer />
-          </> :
-          <></>
+          </> 
 
     </div >
 
