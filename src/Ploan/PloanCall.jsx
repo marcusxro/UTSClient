@@ -51,9 +51,9 @@ const PloanCall = () => {
                         <li>
                             <h3 className={`liTitle ${contentTitle[0].title === headerTitle ? 'searched' : ''}`}
                                 ref={titleRefs.current[0]}> {contentTitle[0].title}</h3>
-                            <p>"Good Morning/Afternoon, Mr./Ms (CUSTOMER NAME). This is (EMPLOYEE NAME), your (EMPLOYEE TITLE) from the BPI. May I speak to (name of client)?</p>
+                            <p>"Good Morning/Afternoon/Evening! This is (Insert Name) from Bank of the Philippine Islands. May I speak with (name of client)?" - should be verbatim</p>
                             <ul>
-                                <li>If client is not available, proceed to Item 2 – Not NOW SPIEL (ask for other contact information and best time to call back.)</li>
+                                <li>If client is not available, ask for other contact information and best time to call back.</li>
                                 <li>If wrong number, verify the dialed number.</li>
                             </ul>
                         </li>

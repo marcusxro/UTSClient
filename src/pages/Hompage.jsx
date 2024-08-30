@@ -124,7 +124,10 @@ const Hompage = () => {
             <div className="midContainer">
               <div className="textCon">
                 <div className="title">
-                  CHOOSE WHAT CATEGORY
+                i. WHAT ARE YOU LOOKING FOR?
+                </div>
+                <div style={{color: '#888'}}>
+             (click the applicable heading below).
                 </div>
                 <div className="line">
 
@@ -195,10 +198,10 @@ const Hompage = () => {
             <div className="salesTip">
               <div className="firstCon">
                 <div className="text">
-                  Sales Tips of the Month
+                  Sales Tip of the Month
                 </div>
                 <p>
-                  <span>Personal Loan: </span> Keep it simple and clear. When talking to customers over the phone, avoid using complicated jargon or technical terms. Instead, explin things in easy-to-understand language.
+                  <span>Personal Loan: </span> Keep it simple and clear. When talking to customers over the phone, avoid using complicated jargon or technical terms. Instead, explain things in easy-to-understand language.
                   This builds trust and makes customers feel confident about their decision to get a personal loan. Remember, clarity sells!
                 </p>
               </div>
