@@ -15,13 +15,18 @@ export const CategoryOBJ = [
         HaveContent: false,
         subCater: [
             {
-                title: "Credit Cards", link: "/under-development"
+                title: "Credit Cards", link: "/under-development",
+                SemiCatP: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.  suscipit animi natus porro error repellendus. Sit, molestiae?',
             },
             {
-                title: "Personal Loans", link: "/under-development"
+                title: "Personal Loans", link: "/under-development",
+                SemiCatP: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.  suscipit animi natus porro error repellendus. Sit, molestiae?',
+
             },
             {
-                title: "SIP Loans", link: "/under-development"
+                title: "SIP Loans", link: "/under-development",
+                SemiCatP: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.  suscipit animi natus porro error repellendus. Sit, molestiae?',
+
             }
         ]
     },

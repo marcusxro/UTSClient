@@ -1885,7 +1885,7 @@ html {
   display: flex;
   height: 100%;
   gap: 20px;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
 }
 
@@ -1912,14 +1912,23 @@ html {
   min-height: fit-content;
   background-position: center;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
+  align-items: start;
+  justify-content: start;
+  font-size: 1.5rem;
   font-weight: bold;
-  text-align: center;
   height: 100%;
 }
+.TitleDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  .textDesc {
+    color: #666666;
+    font-weight: normal;
 
+  }
+}
 .subCon {
   width: 50%;
   display: flex;
@@ -1928,6 +1937,9 @@ html {
 }
 
 @media only screen and (max-width: 750px) {
+  .TitleDiv {
+    width: 100%;
+  }
   .CaterPage .CaterPageContent {
     background-color: #f5f5f5;
     padding: 20px 10%;

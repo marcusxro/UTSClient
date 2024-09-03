@@ -235,6 +235,80 @@ const PloanCall = () => {
                         <ul>
                             <li>Upon confirmation with client, he/she has no active deposit account, TSA may inform client to open an account to complete the Personal Loan Booking Process.</li>
                             <li>"Ma'am/Sir, we will still process your application. Once your PL application is queued for approval, we will be requesting you to open an account with BPI. This is because your loan proceeds will be credited to your BPI account, and your monthly installment will also be automatically debited from this account."</li>
+                            <div
+                                style={{ marginTop: '10px' }}
+                                className="margLeft">
+                                <table 
+                                         style={{ marginTop: '10px' }}
+                                border="1" cellPadding="10">
+                                    <thead>
+                                        <tr>
+                                            <th colSpan="2">Settlement Account:</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colSpan="2"><strong>Valid:</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>BPI/BPI Direct solo account</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>“OR” joint account</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>DBA account (Doing Business As)</td>
+                                        </tr>
+                                        <tr>
+                                            <td colSpan="2"><strong>Invalid:</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>ITF (In trust for)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>Dollar account</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>Time deposit</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>Save up account</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>“AND” joint account</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>Corporate account</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>“Full Hold” account</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>Closed account</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>BFB accounts</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>Stock Trade account</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
                         </ul>
                         <li>q. TIN</li>
                         <li>r. SSS/GSIS</li>
@@ -307,21 +381,21 @@ const PloanCall = () => {
                     <p><strong>Spiel:</strong> "You may choose to sign the loan documents at your nominated BPI branch, or sign them electronically through DocuSign."</p>
                     <h2 className={`liTitle ${contentTitle[20].title === headerTitle ? 'searched' : ''}`}
                         ref={titleRefs.current[20]}>7. {contentTitle[20].title}</h2>
-                    <h3  className={`liTitle ${contentTitle[21].title === headerTitle ? 'searched' : ''}`}
-                                        ref={titleRefs.current[21]}> {contentTitle[21].title}</h3>
+                    <h3 className={`liTitle ${contentTitle[21].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[21]}> {contentTitle[21].title}</h3>
                     <p>"To recap, your residence address is &lt;Residence address&gt;. Your Personal Loan application amounting to &lt;specify amount&gt; will be payable in &lt;specify loan term in months&gt;, with a monthly interest rate of &lt;specify add-on-rate&gt; or effective interest rate of &lt;specify EIR&gt;. Your monthly amortization is &lt;specify monthly amortization amount&gt; and your preferred branch for the loan documents signing is at &lt;specify BPI or BFSB branch&gt; on &lt;Day, Date and Time&gt;. Your loan will be processed for cash release within 3-5 days after the signing of your loan documents."</p>
                     <p>"The loan proceeds will be credited to your nominated BPI &lt;account type – Savings/Checking&gt; account number &lt;specify account number&gt;."</p>
                     <p>"Kindly confirm by saying “YES” if all the details are correct."</p>
                     <p>&lt;Acceptable Response: Yes, Oo, Opo, I agree, I confirm, Okay, Correct, Tama, please proceed&gt;</p>
 
-                    <h3  className={`liTitle ${contentTitle[22].title === headerTitle ? 'searched' : ''}`}
-                                        ref={titleRefs.current[22]}> {contentTitle[22].title}</h3>
+                    <h3 className={`liTitle ${contentTitle[22].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[22]}> {contentTitle[22].title}</h3>
                     <p>"To recap, your residence address is &lt;Residence address&gt;. Your Personal Loan application amounting to &lt;specify amount&gt; will be payable in &lt;specify loan term in months&gt;, with a monthly interest rate of &lt;specify add-on-rate&gt; or effective interest rate of &lt;specify EIR&gt;. Your monthly amortization is &lt;specify monthly amortization amount&gt; and your preferred branch for the loan documents signing is at &lt;specify BPI or BFSB branch&gt; on &lt;Day, Date and Time&gt;. Your loan will be processed for cash release within 3-5 days after the signing of your loan documents."</p>
                     <p>"Kindly confirm by saying “YES” if all the details are correct."</p>
                     <p>&lt;Acceptable Response: Yes, Oo, Opo, I agree, I confirm, Okay, Correct, Tama, please proceed&gt;</p>
 
-                    <h2  className={`liTitle ${contentTitle[23].title === headerTitle ? 'searched' : ''}`}
-                                        ref={titleRefs.current[23]}>8. {contentTitle[23].title}</h2>
+                    <h2 className={`liTitle ${contentTitle[23].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[23]}>8. {contentTitle[23].title}</h2>
                     <p>a. FEES AND CHARGES:</p>
                     <ul>
                         <li>PL Loan availment of below P250,000: "Our minimal one-time processing fee is P1,500."</li>
@@ -333,10 +407,10 @@ const PloanCall = () => {
                     <p>e. SMS NOTIFICATION: "Mr./Ms. ________, Once we have submitted your application, it will be queued for processing and credit approval. You will be receiving an SMS notification once your loan is approved within 4-7 banking days."</p>
                     <p>f. DocuSign: “Please wait for the loan documents and instructions that will be sent to your registered email address. Once you have received the email, kindly read and review the documents before affixing your signature. Refer to this link <a href="https://l.bpi.com.ph/Docusign">https://l.bpi.com.ph/Docusign</a> for the step-by-step process. You will receive an email confirmation upon submission of the signed documents. Once your loan is approved, please expect an SMS notification from BPI.”</p>
 
-                    <h2  className={`liTitle ${contentTitle[24].title === headerTitle ? 'searched' : ''}`}
-                                        ref={titleRefs.current[24]}>9. {contentTitle[24].title}</h2>
-                    <h3  className={`liTitle ${contentTitle[25].title === headerTitle ? 'searched' : ''}`}
-                                        ref={titleRefs.current[25]}> {contentTitle[25].title}</h3>
+                    <h2 className={`liTitle ${contentTitle[24].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[24]}>9. {contentTitle[24].title}</h2>
+                    <h3 className={`liTitle ${contentTitle[25].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[25]}> {contentTitle[25].title}</h3>
                     <p>“Ma’am/ Sir, before we process your PL application, please note that by saying YES to proceeding with the application processing, you have agreed to be bound by the governing terms and conditions of the PL Application and BPI’s Privacy Policy. You may refer to <a href="https://www.bpi.com.ph/personalloan/undertaking">https://www.bpi.com.ph/personalloan/undertaking</a> for the copy of the full terms and conditions and <a href="www.bpi.com.ph">www.bpi.com.ph</a> for the Bank’s Privacy Policy. You will also be provided with a copy of the Application Terms and Conditions upon the signing of the loan documents at the branch.”</p>
                     <p>“Shall we now proceed with your Personal Loan application processing and evaluation?”</p>
                     <p><em>&lt;Acceptable Response: Yes, Oo, Opo, I agree, I confirm, Okay, Correct, Tama, please proceed&gt;</em></p>
@@ -354,8 +428,8 @@ const PloanCall = () => {
                         <li>BPIs Privacy Policy: <a href="www.bpi.com.ph">www.bpi.com.ph</a></li>
                     </ul>
 
-                    <h2  className={`liTitle ${contentTitle[26].title === headerTitle ? 'searched' : ''}`}
-                                        ref={titleRefs.current[26]}>10. {contentTitle[26].title}</h2>
+                    <h2 className={`liTitle ${contentTitle[26].title === headerTitle ? 'searched' : ''}`}
+                        ref={titleRefs.current[26]}>10. {contentTitle[26].title}</h2>
                     <p>"Thank you for availing our BPI Personal Loan. Kindly take note of this service request number _______ as reference for this call out/application. Thank you for your time.”</p>
                 </div>
             </div>

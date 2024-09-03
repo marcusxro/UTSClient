@@ -40,8 +40,13 @@ const CaterPage = () => {
                 {data.map((itm) => (
                     itm.subCater.map((subItem) => (
                         <div className="caterIttem" key={subItem.title}>
+                            <div className='TitleDiv'>
                             <div className="subCaterTitle">
                                 {subItem.title}
+                            </div>
+                            <div className='textDesc'>
+                                {subItem?.SemiCatP}
+                            </div>
                             </div>
                             <div className="subCon">
                                 {subItem.content ? subItem.content.map((itmz) => (

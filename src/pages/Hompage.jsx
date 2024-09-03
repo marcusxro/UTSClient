@@ -124,10 +124,10 @@ const Hompage = () => {
             <div className="midContainer">
               <div className="textCon">
                 <div className="title">
-                i. WHAT ARE YOU LOOKING FOR?
+                WHAT ARE YOU LOOKING FOR?
                 </div>
                 <div style={{color: '#888'}}>
-             (click the applicable heading below).
+                (Click on the desired section below)
                 </div>
                 <div className="line">
 
