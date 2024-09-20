@@ -133,6 +133,11 @@ const PloanDocu = () => {
                             <li>Date and time of all successful call-outs to client</li>
                             <li>Okay for Validation</li>
                         </ul>
+                        <li>Signing Options:</li>
+                        <ul>
+                            <li>Branch</li>
+                            <li>DocuSign</li>
+                        </ul>
                     </ul>
                 </ul>
                 </div>

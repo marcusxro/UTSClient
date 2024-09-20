@@ -120,8 +120,6 @@ const PloanCall = () => {
                     </ol>
 
 
-
-
                     <h2 className={`liTitle ${contentTitle[5].title === headerTitle ? 'searched' : ''}`}
                         ref={titleRefs.current[5]}>3. {contentTitle[5].title}</h2>
                     <p>TSA must confirm with the client if there is no pending application.</p>
@@ -238,9 +236,9 @@ const PloanCall = () => {
                             <div
                                 style={{ marginTop: '10px' }}
                                 className="margLeft">
-                                <table 
-                                         style={{ marginTop: '10px' }}
-                                border="1" cellPadding="10">
+                                <table
+                                    style={{ marginTop: '10px' }}
+                                    border="1" cellPadding="10">
                                     <thead>
                                         <tr>
                                             <th colSpan="2">Settlement Account:</th>
@@ -362,24 +360,47 @@ const PloanCall = () => {
                         ref={titleRefs.current[17]}> {contentTitle[17].title}</h3>
                     <p><strong className={`liTitle ${contentTitle[18].title === headerTitle ? 'searched' : ''}`}
                         ref={titleRefs.current[18]}> {contentTitle[18].title}</strong></p>
+                    sd
                     <ul>
-                        <li>Client’s email address and mobile number in the application form is exactly the same as the information reflected in Salesforce.</li>
-                        <li>Also, both contact information must be active and in use.</li>
-                        <li>If the email address and/or mobile number are no longer updated, TSA cannot offer DocuSign option.</li>
-                        <li>Client provided a valid BPI settlement account (SETA) at point of call.</li>
-                        <li>If the client cannot provide or does not want to disclose his SETA, TSA cannot offer DocuSign option.</li>
-                        <li>Vouching of settlement accounts by Team Leaders are not allowed in the DocuSign process.</li>
+                        <li>
+                        Client’s email address and mobile number in the application form is exactly the same as the information reflected in Salesforce. 
+                        </li>
+                        <li>
+                        Also, both contact information must be active and in use. 
+                        </li>
+                        <li>
+                        If the email address and/or mobile number are no longer updated, TSA cannot offer DocuSign option. 
+                        </li>
+                        <li>
+                        Client provided a valid BPI settlement account (SETA) at point of call. 
+                        </li>
+                        <li>
+                        If the client cannot provide or does not want to disclose his SETA, TSA cannot offer DocuSign option. 
+                        </li>
+                        <li>
+                        Vouching of settlement accounts by Team Leaders are not allowed in the DocuSign process. 
+                        </li>
                     </ul>
                     <p><strong className={`liTitle ${contentTitle[19].title === headerTitle ? 'searched' : ''}`}
                         ref={titleRefs.current[19]}> {contentTitle[19].title}</strong></p>
+                  
                     <ul>
-                        <li>If upon probing, the conditions are not met, TSA cannot offer DocuSign option.</li>
-                        <li>TSA to advise the client to visit his nominated branch for the signing of his loan documents.</li>
-                        <li>If the client insists to use DocuSign, the client must update his records in the branch.</li>
-                        <li>If upon probing, the conditions are met, TSA can offer DocuSign option.</li>
+                        <li>
+                        If upon probing, the conditions are not met, TSA cannot offer DocuSign option. 
+                        </li>
+                        <li>
+                        TSA to advise the client to visit his nominated branch for the signing of his loan documents. 
+                        </li>
+                        <li>
+                        If the client insists to use DocuSign, the client must update his records in the branch. 
+                        </li>
+                        <li>
+                        If upon probing, the conditions are met, TSA can offer DocuSign option. 
+                        </li>
                     </ul>
-                    <p><strong>Spiel:</strong> "You may choose to sign the loan documents at your nominated BPI branch, or sign them electronically through DocuSign."</p>
-                    <h2 className={`liTitle ${contentTitle[20].title === headerTitle ? 'searched' : ''}`}
+                    <p><strong>Spiel:</strong> “You may choose to sign the loan documents at your nominated BPI branch, or sign them electronically through DocuSign.”
+                    </p>
+                        <h2 className={`liTitle ${contentTitle[20].title === headerTitle ? 'searched' : ''}`}
                         ref={titleRefs.current[20]}>7. {contentTitle[20].title}</h2>
                     <h3 className={`liTitle ${contentTitle[21].title === headerTitle ? 'searched' : ''}`}
                         ref={titleRefs.current[21]}> {contentTitle[21].title}</h3>
@@ -393,9 +414,11 @@ const PloanCall = () => {
                     <p>"To recap, your residence address is &lt;Residence address&gt;. Your Personal Loan application amounting to &lt;specify amount&gt; will be payable in &lt;specify loan term in months&gt;, with a monthly interest rate of &lt;specify add-on-rate&gt; or effective interest rate of &lt;specify EIR&gt;. Your monthly amortization is &lt;specify monthly amortization amount&gt; and your preferred branch for the loan documents signing is at &lt;specify BPI or BFSB branch&gt; on &lt;Day, Date and Time&gt;. Your loan will be processed for cash release within 3-5 days after the signing of your loan documents."</p>
                     <p>"Kindly confirm by saying “YES” if all the details are correct."</p>
                     <p>&lt;Acceptable Response: Yes, Oo, Opo, I agree, I confirm, Okay, Correct, Tama, please proceed&gt;</p>
-
+                    <h3>DocuSign</h3>
+                    <p>“To recap, your residence address is &lt;residence address&gt;. Your Personal Loan application amounting to &lt;specify amount&gt; will be payable in &lt;specify loan term in months&gt;, with a monthly interest rate of &lt;specify add-on-rate&gt; or effective interest rate of &lt;specify EIR&gt;. Your monthly amortization is &lt;specify monthly amortization amount&gt; and you will be signing the loan documents electronically through DocuSign. Your loan will be processed for cash release within 3-5 days after the submission of your signed loan documents.”</p>
                     <h2 className={`liTitle ${contentTitle[23].title === headerTitle ? 'searched' : ''}`}
                         ref={titleRefs.current[23]}>8. {contentTitle[23].title}</h2>
+
                     <p>a. FEES AND CHARGES:</p>
                     <ul>
                         <li>PL Loan availment of below P250,000: "Our minimal one-time processing fee is P1,500."</li>
@@ -405,8 +428,9 @@ const PloanCall = () => {
                     <p>c. ADA: "We will deduct your monthly payment from the settlement account on your prescribed due date via auto debit facility"</p>
                     <p>d. VALID IDs: “Please bring at least 2 valid IDs when you visit the nominated branch.” - Not included in DocuSign.</p>
                     <p>e. SMS NOTIFICATION: "Mr./Ms. ________, Once we have submitted your application, it will be queued for processing and credit approval. You will be receiving an SMS notification once your loan is approved within 4-7 banking days."</p>
-                    <p>f. DocuSign: “Please wait for the loan documents and instructions that will be sent to your registered email address. Once you have received the email, kindly read and review the documents before affixing your signature. Refer to this link <a href="https://l.bpi.com.ph/Docusign">https://l.bpi.com.ph/Docusign</a> for the step-by-step process. You will receive an email confirmation upon submission of the signed documents. Once your loan is approved, please expect an SMS notification from BPI.”</p>
-
+                    <p>
+                        f. DocuSign: “Please wait for the loan documents and instructions that will be sent to your registered email address. Once you have received the email, kindly read and review the documents before affixing your signature. Refer to this link https://l.bpi.com.ph/Docusign  for the step-by-step process. You will receive an email confirmation upon submission of the signed documents. Once your loan is approved, please expect an SMS notification from BPI.”
+                    </p>
                     <h2 className={`liTitle ${contentTitle[24].title === headerTitle ? 'searched' : ''}`}
                         ref={titleRefs.current[24]}>9. {contentTitle[24].title}</h2>
                     <h3 className={`liTitle ${contentTitle[25].title === headerTitle ? 'searched' : ''}`}
@@ -417,11 +441,17 @@ const PloanCall = () => {
                     <p>“Ma’am/Sir, please also note that this telephone conversation will also serve as your application for a BPI Personal Loan. We will forward your application for processing, please wait for the SMS advise that you may proceed to your nominated branch for the signing of the loan documents. Upon signing of the loan documents personally at the branch, the loan proceeds will be credited to your account within 1-2 banking days.”</p>
 
                     <h3>DocuSign:</h3>
-                    <p>“Ma’am/ Sir, before we process your Personal Loan application, please note that by saying YES to proceeding with the application processing, you have agreed to be bound by the governing terms and conditions of the Personal Loan Application and BPI’s Privacy Policy. You may refer to <a href="www.bpi.com.ph/personalloan/undertaking">www.bpi.com.ph/personalloan/undertaking</a> for the copy of the full terms and conditions and <a href="www.bpi.com.ph">www.bpi.com.ph</a> for the Bank’s Privacy Policy. Also, the copy of the terms and conditions are included in the loan documents. You may download and print the signed loan document for your reference.”</p>
-                    <p>“Shall we now proceed with your Personal Loan application processing and evaluation?”</p>
-                    <p><em>&lt;Acceptable Response: Yes, Oo, Opo, I agree, I confirm, Okay, Correct, Tama, please proceed&gt;</em></p>
-                    <p>“Ma’am/Sir, please also note that this telephone conversation will also serve as your application for a BPI Personal Loan. We will forward your application for processing. Please wait for the email and SMS for the loan documents and other instructions. Your loan will be processed for cash release within 3-5 days after the submission of your signed loan documents.”</p>
+                    <p>
+                        “Ma’am/ Sir, before we process your Personal Loan application, please note that by saying YES to proceeding with the application processing, you have agreed to be bound by the governing terms and conditions of the Personal Loan Application and BPI’s Privacy Policy. You may refer to www.bpi.com.ph/personalloan/undertaking for the copy of the full terms and conditions and www.bpi.com.ph for the Bank’s Privacy Policy. Also, the copy of the terms and conditions are included in the loan documents. You may download and print the signed loan document for your reference.
 
+                    </p>
+                    <p>
+                        “Shall we now proceed with your Personal Loan application processing and evaluation?”
+                    </p>
+                    <p><em>&lt;Acceptable Response: Yes, Oo, Opo, I agree, I confirm, Okay, Correct, Tama, please proceed&gt;</em></p>
+                    <p>
+                        “Ma’am/Sir, please also note that this telephone conversation will also serve as your application for a BPI Personal Loan. We will forward your application for processing. Please wait for the email and SMS for the loan documents and other instructions. Your loan will be processed for cash release within 3-5 days after the submission of your signed loan documents.”
+                    </p>
                     <p>For Reference:</p>
                     <ul>
                         <li>Terms and Conditions: <a href="https://www.bpi.com.ph/personalloan/undertaking">https://www.bpi.com.ph/personalloan/undertaking</a></li>
