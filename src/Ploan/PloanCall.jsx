@@ -22,6 +22,67 @@ const PloanCall = () => {
         titleRefs.current = Array(contentTitle.length).fill().map((_, i) => titleRefs.current[i] || React.createRef());
     }
 
+
+    const styles = {
+        container: {
+            maxWidth: '800px',
+            margin: '10px 0',
+            fontFamily: 'Arial, sans-serif',
+            backgroundColor: '#f9f9f9',
+            border: '1px solid #a8181f',
+            padding: '0px',
+            borderRadius: '5px',
+            display: 'flex',
+            flexDirection: 'column'
+        },
+        title: {
+            color: 'white',
+            textAlign: 'center',
+            fontSize: '24px',
+        },
+        subtitle: {
+            color: 'yellow',
+            textAlign: 'center',
+            fontSize: '20px',
+            marginBottom: '5px',
+        },
+        date: {
+            textAlign: 'center',
+            marginBottom: '15px',
+            color: 'white',
+            fontStyle: 'italic',
+        },
+        list: {
+            listStyleType: 'none',
+            padding: '0',
+        },
+        table: {
+            width: '100%',
+            borderCollapse: 'collapse',
+            marginTop: '20px',
+        },
+        th: {
+            backgroundColor: '#b22222',
+            color: '#fff',
+            padding: '10px',
+            textAlign: 'left',
+        },
+        cons: {
+            backgroundColor: "#a8181f"
+        },
+        td: {
+            padding: '10px',
+            verticalAlign: 'top',
+            width: '50%',
+            border: '1px solid #a8181f',
+        },
+        ul: {
+            margin: '0',
+            padding: '20px',
+        },
+    };
+
+
     useEffect(() => {
         if (headerTitle) {
             // Find the matching title and scroll to it
@@ -233,78 +294,54 @@ const PloanCall = () => {
                         <ul>
                             <li>Upon confirmation with client, he/she has no active deposit account, TSA may inform client to open an account to complete the Personal Loan Booking Process.</li>
                             <li>"Ma'am/Sir, we will still process your application. Once your PL application is queued for approval, we will be requesting you to open an account with BPI. This is because your loan proceeds will be credited to your BPI account, and your monthly installment will also be automatically debited from this account."</li>
-                            <div
-                                style={{ marginTop: '10px' }}
-                                className="margLeft">
-                                <table
-                                    style={{ marginTop: '10px' }}
-                                    border="1" cellPadding="10">
-                                    <thead>
-                                        <tr>
-                                            <th colSpan="2">Settlement Account:</th>
-                                        </tr>
-                                    </thead>
+                            <div style={styles.container}>
+
+                    <div style={styles.cons}>
+                    <h1 style={styles.title}>S.Q.M. Campaign Advisory:</h1>
+                                <h2 style={styles.subtitle}>Personal Loan SETA - Valid Account Types</h2>
+                                <p style={styles.date}>Broadcast Sent: September 2, 2024</p>
+                    </div>
+                                <p style={{padding: '10px', textAlign: 'center'}}>Please be advised of the types of accounts that can be used as a settlement account for Personal Loan applications.</p>
+
+                                <table style={styles.table}>
                                     <tbody>
                                         <tr>
-                                            <td colSpan="2"><strong>Valid:</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>BPI/BPI Direct solo account</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>“OR” joint account</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>DBA account (Doing Business As)</td>
-                                        </tr>
-                                        <tr>
-                                            <td colSpan="2"><strong>Invalid:</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>ITF (In trust for)</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>Dollar account</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>Time deposit</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>Save up account</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>“AND” joint account</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>Corporate account</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>“Full Hold” account</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>Closed account</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>BFB accounts</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>Stock Trade account</td>
+                                        <td style={styles.td}>
+                                                Valid
+                                            </td>
+                                            <td style={styles.td}>
+                                                <ul style={styles.ul}>
+                                                    <li>BPI/BPI Direct solo account</li>
+                                                    <li>“OR” joint account</li>
+                                                    <li>DBA (Doing Business As) account</li>
+                                                    <li>BPI Save up Account (Product Code 241)</li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                     </tbody>
+                                    <tbody>
+                                        <tr>
+                                            <td style={styles.td}>
+                                              Invalid
+                                            </td>
+                                            <td style={styles.td}>
+                                                <ul style={styles.ul}>
+                                                    <li>ITF (In trust for) account</li>
+                                                    <li>Dollar account</li>
+                                                    <li>Time deposit</li>
+                                                    <li>GSave Account (Product Code 245)</li>
+                                                    <li>“AND” joint account</li>
+                                                    <li>Corporate account</li>
+                                                    <li>“Full Hold” account</li>
+                                                    <li>Closed account</li>
+                                                    <li>Stock Trade account</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
                                 </table>
+
                             </div>
 
                         </ul>
@@ -363,44 +400,44 @@ const PloanCall = () => {
                     sd
                     <ul>
                         <li>
-                        Client’s email address and mobile number in the application form is exactly the same as the information reflected in Salesforce. 
+                            Client’s email address and mobile number in the application form is exactly the same as the information reflected in Salesforce.
                         </li>
                         <li>
-                        Also, both contact information must be active and in use. 
+                            Also, both contact information must be active and in use.
                         </li>
                         <li>
-                        If the email address and/or mobile number are no longer updated, TSA cannot offer DocuSign option. 
+                            If the email address and/or mobile number are no longer updated, TSA cannot offer DocuSign option.
                         </li>
                         <li>
-                        Client provided a valid BPI settlement account (SETA) at point of call. 
+                            Client provided a valid BPI settlement account (SETA) at point of call.
                         </li>
                         <li>
-                        If the client cannot provide or does not want to disclose his SETA, TSA cannot offer DocuSign option. 
+                            If the client cannot provide or does not want to disclose his SETA, TSA cannot offer DocuSign option.
                         </li>
                         <li>
-                        Vouching of settlement accounts by Team Leaders are not allowed in the DocuSign process. 
+                            Vouching of settlement accounts by Team Leaders are not allowed in the DocuSign process.
                         </li>
                     </ul>
                     <p><strong className={`liTitle ${contentTitle[19].title === headerTitle ? 'searched' : ''}`}
                         ref={titleRefs.current[19]}> {contentTitle[19].title}</strong></p>
-                  
+
                     <ul>
                         <li>
-                        If upon probing, the conditions are not met, TSA cannot offer DocuSign option. 
+                            If upon probing, the conditions are not met, TSA cannot offer DocuSign option.
                         </li>
                         <li>
-                        TSA to advise the client to visit his nominated branch for the signing of his loan documents. 
+                            TSA to advise the client to visit his nominated branch for the signing of his loan documents.
                         </li>
                         <li>
-                        If the client insists to use DocuSign, the client must update his records in the branch. 
+                            If the client insists to use DocuSign, the client must update his records in the branch.
                         </li>
                         <li>
-                        If upon probing, the conditions are met, TSA can offer DocuSign option. 
+                            If upon probing, the conditions are met, TSA can offer DocuSign option.
                         </li>
                     </ul>
                     <p><strong>Spiel:</strong> “You may choose to sign the loan documents at your nominated BPI branch, or sign them electronically through DocuSign.”
                     </p>
-                        <h2 className={`liTitle ${contentTitle[20].title === headerTitle ? 'searched' : ''}`}
+                    <h2 className={`liTitle ${contentTitle[20].title === headerTitle ? 'searched' : ''}`}
                         ref={titleRefs.current[20]}>7. {contentTitle[20].title}</h2>
                     <h3 className={`liTitle ${contentTitle[21].title === headerTitle ? 'searched' : ''}`}
                         ref={titleRefs.current[21]}> {contentTitle[21].title}</h3>

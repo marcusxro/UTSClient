@@ -5,6 +5,7 @@ import Footer from '../comp/Footer'
 
 const SIPCallFlowAndSpiels = () => {
     const nav = useNavigate()
+    
     return (
         <div className='SIPFilter closer'>
             <Header />
@@ -14,7 +15,7 @@ const SIPCallFlowAndSpiels = () => {
             </div>
             <div className="Homepage">
                 <div className="titleForPage">
-                    Call Flow and Spiels
+                    Call Flow and Spielss
                 </div>
                 <h3>A. Opening Spiel</h3>
                 <div className="margLeft">
@@ -340,16 +341,24 @@ const SIPCallFlowAndSpiels = () => {
                     <div className="margLefts">
                         "In case you will use your credit card after this call, please be reminded that the total loan amount will be processed and approved based on the remaining available credit limit/ madness limit (whichever is applicable).”
                     </div>
-                    <h4>3. CNPL Reminders </h4>
+
+
+
+                    <h4>3. 1st Billing / CNPL Reminders </h4>
                     <div className="margLefts">
                         <p>If applicable: “Please be reminded that upon loan approval, your monthly installment shall commence after 60/90 days.”</p>
-                        <p>Note: First billing Reminder is already included in the Recorded Spiel.</p>
+                        {/* <p>Note: First billing Reminder is already included in the Recorded Spiel.</p> */}
                     </div>
-                    <h4>4. Reminders for Balance Conversion (already included in the Recorded Spiel)</h4>
+                    <h4>4. Reminders for Balance Conversion</h4>
                     <div className="margLefts">
-                        "Please settle the Minimum Payment Required for your account since this balance conversion be reflected on your next statement cut-off. Please be advised that the reversal of your transactions will be posted on the next statement cut-off."
+                    "Please settle the Minimum Payment Required for your account since this balance conversion be reflected on your next statement cut-off. Please be advised that the reversal of your transactions will be posted on the next statement cut-off."
                     </div>
-                    <h4>5. SIP Loan Service Fee (already included in the Recorded Spiel)</h4>
+                    <h4>5. SIP Loan Service Fee (already included in the Recorded Spiel)
+                    </h4>
+                   
+                   
+                   
+                   
                     <div className="margLefts">
                         <p>A service fee of Php 500 will be charged for each Balance Transfer, Credit to Cash, and Balance Conversion availment above Php 50,000; while availment up to Php 50,000 and all other S.I.P. Loan variants will be charged a service fee of P300. This fee will be reflected in the succeeding statement of account. </p>
                         <div className="margLefts">
