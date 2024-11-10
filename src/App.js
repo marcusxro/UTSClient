@@ -57,8 +57,10 @@ function App() {
                element={ <SearchedItem /> }  />
             <Route path='/category/:item'
                element={ <CaterPage /> }  />
+               
             <Route path='/campaign/filtering-of-leads'
                element={ <Campaign /> }  />
+
             <Route path='/campaign/call-flow-and-spiels'
                element={ <CallAndSpiels /> }  />
             <Route path='/campaign/documentation'

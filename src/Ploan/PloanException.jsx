@@ -147,7 +147,9 @@ const PloanException = () => {
                             <li>Incomplete mother's maiden name (only last name is indicated in the records) - okay to proceed as long as the client answered 2 other PID questions.</li>
                             <li>Shortened Mother's Maiden (Mother's Maiden name is cut or Vowels dropped in the records) - okay to proceed as long as the client answered 2 other PID questions.</li>
                             <li>Indicated in mother's maiden name is mother's married name - As long as the complete MMN on record was mentioned, it is already acceptable. TSA to probe on the correct MMN. Note: If confirmed MMN is for updating, indicate correct MMN in regression and advise the client to visit the branch whenever convenient for him/her to update his/her record.</li>
-                            <li>Interchanged mother's maiden name - OK to proceed as long as the client answered 2 other PID questions. As long as the complete MMN on record was mentioned, it is already acceptable. TSA to probe on the correct MMN Format. Note: If confirmed MMN is for updating, indicate correct MMN in regression and advise the client to visit the branch whenever convenient for him/her to update his/her record.</li>
+                            <li>
+                            Interchanged mother's maiden name - As long as the complete MMN on record was mentioned, it is already acceptable.
+                            </li>
                         </ul>
                         <li><strong>Zip Code</strong></li>
                         <ul>
